@@ -1,0 +1,8 @@
+# Core analysis dependencies; historical runs were not fully version-locked.
+numpy
+pandas
+scipy
+matplotlib
+scikit-learn
+joblib
+uproot

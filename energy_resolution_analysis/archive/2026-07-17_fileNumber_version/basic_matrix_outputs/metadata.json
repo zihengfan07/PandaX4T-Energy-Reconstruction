@@ -1,0 +1,163 @@
+{
+  "data_file": "light_ana_run10972_finalSS_Egt2MeV_scalar.txt",
+  "data_sha256": "d026e0e30bf6d6af44f3b04848c96815bbbc062cf13f7017e2422dc054cf9d0b",
+  "n_events": 4500,
+  "n_unique_files": 985,
+  "allowed_columns": [
+    "runNumber",
+    "fileNumber",
+    "eventNumber",
+    "qS1_max",
+    "qS2B_max",
+    "dt",
+    "xS2T_max",
+    "yS2T_max"
+  ],
+  "all_events_retained": true,
+  "forbidden_inputs_used": false,
+  "alpha_definition": "E_raw=qS2B/median_train(qS2B)+alpha*qS1/median_train(qS1)",
+  "positive_alpha_grid": [
+    0.05,
+    0.07670637023171953,
+    0.11767734468251262,
+    0.1805320393820497,
+    0.2769591490305376,
+    0.42489062049196813,
+    0.6518363448688389,
+    0.75,
+    1.0,
+    1.5,
+    1.5341274046343907,
+    2.3535468936502513,
+    3.6106407876409943,
+    5.539182980610754,
+    8.49781240983936,
+    13.03672689737678,
+    20.0
+  ],
+  "metrics": {
+    "R68": "(Q84.135-Q15.865)/(2*median), evaluated on all OOF events",
+    "R90": "(Q95-Q05)/(2*median), evaluated on all OOF events"
+  },
+  "outer_schemes": {
+    "file_mod5": "fileNumber modulo 5",
+    "file_block5": "five contiguous blocks of sorted unique fileNumber"
+  },
+  "blocked_fold_ranges": [
+    {
+      "fold": 0,
+      "file_min": 0,
+      "file_max": 199,
+      "n_files": 197,
+      "n_events": 869
+    },
+    {
+      "fold": 1,
+      "file_min": 200,
+      "file_max": 397,
+      "n_files": 197,
+      "n_events": 939
+    },
+    {
+      "fold": 2,
+      "file_min": 398,
+      "file_max": 600,
+      "n_files": 197,
+      "n_events": 928
+    },
+    {
+      "fold": 3,
+      "file_min": 601,
+      "file_max": 801,
+      "n_files": 197,
+      "n_events": 873
+    },
+    {
+      "fold": 4,
+      "file_min": 802,
+      "file_max": 999,
+      "n_files": 197,
+      "n_events": 891
+    }
+  ],
+  "inner_validation": "leave one of the remaining outer file groups out in turn",
+  "family_selection_tolerance_fraction": 0.0005,
+  "response_learning": "low-order surfaces fitted to quantile-cell median log energies; fileNumber is not a response feature",
+  "bootstrap": "1000 paired file-resampling replicates on frozen OOF predictions; the full method-selection and response-learning pipeline is not retrained",
+  "methods": [
+    {
+      "name": "raw",
+      "steps": [],
+      "complexity": 0,
+      "description": "positive-weight raw qS1+qS2B combination"
+    },
+    {
+      "name": "dt_quad",
+      "steps": [
+        "dt"
+      ],
+      "complexity": 3,
+      "description": "quadratic dt response from binned medians"
+    },
+    {
+      "name": "r2_quad",
+      "steps": [
+        "r2"
+      ],
+      "complexity": 3,
+      "description": "quadratic r2 response from binned medians"
+    },
+    {
+      "name": "dt_r2_joint",
+      "steps": [
+        "dt_r2"
+      ],
+      "complexity": 6,
+      "description": "joint quadratic dt/r2 response from 2-D cell medians"
+    },
+    {
+      "name": "dt_then_r2",
+      "steps": [
+        "dt",
+        "r2"
+      ],
+      "complexity": 6,
+      "description": "sequential binned-median dt then r2 correction"
+    },
+    {
+      "name": "r2_then_dt",
+      "steps": [
+        "r2",
+        "dt"
+      ],
+      "complexity": 6,
+      "description": "sequential binned-median r2 then dt correction"
+    },
+    {
+      "name": "xy_quad",
+      "steps": [
+        "xy"
+      ],
+      "complexity": 6,
+      "description": "quadratic x/y response from 2-D cell medians"
+    },
+    {
+      "name": "dt_then_xy",
+      "steps": [
+        "dt",
+        "xy"
+      ],
+      "complexity": 9,
+      "description": "sequential binned-median dt then x/y correction"
+    },
+    {
+      "name": "dt_r2_then_xy",
+      "steps": [
+        "dt_r2",
+        "xy"
+      ],
+      "complexity": 12,
+      "description": "joint dt/r2 followed by a low-order x/y residual correction"
+    }
+  ]
+}

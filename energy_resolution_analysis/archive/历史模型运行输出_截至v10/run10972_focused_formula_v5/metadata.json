@@ -1,0 +1,42 @@
+{
+  "events": 4499,
+  "feature_groups": {
+    "geometry": [
+      "dt",
+      "xS2T_max",
+      "yS2T_max",
+      "xS2Tcor_max",
+      "yS2Tcor_max"
+    ],
+    "geometry_shape": [
+      "dt",
+      "xS2T_max",
+      "yS2T_max",
+      "xS2Tcor_max",
+      "yS2Tcor_max",
+      "wS1_max",
+      "wS2_max",
+      "wS2CDF_max",
+      "wS2FWHM_max",
+      "tDiffBottomTopS1_max",
+      "tDiffBottomTopS2_max",
+      "nPMTS1_max",
+      "nPMTS2_max"
+    ]
+  },
+  "formula_family": "E = 0.0137 * (k*qS1ub_C/0.125 + S2_candidate/10.58)",
+  "outer_validation": "balanced seeded event-level five-fold OOF",
+  "rejected_source_rows": [
+    1151
+  ],
+  "seed": 10972,
+  "selection_constraints": "lower sigma/mu with R68 and R90 no more than 0.2% relatively worse",
+  "usable_s2": [
+    "qS2Bub_C",
+    "qS2Bdesub_C",
+    "qS2Bub_C_stretch",
+    "qS2Bdesub_C_stretch",
+    "qS2BC_max",
+    "qS2Bdes_max"
+  ]
+}

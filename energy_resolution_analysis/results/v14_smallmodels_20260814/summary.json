@@ -1,0 +1,171 @@
+{
+  "background_base_spike": {
+    "center": 2697.5,
+    "count": 42,
+    "ratio": 1.423728813559322
+  },
+  "background_candidate_spike": {
+    "center": 2872.5,
+    "count": 34,
+    "ratio": 1.511111111111111
+  },
+  "calibration_base_metrics": {
+    "median": 2235.625060538251,
+    "n": 4499,
+    "q10": 2084.431569012847,
+    "q90": 2510.977588123844,
+    "r68": 0.06774135758272384,
+    "r90": 0.1312197664911172
+  },
+  "calibration_base_protocols": {
+    "center_bias_max": 0.15695340854830986,
+    "fit_p_median": 2.335823510928796e-128,
+    "protocol_successes": 12,
+    "r68": 0.06821389717074168,
+    "r90": 0.1312197664911172,
+    "sigma_median": 0.04178090146749322,
+    "sigma_worst": 0.04406452871013784
+  },
+  "calibration_candidate_metrics": {
+    "median": 2235.568024302304,
+    "n": 4499,
+    "q10": 2084.588315941643,
+    "q90": 2510.300635386388,
+    "r68": 0.06777750435145811,
+    "r90": 0.13117228744255305
+  },
+  "calibration_candidate_protocols": {
+    "center_bias_max": 0.1571452617666217,
+    "fit_p_median": 1.053337102285971e-128,
+    "protocol_successes": 12,
+    "r68": 0.06817352493132309,
+    "r90": 0.13117228744255305,
+    "sigma_median": 0.04166268293908018,
+    "sigma_worst": 0.04419130191998845
+  },
+  "historical_importance": {
+    "dt": {
+      "normalized": 0.2392,
+      "rank": 38
+    },
+    "qS1channelStdevTo1_max": {
+      "normalized": 0.8438,
+      "rank": 4
+    },
+    "qS2channelStdevTo1_max": {
+      "normalized": 1.0,
+      "rank": 1
+    },
+    "wS2CDF_max": {
+      "normalized": 0.5033,
+      "rank": 12
+    },
+    "xS2T_max": {
+      "normalized": 0.9681,
+      "rank": 2
+    },
+    "yS2B_max": {
+      "normalized": 0.8901,
+      "rank": 3
+    }
+  },
+  "model_sets": {
+    "M01_dt": [
+      "dt"
+    ],
+    "M02_dt_s2pattern": [
+      "dt",
+      "qS2channelStdevTo1_max"
+    ],
+    "M03_dt_x": [
+      "dt",
+      "xS2T_max"
+    ],
+    "M04_dt_y": [
+      "dt",
+      "yS2B_max"
+    ],
+    "M05_dt_s1pattern": [
+      "dt",
+      "qS1channelStdevTo1_max"
+    ],
+    "M06_dt_s2width": [
+      "dt",
+      "wS2CDF_max"
+    ],
+    "M07_dt_xy": [
+      "dt",
+      "xS2T_max",
+      "yS2B_max"
+    ],
+    "M08_dt_patterns": [
+      "dt",
+      "qS2channelStdevTo1_max",
+      "qS1channelStdevTo1_max"
+    ],
+    "M09_dt_xy_width": [
+      "dt",
+      "xS2T_max",
+      "yS2B_max",
+      "wS2CDF_max"
+    ],
+    "M10_all_six": [
+      "dt",
+      "qS2channelStdevTo1_max",
+      "xS2T_max",
+      "yS2B_max",
+      "qS1channelStdevTo1_max",
+      "wS2CDF_max"
+    ]
+  },
+  "safe_models": 2,
+  "selection_status": "safe_candidate_selected",
+  "total_models": 10,
+  "warning": "Single-run mixed calibration sample. Do not promote without multi-line and cross-run validation.",
+  "winner": {
+    "alpha": 1000.0,
+    "background_applied": 0.22803642162662688,
+    "background_energy_trend": 0.0009847546671419348,
+    "background_median_scale_shift": 0.0,
+    "background_near_cap": 0.0,
+    "background_ood": 0.04163794433870055,
+    "background_rank_corr": 0.9999983457136354,
+    "background_ratio_q01": 0.9978213504760758,
+    "background_ratio_q99": 1.002203999453338,
+    "background_spike_growth": 1.0613756613756613,
+    "background_strong": 0.7682596841401307,
+    "calibration_base_r68": 0.06774135758272384,
+    "calibration_base_sigma": 0.04178090146749322,
+    "calibration_center_bias_max": 0.1571452617666217,
+    "calibration_oof_r68": 0.06777750435145811,
+    "calibration_oof_r90": 0.13117228744255305,
+    "calibration_oof_sigma": 0.04166268293908018,
+    "calibration_protocol_successes": 12,
+    "cap": 0.0025,
+    "feature_count": 2,
+    "features": "dt|wS2CDF_max",
+    "name": "M06_dt_s2width",
+    "relative_r68_improvement": -0.0005335997096032052,
+    "relative_sigma_improvement": 0.0028294872599868848,
+    "safe": true,
+    "safety_pass_count": 13,
+    "time_applied_fraction_span": 0.01816680429397191,
+    "time_ratio_span": 0.0002591569557399698,
+    "time_supported_blocks": 10
+  },
+  "winner_safety_flags": {
+    "background_coverage": true,
+    "background_ood": true,
+    "center_stable": true,
+    "fit_protocol_ok": true,
+    "no_cap_pileup": true,
+    "no_spike_growth": true,
+    "r68_not_worse": true,
+    "ranking_preserved": true,
+    "scale_stable": true,
+    "sigma_improves": true,
+    "time_blocks_supported": true,
+    "time_coverage_stable": true,
+    "time_stable": true
+  }
+}

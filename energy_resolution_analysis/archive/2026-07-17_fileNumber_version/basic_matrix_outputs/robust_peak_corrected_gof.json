@@ -1,0 +1,180 @@
+{
+  "metadata": {
+    "input": "C:\\Users\\researcher\\Desktop\\暑假\\energy_resolution_analysis\\basic_matrix_outputs\\oof_predictions.csv",
+    "fixed_window": [
+      0.8,
+      1.2
+    ],
+    "poisson_deviance_bins": 40,
+    "models": [
+      "gaussian_bernstein2"
+    ],
+    "optimizer_starts": 12,
+    "parametric_bootstrap_requested_per_fit": 200,
+    "bootstrap_optimizer_starts": 3,
+    "seed": 10972,
+    "interpretation": "Conditional diagnostic for the supplied OOF sample; no source or absolute peak energy is assumed, and upstream E>2MeV selection bias is not removed."
+  },
+  "datasets": [
+    {
+      "method": "basic_matrix_file_block5",
+      "stage": "corrected",
+      "energy_column": "oof_corrected_energy",
+      "all_finite_event_count": 4500,
+      "all_event_central68_quantiles": [
+        0.9428623907327435,
+        0.9997140402960933,
+        1.0622975430808528
+      ],
+      "all_event_nonparametric_r68": 0.059734657879134734,
+      "all_event_central90_quantiles": [
+        0.895381017051516,
+        0.9997140402960933,
+        1.1318416038095767
+      ],
+      "all_event_nonparametric_r90_halfwidth": 0.11826411214952341,
+      "fixed_window_event_count": 4398,
+      "fixed_window_fraction_of_finite_events": 0.9773333333333334,
+      "fits": [
+        {
+          "model": "gaussian_bernstein2",
+          "success": true,
+          "quality_accepted_no_gof": true,
+          "multistart_stable": true,
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+          "negative_log_likelihood": -6046.788364853229,
+          "parameter_count": 5,
+          "aic": -12083.576729706458,
+          "aicc": -12083.563068504272,
+          "bic": -12051.632203850884,
+          "parameters": {
+            "mu": 0.9963642179765901,
+            "log_sigma": -3.211277684878129,
+            "logit_signal_fraction": 0.6983658273604852,
+            "background_logit_0": -1.7634805649461782,
+            "background_logit_1": 2.24968448453633,
+            "sigma": 0.040305083164150934
+          },
+          "mu": 0.9963642179765901,
+          "sigma": 0.040305083164150934,
+          "core_resolution_sigma_over_mu": 0.0404521583944496,
+          "signal_fraction": 0.6678253555280194,
+          "fitted_signal_yield_in_window": 2937.095913612229,
+          "fitted_background_yield_in_window": 1460.9040863877708,
+          "background_weights": [
+            0.01608896739333214,
+            0.8900688608776772,
+            0.09384217172899072
+          ],
+          "boundary_degenerate": false,
+          "boundary_parameters": [],
+          "successful_optimizer_starts": 12,
+          "starts_reaching_best_nll_within_1e-4": 8,
+          "optimizer_starts": 12,
+          "quality_accepted_with_bootstrap_gof_p_gt_0_05": true,
+          "poisson_deviance_gof": {
+            "bins": 40,
+            "deviance": 42.90341359138351,
+            "degrees_of_freedom": 34,
+            "asymptotic_p_value_diagnostic": 0.14074236873393525,
+            "minimum_expected_bin_count": 4.122618431489773,
+            "maximum_absolute_pull": 2.287115735628759
+          },
+          "parametric_bootstrap_gof": {
+            "requested": 200,
+            "successful": 200,
+            "failed": 0,
+            "p_value": 0.1691542288557214,
+            "monte_carlo_standard_error": 0.026442566666648255,
+            "deviance_quantiles_025_500_975": [
+              20.666969005876755,
+              34.07345075710253,
+              52.96335326242009
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "method": "basic_matrix_file_mod5",
+      "stage": "corrected",
+      "energy_column": "oof_corrected_energy",
+      "all_finite_event_count": 4500,
+      "all_event_central68_quantiles": [
+        0.9395670017430712,
+        1.0000216034193357,
+        1.0562276902413303
+      ],
+      "all_event_nonparametric_r68": 0.05832908414146541,
+      "all_event_central90_quantiles": [
+        0.8850545920469225,
+        1.0000216034193357,
+        1.120570397888496
+      ],
+      "all_event_nonparametric_r90_halfwidth": 0.1177553590023872,
+      "fixed_window_event_count": 4367,
+      "fixed_window_fraction_of_finite_events": 0.9704444444444444,
+      "fits": [
+        {
+          "model": "gaussian_bernstein2",
+          "success": true,
+          "quality_accepted_no_gof": true,
+          "multistart_stable": true,
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+          "negative_log_likelihood": -6066.675717969172,
+          "parameter_count": 5,
+          "aic": -12123.351435938344,
+          "aicc": -12123.33767762603,
+          "bic": -12091.442278170916,
+          "parameters": {
+            "mu": 0.9982785526664094,
+            "log_sigma": -3.127747231527777,
+            "logit_signal_fraction": 1.06008028479516,
+            "background_logit_0": -0.010573169745801166,
+            "background_logit_1": 2.1501067719784603,
+            "sigma": 0.04381639434458889
+          },
+          "mu": 0.9982785526664094,
+          "sigma": 0.04381639434458889,
+          "core_resolution_sigma_over_mu": 0.04389195202837422,
+          "signal_fraction": 0.7427058875324067,
+          "fitted_signal_yield_in_window": 3243.3966108540203,
+          "fitted_background_yield_in_window": 1123.6033891459797,
+          "background_weights": [
+            0.09356580873317692,
+            0.8118738469236656,
+            0.09456034434315755
+          ],
+          "boundary_degenerate": false,
+          "boundary_parameters": [],
+          "successful_optimizer_starts": 12,
+          "starts_reaching_best_nll_within_1e-4": 12,
+          "optimizer_starts": 12,
+          "quality_accepted_with_bootstrap_gof_p_gt_0_05": false,
+          "poisson_deviance_gof": {
+            "bins": 40,
+            "deviance": 52.57122508668682,
+            "degrees_of_freedom": 34,
+            "asymptotic_p_value_diagnostic": 0.021938939487796818,
+            "minimum_expected_bin_count": 9.391203073985217,
+            "maximum_absolute_pull": 2.538717963125961
+          },
+          "parametric_bootstrap_gof": {
+            "requested": 200,
+            "successful": 200,
+            "failed": 0,
+            "p_value": 0.029850746268656716,
+            "monte_carlo_standard_error": 0.012003249811990904,
+            "deviance_quantiles_025_500_975": [
+              21.909454997569178,
+              34.75564978160836,
+              49.574599941416864
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

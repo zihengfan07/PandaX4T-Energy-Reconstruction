@@ -1,0 +1,9 @@
+scheme,metric,q025,median,q975,replicates,interpretation
+file_block5,delta_r68,-0.024879345879831555,-0.021915166737441143,-0.01898162170371597,1000,conditional on frozen OOF predictions; pipeline is not retrained
+file_block5,ratio_r68,0.698486141593105,0.7306123167091458,0.760663072995711,1000,conditional on frozen OOF predictions; pipeline is not retrained
+file_block5,delta_r90,-0.03652209357849228,-0.031289655085886284,-0.02592419260734066,1000,conditional on frozen OOF predictions; pipeline is not retrained
+file_block5,ratio_r90,0.7608797863638266,0.7915152718848433,0.824595632466817,1000,conditional on frozen OOF predictions; pipeline is not retrained
+file_mod5,delta_r68,-0.02505848107294398,-0.022061528531381786,-0.018991564671037135,1000,conditional on frozen OOF predictions; pipeline is not retrained
+file_mod5,ratio_r68,0.6969460478389888,0.7265193515585607,0.7565703044148092,1000,conditional on frozen OOF predictions; pipeline is not retrained
+file_mod5,delta_r90,-0.03939383866902153,-0.03317585949012996,-0.026728634105929565,1000,conditional on frozen OOF predictions; pipeline is not retrained
+file_mod5,ratio_r90,0.7441093445890772,0.7804491800171621,0.8193930154275635,1000,conditional on frozen OOF predictions; pipeline is not retrained

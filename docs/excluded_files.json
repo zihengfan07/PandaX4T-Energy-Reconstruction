@@ -1,0 +1,1458 @@
+[
+  {
+    "path": "00_报告与说明/$job.aux",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "00_报告与说明/$job.log",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "00_报告与说明/$job.nav",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "00_报告与说明/$job.out",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "00_报告与说明/$job.pdf",
+    "reason": "duplicate build output"
+  },
+  {
+    "path": "00_报告与说明/$job.snm",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "00_报告与说明/$job.toc",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "00_报告与说明/06_PandaX4T_candidate_v11_LaTeX源文件.zip",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "00_报告与说明/06_PandaX4T_模型问题诊断与v13阶段汇报_20260807.pdf",
+    "reason": "PDF contains internal paths; sanitized TeX source is included instead"
+  },
+  {
+    "path": "00_报告与说明/07_PandaX4T_candidate_v11_核心汇报_LaTeX源文件.zip",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "00_报告与说明/08_PandaX4T_近期模型优化阶段汇报_20260815.aux",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "00_报告与说明/08_PandaX4T_近期模型优化阶段汇报_20260815.log",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "00_报告与说明/08_PandaX4T_近期模型优化阶段汇报_20260815.nav",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "00_报告与说明/08_PandaX4T_近期模型优化阶段汇报_20260815.out",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "00_报告与说明/08_PandaX4T_近期模型优化阶段汇报_20260815.snm",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "00_报告与说明/08_PandaX4T_近期模型优化阶段汇报_20260815.toc",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "00_报告与说明/09_PandaX4T_v19最新模型阶段汇报_20260815.aux",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "00_报告与说明/09_PandaX4T_v19最新模型阶段汇报_20260815.log",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "00_报告与说明/09_PandaX4T_v19最新模型阶段汇报_20260815.nav",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "00_报告与说明/09_PandaX4T_v19最新模型阶段汇报_20260815.out",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "00_报告与说明/09_PandaX4T_v19最新模型阶段汇报_20260815.snm",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "00_报告与说明/09_PandaX4T_v19最新模型阶段汇报_20260815.toc",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "00_报告与说明/归档/历史完整报告/05_PandaX4T_完整技术报告_LaTeX源文件.zip",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "01_老师盲测交付/PandaX_candidate_v11_blindtest_FINAL_20260731.zip",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "01_老师盲测交付/PandaX_candidate_v12_safe_20260803.zip",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "01_老师盲测交付/PandaX_v13_teacher_demo_20260807.zip",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "01_老师盲测交付/90_服务器部署工具/audit_and_fetch_bl0_v12_safe.py",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "01_老师盲测交付/90_服务器部署工具/audit_foundation_spikes.py",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "01_老师盲测交付/90_服务器部署工具/audit_invalid_image_foundation.py",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "01_老师盲测交付/90_服务器部署工具/audit_teacher_background_failure.py",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "01_老师盲测交付/90_服务器部署工具/build_bl0_teacher_ready_package.py",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "01_老师盲测交付/90_服务器部署工具/build_upload_verify_v13_teacher_demo.py",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "01_老师盲测交付/90_服务器部署工具/export_fetch_bl0_v12_portable.py",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "01_老师盲测交付/90_服务器部署工具/fetch_bl0_v13_search.py",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "01_老师盲测交付/90_服务器部署工具/fetch_original_v12_comparison.py",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "01_老师盲测交付/90_服务器部署工具/grant_bl0_teacher_python_access.py",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "01_老师盲测交付/90_服务器部署工具/inspect_bl0_compute.py",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "01_老师盲测交付/90_服务器部署工具/inspect_bl0_sharing.py",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "01_老师盲测交付/90_服务器部署工具/inspect_bl0_user_entitlement.py",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "01_老师盲测交付/90_服务器部署工具/inspect_teacher_background.py",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "01_老师盲测交付/90_服务器部署工具/run_bl0_v12_safe_development.py",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "01_老师盲测交付/90_服务器部署工具/run_bl0_v13_anchored.py",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "01_老师盲测交付/90_服务器部署工具/upload_bl0_candidate_v11.py",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "01_老师盲测交付/90_服务器部署工具/upload_verify_bl0_v12_safe.py",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "01_老师盲测交付/90_服务器部署工具/verify_bl0_candidate_v11.py",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "01_老师盲测交付/PandaX_candidate_v11_blindtest/model/candidate_v11.joblib",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "01_老师盲测交付/PandaX_candidate_v12_safe/__pycache__/apply_v12_safe.cpython-312.pyc",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "01_老师盲测交付/PandaX_v13_teacher_demo/docs/PandaX_v13_stage_report_20260807.pdf",
+    "reason": "PDF contains internal paths; sanitized TeX source is included instead"
+  },
+  {
+    "path": "01_老师盲测交付/PandaX_v13_teacher_demo/__pycache__/apply_v13.cpython-312.pyc",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/archive/2026-07-17_fileNumber_version/basic_matrix_outputs/file_time_diagnostic.csv",
+    "reason": "event-level derived data"
+  },
+  {
+    "path": "energy_resolution_analysis/archive/2026-07-17_fileNumber_version/basic_matrix_outputs/oof_predictions.csv",
+    "reason": "event-level derived data"
+  },
+  {
+    "path": "energy_resolution_analysis/archive/2026-07-17_fileNumber_version/channel_physics_outputs/oof_events.tsv",
+    "reason": "event-level derived data"
+  },
+  {
+    "path": "energy_resolution_analysis/archive/2026-07-17_fileNumber_version/historical_early_pipeline/outputs/nested_cv_events.tsv",
+    "reason": "event-level derived data"
+  },
+  {
+    "path": "energy_resolution_analysis/archive/2026-07-17_fileNumber_version/independent_outputs/oof_events.tsv",
+    "reason": "event-level derived data"
+  },
+  {
+    "path": "energy_resolution_analysis/archive/历史模型运行输出_截至v10/run10972_focused_formula_v5/oof_events.csv",
+    "reason": "event-level derived data"
+  },
+  {
+    "path": "energy_resolution_analysis/archive/历史模型运行输出_截至v10/run10972_full_feature_v2/oof_events.csv",
+    "reason": "event-level derived data"
+  },
+  {
+    "path": "energy_resolution_analysis/archive/历史模型运行输出_截至v10/run10972_grouped_nested_v9_hard_audit/candidate_v9.joblib",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "energy_resolution_analysis/archive/历史模型运行输出_截至v10/run10972_grouped_nested_v9_hard_audit/oof_events.csv",
+    "reason": "event-level derived data"
+  },
+  {
+    "path": "energy_resolution_analysis/archive/历史模型运行输出_截至v10/run10972_grouped_nested_v9_soft/candidate_v9.joblib",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "energy_resolution_analysis/archive/历史模型运行输出_截至v10/run10972_grouped_nested_v9_soft/oof_events.csv",
+    "reason": "event-level derived data"
+  },
+  {
+    "path": "energy_resolution_analysis/archive/历史模型运行输出_截至v10/run10972_grouped_nested_v9_soft/apply_smoke/validation_events.csv",
+    "reason": "event-level derived data"
+  },
+  {
+    "path": "energy_resolution_analysis/archive/历史模型运行输出_截至v10/run10972_heterogeneous_oof_v8/oof_events.csv",
+    "reason": "event-level derived data"
+  },
+  {
+    "path": "energy_resolution_analysis/archive/历史模型运行输出_截至v10/run10972_repeated_oof_v6/oof_ensemble_events.csv",
+    "reason": "event-level derived data"
+  },
+  {
+    "path": "energy_resolution_analysis/archive/历史模型运行输出_截至v10/run10972_repeated_oof_v7/oof_ensemble_events.csv",
+    "reason": "event-level derived data"
+  },
+  {
+    "path": "energy_resolution_analysis/archive/历史模型运行输出_截至v10/run10972_sparse_grouped_v10/candidate_v10.joblib",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "energy_resolution_analysis/archive/历史模型运行输出_截至v10/run10972_sparse_grouped_v10/diagnostic_features.csv",
+    "reason": "event identifiers or event-level detector values"
+  },
+  {
+    "path": "energy_resolution_analysis/archive/历史模型运行输出_截至v10/run10972_sparse_grouped_v10/oof_events.csv",
+    "reason": "event-level derived data"
+  },
+  {
+    "path": "energy_resolution_analysis/basic_matrix_outputs/oof_predictions.csv",
+    "reason": "event-level derived data"
+  },
+  {
+    "path": "energy_resolution_analysis/channel_physics_outputs/oof_events.tsv",
+    "reason": "event-level derived data"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render/contact-01-05.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render/contact-06-10.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render/contact-11-15.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render/contact-16-20.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render/contact-21-25.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render/page-01.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render/page-02.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render/page-03.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render/page-04.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render/page-05.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render/page-06.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render/page-07.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render/page-08.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render/page-09.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render/page-10.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render/page-11.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render/page-12.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render/page-13.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render/page-14.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render/page-15.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render/page-16.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render/page-17.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render/page-18.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render/page-19.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render/page-20.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render/page-21.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render/page-22.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render/page-23.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render/page-24.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render/page-25.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render_v2/contact-01-06.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render_v2/contact-07-12.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render_v2/contact-13-18.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render_v2/contact-19-24.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render_v2/page-01.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render_v2/page-02.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render_v2/page-03.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render_v2/page-04.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render_v2/page-05.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render_v2/page-06.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render_v2/page-07.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render_v2/page-08.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render_v2/page-09.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render_v2/page-10.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render_v2/page-11.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render_v2/page-12.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render_v2/page-13.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render_v2/page-14.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render_v2/page-15.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render_v2/page-16.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render_v2/page-17.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render_v2/page-18.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render_v2/page-19.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render_v2/page-20.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render_v2/page-21.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render_v2/page-22.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render_v2/page-23.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/final_render_v2/page-24.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/output/pdf/PandaX4T_independent_energy_reconstruction_complete_report.aux",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/output/pdf/PandaX4T_independent_energy_reconstruction_complete_report.log",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/output/pdf/PandaX4T_independent_energy_reconstruction_complete_report.out",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/output/pdf/PandaX4T_independent_energy_reconstruction_complete_report.toc",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_final_render/contact-01-06.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_final_render/contact-07-12.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_final_render/contact-13-18.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_final_render/contact-19-24.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_final_render/page-01.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_final_render/page-02.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_final_render/page-03.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_final_render/page-04.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_final_render/page-05.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_final_render/page-06.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_final_render/page-07.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_final_render/page-08.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_final_render/page-09.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_final_render/page-10.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_final_render/page-11.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_final_render/page-12.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_final_render/page-13.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_final_render/page-14.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_final_render/page-15.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_final_render/page-16.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_final_render/page-17.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_final_render/page-18.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_final_render/page-19.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_final_render/page-20.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_final_render/page-21.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_final_render/page-22.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_final_render/page-23.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_final_render/page-24.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_render/contact-01-06.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_render/contact-07-12.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_render/contact-13-18.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_render/contact-19-24.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_render/page-01.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_render/page-02.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_render/page-03.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_render/page-04.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_render/page-05.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_render/page-06.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_render/page-07.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_render/page-08.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_render/page-09.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_render/page-10.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_render/page-11.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_render/page-12.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_render/page-13.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_render/page-14.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_render/page-15.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_render/page-16.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_render/page-17.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_render/page-18.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_render/page-19.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_render/page-20.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_render/page-21.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_render/page-22.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_render/page-23.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/complete_report/v11_render/page-24.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/core_report/output/pdf/PandaX4T_candidate_v11_core_report.aux",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "energy_resolution_analysis/core_report/output/pdf/PandaX4T_candidate_v11_core_report.log",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "energy_resolution_analysis/core_report/output/pdf/PandaX4T_candidate_v11_core_report.out",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "energy_resolution_analysis/data/bkg_26_8_13/2615.root",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/data/bkg_26_8_13/kr.root",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/report/output/pdf/PandaX4T_v13_stage_report.aux",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "energy_resolution_analysis/report/output/pdf/PandaX4T_v13_stage_report.log",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "energy_resolution_analysis/report/output/pdf/PandaX4T_v13_stage_report.out",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "energy_resolution_analysis/report/output/pdf/PandaX4T_v13_stage_report.pdf",
+    "reason": "PDF contains internal paths; sanitized TeX source is included instead"
+  },
+  {
+    "path": "energy_resolution_analysis/report/output/pdf/PandaX4T_v13_stage_report.toc",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "energy_resolution_analysis/report/__pycache__/report_assets.cpython-310.pyc",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/report/__pycache__/report_assets.cpython-312.pyc",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/report/__pycache__/report_assets.cpython-313.pyc",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/results/v12_safe_20260803/background_events.csv",
+    "reason": "event-level derived data"
+  },
+  {
+    "path": "energy_resolution_analysis/results/v12_safe_20260803/background_events.txt",
+    "reason": "event-level output or unreviewed text data"
+  },
+  {
+    "path": "energy_resolution_analysis/results/v12_safe_20260803/calibration_oof_events.csv",
+    "reason": "event-level derived data"
+  },
+  {
+    "path": "energy_resolution_analysis/results/v12_safe_20260803/candidate_v12_safe.joblib",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "energy_resolution_analysis/results/v12_safe_20260803/original_vs_v12_events.csv",
+    "reason": "event-level derived data"
+  },
+  {
+    "path": "energy_resolution_analysis/results/v13_anchored_20260807/background_events.csv",
+    "reason": "event-level derived data"
+  },
+  {
+    "path": "energy_resolution_analysis/results/v13_anchored_20260807/background_events.txt",
+    "reason": "event-level output or unreviewed text data"
+  },
+  {
+    "path": "energy_resolution_analysis/results/v13_anchored_20260807/calibration_oof_events.csv",
+    "reason": "event-level derived data"
+  },
+  {
+    "path": "energy_resolution_analysis/results/v13_anchored_20260807/candidate_v13_anchored.joblib",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "energy_resolution_analysis/results/v14_smallmodels_20260814/background_events.csv",
+    "reason": "event-level derived data"
+  },
+  {
+    "path": "energy_resolution_analysis/results/v14_smallmodels_20260814/calibration_oof_events.csv",
+    "reason": "event-level derived data"
+  },
+  {
+    "path": "energy_resolution_analysis/results/v14_smallmodels_20260814/candidate_v14_smallmodels.joblib",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "energy_resolution_analysis/results/v15_multivariable_20260814/candidate_v15_multivariable.joblib",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "energy_resolution_analysis/results/v15_multivariable_20260814/winner_background_events.csv",
+    "reason": "event-level derived data"
+  },
+  {
+    "path": "energy_resolution_analysis/results/v15_multivariable_20260814/winner_calibration_oof_events.csv",
+    "reason": "event-level derived data"
+  },
+  {
+    "path": "energy_resolution_analysis/results/v15_multivariable_20260814/figures/ratio_relationships/_render_cache/background_combined.html",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "energy_resolution_analysis/results/v15_multivariable_20260814/figures/ratio_relationships/_render_cache/background_combined_fragment.html",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "energy_resolution_analysis/results/v15_multivariable_20260814/figures/ratio_relationships/_render_cache/background_dt.html",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "energy_resolution_analysis/results/v15_multivariable_20260814/figures/ratio_relationships/_render_cache/background_dt_fragment.html",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "energy_resolution_analysis/results/v15_multivariable_20260814/figures/ratio_relationships/_render_cache/background_wS2CDF_max.html",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "energy_resolution_analysis/results/v15_multivariable_20260814/figures/ratio_relationships/_render_cache/background_wS2CDF_max_fragment.html",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "energy_resolution_analysis/results/v15_multivariable_20260814/figures/ratio_relationships/_render_cache/background_xS2Bcor_max.html",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "energy_resolution_analysis/results/v15_multivariable_20260814/figures/ratio_relationships/_render_cache/background_xS2Bcor_max_fragment.html",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "energy_resolution_analysis/results/v15_multivariable_20260814/figures/ratio_relationships/_render_cache/background_yS2Tcor_max.html",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "energy_resolution_analysis/results/v15_multivariable_20260814/figures/ratio_relationships/_render_cache/background_yS2Tcor_max_fragment.html",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "energy_resolution_analysis/results/v15_multivariable_20260814/figures/ratio_relationships/_render_cache/calibration_combined.html",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "energy_resolution_analysis/results/v15_multivariable_20260814/figures/ratio_relationships/_render_cache/calibration_combined_fragment.html",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "energy_resolution_analysis/results/v15_multivariable_20260814/figures/ratio_relationships/_render_cache/calibration_dt.html",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "energy_resolution_analysis/results/v15_multivariable_20260814/figures/ratio_relationships/_render_cache/calibration_dt_fragment.html",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "energy_resolution_analysis/results/v15_multivariable_20260814/figures/ratio_relationships/_render_cache/calibration_wS2CDF_max.html",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "energy_resolution_analysis/results/v15_multivariable_20260814/figures/ratio_relationships/_render_cache/calibration_wS2CDF_max_fragment.html",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "energy_resolution_analysis/results/v15_multivariable_20260814/figures/ratio_relationships/_render_cache/calibration_xS2Bcor_max.html",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "energy_resolution_analysis/results/v15_multivariable_20260814/figures/ratio_relationships/_render_cache/calibration_xS2Bcor_max_fragment.html",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "energy_resolution_analysis/results/v15_multivariable_20260814/figures/ratio_relationships/_render_cache/calibration_yS2Tcor_max.html",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "energy_resolution_analysis/results/v15_multivariable_20260814/figures/ratio_relationships/_render_cache/calibration_yS2Tcor_max_fragment.html",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "energy_resolution_analysis/results/v16_nonlinear_holdout_20260814/calibration_events.csv",
+    "reason": "event-level derived data"
+  },
+  {
+    "path": "energy_resolution_analysis/results/v16_nonlinear_holdout_20260814/candidate_v16.joblib",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "energy_resolution_analysis/results/v17_ensemble_20260814/candidate_v17.joblib",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "energy_resolution_analysis/results/v18_response_map_20260814/candidate_v18.joblib",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "energy_resolution_analysis/results/v19_incremental_features_20260815/background_events.txt",
+    "reason": "event-level output or unreviewed text data"
+  },
+  {
+    "path": "energy_resolution_analysis/results/v19_incremental_features_20260815/calibration_events.csv",
+    "reason": "event-level derived data"
+  },
+  {
+    "path": "energy_resolution_analysis/results/v19_incremental_features_20260815/candidate_v19.joblib",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "energy_resolution_analysis/results/v20_physics_audit_bl0_20260815/background_energies.txt",
+    "reason": "event-level output or unreviewed text data"
+  },
+  {
+    "path": "energy_resolution_analysis/results/v20_physics_audit_bl0_20260815/calibration_events.csv",
+    "reason": "event-level derived data"
+  },
+  {
+    "path": "energy_resolution_analysis/results/v20_physics_audit_local_20260815/calibration_events.csv",
+    "reason": "event-level derived data"
+  },
+  {
+    "path": "energy_resolution_analysis/results/v21_kr_residual_correction_20260822/2615_energy_output.txt",
+    "reason": "event-level output or unreviewed text data"
+  },
+  {
+    "path": "energy_resolution_analysis/results/v21_kr_residual_correction_20260822/2615_time_matched_output.txt",
+    "reason": "event-level output or unreviewed text data"
+  },
+  {
+    "path": "energy_resolution_analysis/server_runs/run10972_foundation_environment_v11/candidate_v11.joblib",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "energy_resolution_analysis/server_runs/run10972_foundation_environment_v11/oof_events.csv",
+    "reason": "event-level derived data"
+  },
+  {
+    "path": "energy_resolution_analysis/stage_report/tmp/pdfs/check-2.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/stage_report/tmp/pdfs/check-3.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/stage_report/tmp/pdfs/finalcheck-1.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/stage_report/tmp/pdfs/finalcheck-2.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/stage_report/tmp/pdfs/finalcheck-3.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/stage_report/tmp/pdfs/finalcheck-4.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/stage_report/tmp/pdfs/finalcheck-5.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/stage_report/tmp/pdfs/finalcheck-6.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/stage_report/tmp/pdfs/finalcheck-7.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/stage_report/tmp/pdfs/finalcheck-8.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/stage_report/tmp/pdfs/PandaX4T_run10972_data_processing_report.aux",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/stage_report/tmp/pdfs/PandaX4T_run10972_data_processing_report.log",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/stage_report/tmp/pdfs/PandaX4T_run10972_data_processing_report.out",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/stage_report/tmp/pdfs/PandaX4T_run10972_data_processing_report.pdf",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/stage_report/tmp/pdfs/PandaX4T_run10972_raw_data_report.aux",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/stage_report/tmp/pdfs/PandaX4T_run10972_raw_data_report.log",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/stage_report/tmp/pdfs/PandaX4T_run10972_raw_data_report.out",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/stage_report/tmp/pdfs/PandaX4T_run10972_raw_data_report.pdf",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/stage_report/tmp/pdfs/PandaX4T_stage_report_part1.aux",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/stage_report/tmp/pdfs/PandaX4T_stage_report_part1.log",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/stage_report/tmp/pdfs/PandaX4T_stage_report_part1.out",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/stage_report/tmp/pdfs/PandaX4T_stage_report_part1.pdf",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/stage_report/tmp/pdfs/rawcheck-1.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/stage_report/tmp/pdfs/rawcheck-2.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/stage_report/tmp/pdfs/rawcheck-3.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/stage_report/tmp/pdfs/rawcheck-4.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/stage_report/tmp/pdfs/rawcheck-5.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/stage_report/tmp/pdfs/rawcheck-6.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/stage_report/tmp/pdfs/rawcheck-7.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/stage_report/tmp/pdfs/rawcheck-8.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/stage_report/tmp/pdfs/rendered_processing/page-01.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/stage_report/tmp/pdfs/rendered_processing/page-02.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/stage_report/tmp/pdfs/rendered_processing/page-03.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/stage_report/tmp/pdfs/rendered_processing/page-04.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/stage_report/tmp/pdfs/rendered_processing/page-05.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/stage_report/tmp/pdfs/rendered_processing/page-06.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/stage_report/tmp/pdfs/rendered_processing/page-07.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/stage_report/tmp/pdfs/rendered_processing/page-08.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/stage_report/tmp/pdfs/rendered_processing/page-09.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/stage_report/tmp/pdfs/rendered_processing/page-10.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/stage_report/tmp/pdfs/rendered_processing/page-11.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/stage_report/tmp/pdfs/rendered_processing/page-final.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/stage_report/__pycache__/make_stage_figures.cpython-310.pyc",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/stage_report/__pycache__/make_stage_figures.cpython-312.pyc",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/stage_report/__pycache__/make_stage_figures.cpython-313.pyc",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/v10_report/final_render/contact-01-07.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/v10_report/final_render/contact-08-14.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/v10_report/final_render/page-01.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/v10_report/final_render/page-02.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/v10_report/final_render/page-03.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/v10_report/final_render/page-04.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/v10_report/final_render/page-05.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/v10_report/final_render/page-06.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/v10_report/final_render/page-07.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/v10_report/final_render/page-08.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/v10_report/final_render/page-09.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/v10_report/final_render/page-10.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/v10_report/final_render/page-11.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/v10_report/final_render/page-12.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/v10_report/final_render/page-13.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/v10_report/final_render/page-14.png",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/v10_report/output/pdf/PandaX4T_v10_teacher_feedback_report.aux",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "energy_resolution_analysis/v10_report/output/pdf/PandaX4T_v10_teacher_feedback_report.log",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "energy_resolution_analysis/v10_report/output/pdf/PandaX4T_v10_teacher_feedback_report.out",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "energy_resolution_analysis/v10_report/output/pdf/PandaX4T_v10_teacher_feedback_report.toc",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "energy_resolution_analysis/__pycache__/anchored_energycor_v13.cpython-312.pyc",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/__pycache__/anchored_smallmodels_v14.cpython-313.pyc",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/__pycache__/apply_energy_model_bundle.cpython-312.pyc",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/__pycache__/apply_grouped_physics_v9.cpython-310.pyc",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/__pycache__/basic_experiment_matrix.cpython-310.pyc",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/__pycache__/basic_experiment_matrix.cpython-312.pyc",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/__pycache__/basic_experiment_matrix.cpython-313.pyc",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/__pycache__/bounded_ensemble_v17.cpython-312.pyc",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/__pycache__/channel_physics_matrix.cpython-310.pyc",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/__pycache__/channel_physics_matrix.cpython-312.pyc",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/__pycache__/channel_physics_matrix.cpython-313.pyc",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/__pycache__/export_energy_model_bundle.cpython-312.pyc",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/__pycache__/export_v12_portable.cpython-312.pyc",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/__pycache__/export_v13_portable.cpython-312.pyc",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/__pycache__/finalize_v19_local.cpython-313.pyc",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/__pycache__/focused_formula_sigma_search.cpython-312.pyc",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/__pycache__/full_feature_sigma_search.cpython-312.pyc",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/__pycache__/grouped_nested_physics_v9.cpython-310.pyc",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/__pycache__/grouped_nested_physics_v9.cpython-313.pyc",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/__pycache__/heterogeneous_oof_ensemble_sigma.cpython-312.pyc",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/__pycache__/incremental_features_v19.cpython-312.pyc",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/__pycache__/independent_reconstruction.cpython-310.pyc",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/__pycache__/independent_reconstruction.cpython-312.pyc",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/__pycache__/independent_reconstruction.cpython-313.pyc",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/__pycache__/kr_residual_correction_v21.cpython-313.pyc",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/__pycache__/multivariable_search_v15.cpython-312.pyc",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/__pycache__/nonlinear_holdout_v16.cpython-312.pyc",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/__pycache__/repeated_oof_ensemble_sigma.cpython-312.pyc",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/__pycache__/robust_peak_evaluation.cpython-310.pyc",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/__pycache__/robust_peak_evaluation.cpython-312.pyc",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/__pycache__/robust_peak_evaluation.cpython-313.pyc",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/__pycache__/run_analysis.cpython-312.pyc",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/__pycache__/run_analysis.cpython-313.pyc",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/__pycache__/safe_general_v12.cpython-312.pyc",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/__pycache__/safe_general_v12.cpython-313.pyc",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/__pycache__/smooth_response_map_v18.cpython-312.pyc",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "energy_resolution_analysis/__pycache__/sparse_grouped_physics_v10.cpython-310.pyc",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "99_归档与缓存/历史模型与材料/盲测旧版本/PandaX_candidate_v10_blindtest_FINAL_20260731.zip",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "99_归档与缓存/历史模型与材料/盲测旧版本/PandaX_candidate_v8_老师盲测包_20260723.zip",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "99_归档与缓存/历史模型与材料/盲测旧版本/PandaX_candidate_v9_blindtest_FINAL_20260729.zip",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "99_归档与缓存/历史模型与材料/盲测旧版本/PandaX_candidate_v10_blindtest/model/candidate_v10.joblib",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "99_归档与缓存/历史模型与材料/盲测旧版本/PandaX_candidate_v9_blindtest/model/candidate_v9.joblib",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "99_归档与缓存/历史模型与材料/盲测旧版本/归档_勿发送/PandaX_candidate_v9_teacher_blindtest_20260729.zip",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "99_归档与缓存/历史模型与材料/盲测旧版本/归档_勿发送/PandaX_candidate_v9_老师盲测包_20260729.zip",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "99_归档与缓存/历史模型与材料/盲测旧版本/老师盲测包/model/candidate_v8.joblib",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "99_归档与缓存/历史模型与材料/盲测旧版本/老师盲测包/__pycache__/full_feature_sigma_search.cpython-312.pyc",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "99_归档与缓存/历史模型与材料/盲测旧版本/老师盲测包/__pycache__/repeated_oof_ensemble_sigma.cpython-312.pyc",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "99_归档与缓存/历史模型与材料/盲测旧版本/老师盲测包/__pycache__/validate_new_data.cpython-312.pyc",
+    "reason": "private data, runtime cache, or local server administration"
+  },
+  {
+    "path": "99_归档与缓存/历史模型与材料/盲测旧版本/老师盲测包_v9/model/candidate_v9.joblib",
+    "reason": "binary model, embedded-data HTML, archive, or generated build artifact"
+  },
+  {
+    "path": "light_ana_run10972_finalSS_Egt2MeV_scalar.txt",
+    "reason": "raw event dataset"
+  }
+]

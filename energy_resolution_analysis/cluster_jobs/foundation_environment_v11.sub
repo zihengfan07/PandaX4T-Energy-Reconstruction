@@ -1,0 +1,11 @@
+Universe = vanilla
+Executable = /home/researcher/eres_sigma_search/run_foundation_environment_v11.sh
+Log = /home/researcher/eres_sigma_search/logs/foundation_environment_v11.log
+Output = /home/researcher/eres_sigma_search/logs/foundation_environment_v11.out
+Error = /home/researcher/eres_sigma_search/logs/foundation_environment_v11.err
+should_transfer_files = NO
+request_cpus = 4
+request_memory = 12GB
+request_disk = 4GB
++JobBatchName = "eres_foundation_environment_v11"
+Queue

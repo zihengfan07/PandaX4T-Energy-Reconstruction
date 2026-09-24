@@ -1,0 +1,17 @@
+{
+  "format_version": 2,
+  "model_name": "PandaX_grouped_nested_physics_v9",
+  "model_file": "candidate_v9.joblib",
+  "model_sha256": "011D2ACB4B9C1D6A088969BBEF47658B7B957ED9B4E41C02DCBECBD407FBA371",
+  "training_run": 10972,
+  "training_events": 4499,
+  "training_files": 985,
+  "predictor_feature_count": 30,
+  "group_key": "fileNumber",
+  "group_key_is_predictor": false,
+  "selected_config": "spline_ridge_a100_c100_soft",
+  "alpha": 100.0,
+  "soft_correction_bound": 0.1,
+  "independent_run_validated": false,
+  "warning": "Validated only across grouped file blocks inside run10972. Independent-run blind validation is still required."
+}

@@ -1,0 +1,10 @@
+Portable model verification on bl-0
+Date: 2026-08-03
+Input: /home/researcher/fanhao/light_ana_run10972_finalSS2_scalar.txt
+Rows: 97195
+Valid predictions: 96915
+Invalid foundation rows: 280
+Maximum absolute difference from development output: 0 keV
+Exact portable match: True
+Correction near-cap fraction: 0
+Model SHA-256: e7d85a64a1c6bf51ee129321b3b79b5051df767eb1b8f58c4e7d1bf37d55af98

@@ -1,0 +1,100 @@
+{
+  "metadata": {
+    "input": "C:\\Users\\researcher\\Desktop\\暑假\\energy_resolution_analysis\\channel_physics_outputs\\oof_events.tsv",
+    "fixed_window": [
+      0.8,
+      1.2
+    ],
+    "poisson_deviance_bins": 40,
+    "models": [
+      "gaussian_bernstein2"
+    ],
+    "optimizer_starts": 12,
+    "parametric_bootstrap_requested_per_fit": 200,
+    "bootstrap_optimizer_starts": 3,
+    "seed": 10972,
+    "interpretation": "Conditional diagnostic for the supplied OOF sample; no source or absolute peak energy is assumed, and upstream E>2MeV selection bias is not removed."
+  },
+  "datasets": [
+    {
+      "method": "channel_physics_event_random5",
+      "stage": "corrected",
+      "energy_column": "oof_corrected_energy",
+      "all_finite_event_count": 4500,
+      "all_event_central68_quantiles": [
+        0.9314224855139064,
+        0.9997418314874542,
+        1.066348407084654
+      ],
+      "all_event_nonparametric_r68": 0.06748038209524539,
+      "all_event_central90_quantiles": [
+        0.8738489034684076,
+        0.9997418314874542,
+        1.1405828259622826
+      ],
+      "all_event_nonparametric_r90_halfwidth": 0.1334014012882796,
+      "fixed_window_event_count": 4386,
+      "fixed_window_fraction_of_finite_events": 0.9746666666666667,
+      "fits": [
+        {
+          "model": "gaussian_bernstein2",
+          "success": true,
+          "quality_accepted_no_gof": true,
+          "multistart_stable": true,
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+          "negative_log_likelihood": -5562.70919243991,
+          "parameter_count": 5,
+          "aic": -11115.41838487982,
+          "aicc": -11115.404686249683,
+          "bic": -11083.48752023493,
+          "parameters": {
+            "mu": 0.9985802060934545,
+            "log_sigma": -3.31068820595669,
+            "logit_signal_fraction": 0.022921345932827318,
+            "background_logit_0": -0.3710016094070819,
+            "background_logit_1": 2.653425759053577,
+            "sigma": 0.03649105175099507
+          },
+          "mu": 0.9985802060934545,
+          "sigma": 0.03649105175099507,
+          "core_resolution_sigma_over_mu": 0.03654293518770185,
+          "signal_fraction": 0.505730085608838,
+          "fitted_signal_yield_in_window": 2218.1321554803635,
+          "fitted_background_yield_in_window": 2167.8678445196365,
+          "background_weights": [
+            0.0434189831667839,
+            0.8936588600969702,
+            0.06292215673624606
+          ],
+          "boundary_degenerate": false,
+          "boundary_parameters": [],
+          "successful_optimizer_starts": 12,
+          "starts_reaching_best_nll_within_1e-4": 10,
+          "optimizer_starts": 12,
+          "quality_accepted_with_bootstrap_gof_p_gt_0_05": false,
+          "poisson_deviance_gof": {
+            "bins": 40,
+            "deviance": 106.10116695403066,
+            "degrees_of_freedom": 34,
+            "asymptotic_p_value_diagnostic": 2.4324925821963933e-09,
+            "minimum_expected_bin_count": 10.458775279102037,
+            "maximum_absolute_pull": 3.7330965699479717
+          },
+          "parametric_bootstrap_gof": {
+            "requested": 200,
+            "successful": 200,
+            "failed": 0,
+            "p_value": 0.004975124378109453,
+            "monte_carlo_standard_error": 0.0049627330154608604,
+            "deviance_quantiles_025_500_975": [
+              20.954463360918183,
+              34.92379044574223,
+              51.322210196934215
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "background_base_spike": {
+    "center": 2707.5,
+    "count": 98,
+    "ratio": 1.462686567164179
+  },
+  "background_base_valid_fraction": 0.9971191933741448,
+  "background_candidate_metrics": {
+    "median": 1427.4341217670296,
+    "n": 96915,
+    "q10": 702.6905133094538,
+    "q90": 2628.6757197409024,
+    "r68": 0.5817891806177091,
+    "r90": 0.8944256396165386
+  },
+  "background_candidate_spike": {
+    "center": 3027.5,
+    "count": 35,
+    "ratio": 1.4583333333333333
+  },
+  "base_state": {
+    "invalid_policy": "no_imputation",
+    "s1_median": 11676.6621,
+    "s1_name": "qS1ub_C",
+    "s1_weight": 0.49999999999999994,
+    "s2_median": 611961.688,
+    "s2_name": "qS2Bdesub_C",
+    "training_r68": 0.06472790430702208
+  },
+  "calibration_base_metrics": {
+    "median": 2614.5,
+    "n": 4499,
+    "q10": 2417.9597441777546,
+    "q90": 2883.50229039085,
+    "r68": 0.06472790430702212,
+    "r90": 0.12449127890088917
+  },
+  "calibration_candidate_metrics": {
+    "median": 2613.7487936363705,
+    "n": 4499,
+    "q10": 2424.6671019491737,
+    "q90": 2887.295855520534,
+    "r68": 0.06372760043005694,
+    "r90": 0.12286428717748848
+  },
+  "calibration_candidate_protocols": {
+    "center_bias_max": 0.009250791936823322,
+    "fit_p_median": 3.716088590683306e-12,
+    "protocol_successes": 12,
+    "r68": 0.06407393017326382,
+    "r90": 0.12286428717748848,
+    "sigma_median": 0.04770966079829779,
+    "sigma_worst": 0.05902193939870704
+  },
+  "safe_candidates": 23,
+  "total_candidates": 24,
+  "warning": "Trained on a single 2614.5 keV calibration line. The background sample is used only for anti-sculpting vetoes. Multi-line validation is required before claiming full-energy-range reconstruction.",
+  "winner": {
+    "alpha": 1000.0,
+    "background_applied": 0.3902361232573692,
+    "background_energy_trend": 0.006469892825684189,
+    "background_near_cap": 0.0,
+    "background_ood": 0.0638715983332476,
+    "background_r68": 0.5817891806177091,
+    "background_rank_corr": 0.9999622158276906,
+    "background_spike_center": 3027.5,
+    "background_spike_growth": 0.9970238095238094,
+    "background_spike_ratio": 1.4583333333333333,
+    "background_strong": 0.5986624826379958,
+    "calibration_applied_median": 0.8300220750551877,
+    "calibration_near_cap_max": 0.0,
+    "calibration_r68": 0.06372760043005694,
+    "calibration_r90": 0.12286428717748848,
+    "cap": 0.01,
+    "feature_count": 7,
+    "feature_set": "geometry",
+    "name": "geometry_a1000_c10",
+    "safe": true,
+    "score": 0.07666738608142531
+  }
+}

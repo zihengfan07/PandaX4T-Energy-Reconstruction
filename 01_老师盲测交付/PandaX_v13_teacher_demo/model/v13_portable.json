@@ -1,0 +1,75 @@
+{
+  "base_formula": "given_Energy_cor",
+  "feature_names": [
+    "dt"
+  ],
+  "format": "PandaX-v13-portable-json-1",
+  "model_name": "PandaX_EnergyCor_anchored_v13",
+  "predictor_state": {
+    "cap": 0.0025,
+    "coef": [
+      -0.009643532930313201,
+      0.0002246285360747776
+    ],
+    "energy_scale": 1.0,
+    "intercept": -0.0010050665712585485,
+    "prediction_center": -1.2517808860640699e-18,
+    "strong_raw_limit": 0.00375,
+    "transform": {
+      "centers": [
+        417700.0
+      ],
+      "design_center": [
+        0.015296379076370973,
+        0.6032416278785624
+      ],
+      "design_scale": [
+        0.7765356712126712,
+        0.8393828868836054
+      ],
+      "lower": [
+        -94034.448
+      ],
+      "medians": [
+        417700.0
+      ],
+      "scales": [
+        211652.0
+      ],
+      "upper": [
+        942287.196
+      ]
+    }
+  },
+  "selection": {
+    "alpha": 1000.0,
+    "background_applied": 0.2398271516024487,
+    "background_energy_trend": 0.0010307350556187616,
+    "background_median_scale_shift": 0.0,
+    "background_near_cap": 0.0,
+    "background_ood": 0.016307423221359123,
+    "background_rank_corr": 0.9999982808276758,
+    "background_ratio_q01": 0.9978186792560464,
+    "background_ratio_q99": 1.0022073086379801,
+    "background_spike_growth": 1.0742296918767507,
+    "background_strong": 0.7597921703791347,
+    "calibration_base_r68": 0.06774135758272384,
+    "calibration_base_sigma": 0.04178090146749322,
+    "calibration_center_bias_max": 0.15699797310913066,
+    "calibration_oof_r68": 0.06773766875316366,
+    "calibration_oof_r90": 0.13113988218470482,
+    "calibration_oof_sigma": 0.041778642134631894,
+    "calibration_protocol_successes": 12,
+    "cap": 0.0025,
+    "feature_count": 1,
+    "feature_set": "drift_only",
+    "name": "drift_only_a1000_c25",
+    "relative_r68_improvement": 5.44546151983738e-05,
+    "relative_sigma_improvement": 5.407573273841226e-05,
+    "safe": true,
+    "time_ratio_span": 0.0
+  },
+  "status": "conservative_research_candidate_not_final_physics_model",
+  "version": "v13_anchored_20260807",
+  "warning": "Geometry-only bounded correction anchored to the supplied Energy_cor. Single-line training still requires multi-line external validation."
+}

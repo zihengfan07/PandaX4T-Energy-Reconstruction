@@ -1,0 +1,3313 @@
+{
+  "analysis_status": "exploratory fixed-candidate OOF matrix; candidates are compared after OOF rather than selected by an additional outer layer",
+  "data_path": "C:\\Users\\researcher\\Desktop\\暑假\\light_ana_run10972_finalSS_Egt2MeV_scalar.txt",
+  "source_rows": 4500,
+  "columns_read": [
+    "runNumber",
+    "eventNumber",
+    "qS1_max",
+    "qS2B_max",
+    "dt",
+    "xS2T_max",
+    "yS2T_max"
+  ],
+  "forbidden_branch_policy": "No corrected/lifetime/ub/stretch/desaturation/MCPAF/Cs charge branch is read.",
+  "all_events_policy": "No event-quality or energy cut is applied; non-finite values remain in the event output and finite_fraction is reported.",
+  "metrics": {
+    "r68": "(q84.135-q15.865)/(2*median), evaluated on all finite OOF events",
+    "r90": "(q95-q05)/(2*median), evaluated on all finite OOF events",
+    "tail_beyond_2r68": "fraction with |E/median-1| > 2*R68",
+    "outside_20pct": "fraction outside [0.8,1.2] after median normalization"
+  },
+  "response_model": {
+    "bins": 5,
+    "local_center": "smoothed log-mode followed by a fixed +/-20% local median",
+    "s1": "sequential low-DOF dt then r2 maps",
+    "s2": "non-positive exponential dt slope then low-DOF r2 map",
+    "weight": "positive global alpha chosen on inner validation only",
+    "alpha_grid": [
+      0.1,
+      0.15000000000000002,
+      0.2,
+      0.25,
+      0.30000000000000004,
+      0.35,
+      0.4,
+      0.45000000000000007,
+      0.5,
+      0.55,
+      0.6,
+      0.65,
+      0.7000000000000001,
+      0.75,
+      0.8,
+      0.85,
+      0.9
+    ]
+  },
+  "posthoc_diagnostics": "OOF peak-center flatness versus dt_us and r2; diagnostic binning never feeds back into a correction",
+  "bootstrap": "1000 paired event-resampling replicates on frozen OOF predictions; the full correction/weight pipeline is not refit inside a replicate",
+  "split_schemes": {
+    "event_random5": "seeded balanced random assignment of source rows to five outer folds"
+  },
+  "candidates": {
+    "A0_raw": {
+      "label": "raw S1 + raw S2B",
+      "s1_steps": [],
+      "s2_steps": []
+    },
+    "A1_s2_lifetime": {
+      "label": "raw S1 + S2B exponential lifetime",
+      "s1_steps": [],
+      "s2_steps": [
+        "lifetime"
+      ]
+    },
+    "A2_s1_dt_r2": {
+      "label": "S1(dt,r2) + raw S2B",
+      "s1_steps": [
+        "dt_map",
+        "r2_map"
+      ],
+      "s2_steps": []
+    },
+    "A3_s2_lifetime_r2": {
+      "label": "raw S1 + S2B(lifetime,r2)",
+      "s1_steps": [],
+      "s2_steps": [
+        "lifetime",
+        "r2_map"
+      ]
+    },
+    "A4_both": {
+      "label": "S1(dt,r2) + S2B(lifetime,r2)",
+      "s1_steps": [
+        "dt_map",
+        "r2_map"
+      ],
+      "s2_steps": [
+        "lifetime",
+        "r2_map"
+      ]
+    }
+  },
+  "results": {
+    "event_random5": {
+      "summary": [
+        {
+          "scheme": "event_random5",
+          "candidate": "A0_raw",
+          "label": "raw S1 + raw S2B",
+          "correction_only_retention": 1.0,
+          "mean_alpha": 0.54,
+          "std_alpha": 0.022360679774997918,
+          "events_total": 4500,
+          "events_finite": 4500,
+          "finite_fraction": 1.0,
+          "median": 1.0038415622999926,
+          "r68": 0.07842177482320878,
+          "r90": 0.1472316970487197,
+          "tail_beyond_2r68": 0.08155555555555556,
+          "outside_20pct": 0.037333333333333336,
+          "low_tail_20pct": 0.0024444444444444444,
+          "high_tail_20pct": 0.034888888888888886
+        },
+        {
+          "scheme": "event_random5",
+          "candidate": "A1_s2_lifetime",
+          "label": "raw S1 + S2B exponential lifetime",
+          "correction_only_retention": 1.0,
+          "mean_alpha": 0.36,
+          "std_alpha": 0.04183300132670378,
+          "events_total": 4500,
+          "events_finite": 4500,
+          "finite_fraction": 1.0,
+          "median": 0.9946498927762979,
+          "r68": 0.09389451025945139,
+          "r90": 0.17010875698267425,
+          "tail_beyond_2r68": 0.07022222222222223,
+          "outside_20pct": 0.05177777777777778,
+          "low_tail_20pct": 0.026444444444444444,
+          "high_tail_20pct": 0.025333333333333333
+        },
+        {
+          "scheme": "event_random5",
+          "candidate": "A2_s1_dt_r2",
+          "label": "S1(dt,r2) + raw S2B",
+          "correction_only_retention": 1.0,
+          "mean_alpha": 0.7300000000000001,
+          "std_alpha": 0.02738612787525827,
+          "events_total": 4500,
+          "events_finite": 4500,
+          "finite_fraction": 1.0,
+          "median": 1.0107204446376974,
+          "r68": 0.09093118058655025,
+          "r90": 0.17317169309681085,
+          "tail_beyond_2r68": 0.0811111111111111,
+          "outside_20pct": 0.06444444444444444,
+          "low_tail_20pct": 0.0017777777777777779,
+          "high_tail_20pct": 0.06266666666666666
+        },
+        {
+          "scheme": "event_random5",
+          "candidate": "A3_s2_lifetime_r2",
+          "label": "raw S1 + S2B(lifetime,r2)",
+          "correction_only_retention": 1.0,
+          "mean_alpha": 0.27,
+          "std_alpha": 0.02738612787525833,
+          "events_total": 4500,
+          "events_finite": 4500,
+          "finite_fraction": 1.0,
+          "median": 0.9925356303774019,
+          "r68": 0.08589175144781941,
+          "r90": 0.1567962343425811,
+          "tail_beyond_2r68": 0.07555555555555556,
+          "outside_20pct": 0.042222222222222223,
+          "low_tail_20pct": 0.03177777777777778,
+          "high_tail_20pct": 0.010444444444444444
+        },
+        {
+          "scheme": "event_random5",
+          "candidate": "A4_both",
+          "label": "S1(dt,r2) + S2B(lifetime,r2)",
+          "correction_only_retention": 1.0,
+          "mean_alpha": 0.4800000000000001,
+          "std_alpha": 0.04472135954999577,
+          "events_total": 4500,
+          "events_finite": 4500,
+          "finite_fraction": 1.0,
+          "median": 0.9997418314874542,
+          "r68": 0.06748038209524537,
+          "r90": 0.1334014012882797,
+          "tail_beyond_2r68": 0.09622222222222222,
+          "outside_20pct": 0.025555555555555557,
+          "low_tail_20pct": 0.0077777777777777776,
+          "high_tail_20pct": 0.017777777777777778
+        }
+      ],
+      "parameters": {
+        "A0_raw": {
+          "0": {
+            "alpha": 0.55,
+            "train_energy_scale": 1.0249833509581876,
+            "s1_center": 10737.076649999999,
+            "s2_center": 422857.938,
+            "s1_models": [],
+            "s2_models": []
+          },
+          "1": {
+            "alpha": 0.55,
+            "train_energy_scale": 1.0120144345829032,
+            "s1_center": 10738.1904,
+            "s2_center": 434999.703,
+            "s1_models": [],
+            "s2_models": []
+          },
+          "2": {
+            "alpha": 0.55,
+            "train_energy_scale": 1.0260532293877822,
+            "s1_center": 10749.84275,
+            "s2_center": 421699.4375,
+            "s1_models": [],
+            "s2_models": []
+          },
+          "3": {
+            "alpha": 0.55,
+            "train_energy_scale": 1.013315249448822,
+            "s1_center": 10763.5439,
+            "s2_center": 432742.641,
+            "s1_models": [],
+            "s2_models": []
+          },
+          "4": {
+            "alpha": 0.5,
+            "train_energy_scale": 1.0173676872679835,
+            "s1_center": 10716.448250000001,
+            "s2_center": 431074.375,
+            "s1_models": [],
+            "s2_models": []
+          },
+          "oof_summary": {
+            "scheme": "event_random5",
+            "candidate": "A0_raw",
+            "label": "raw S1 + raw S2B",
+            "correction_only_retention": 1.0,
+            "mean_alpha": 0.54,
+            "std_alpha": 0.022360679774997918,
+            "events_total": 4500,
+            "events_finite": 4500,
+            "finite_fraction": 1.0,
+            "median": 1.0038415622999926,
+            "r68": 0.07842177482320878,
+            "r90": 0.1472316970487197,
+            "tail_beyond_2r68": 0.08155555555555556,
+            "outside_20pct": 0.037333333333333336,
+            "low_tail_20pct": 0.0024444444444444444,
+            "high_tail_20pct": 0.034888888888888886
+          }
+        },
+        "A1_s2_lifetime": {
+          "0": {
+            "alpha": 0.35,
+            "train_energy_scale": 1.0208511290158264,
+            "s1_center": 10737.076649999999,
+            "s2_center": 432314.70366894186,
+            "s1_models": [],
+            "s2_models": [
+              {
+                "kind": "linear_log_response",
+                "feature": "dt_us",
+                "reference": 417.65,
+                "slope": -0.0007911969055026566,
+                "unconstrained_slope": -0.0007911969055026566,
+                "implied_lifetime_us": 1263.9078755808434,
+                "response_clip": [
+                  0.5,
+                  2.0
+                ],
+                "bin_rows": [
+                  {
+                    "bin": 0,
+                    "low": 10.112,
+                    "high": 291.2388,
+                    "feature_center": 213.661,
+                    "events": 720,
+                    "signal_center": 517185.797
+                  },
+                  {
+                    "bin": 1,
+                    "low": 291.2388,
+                    "high": 380.37120000000004,
+                    "feature_center": 339.883,
+                    "events": 720,
+                    "signal_center": 458787.406
+                  },
+                  {
+                    "bin": 2,
+                    "low": 380.37120000000004,
+                    "high": 459.30400000000003,
+                    "feature_center": 417.65,
+                    "events": 720,
+                    "signal_center": 430083.594
+                  },
+                  {
+                    "bin": 3,
+                    "low": 459.30400000000003,
+                    "high": 554.4200000000001,
+                    "feature_center": 501.534,
+                    "events": 720,
+                    "signal_center": 405236.9065
+                  },
+                  {
+                    "bin": 4,
+                    "low": 554.4200000000001,
+                    "high": 842.3,
+                    "feature_center": 634.5219999999999,
+                    "events": 720,
+                    "signal_center": 369979.281
+                  }
+                ]
+              }
+            ]
+          },
+          "1": {
+            "alpha": 0.30000000000000004,
+            "train_energy_scale": 1.01996911276244,
+            "s1_center": 10738.1904,
+            "s2_center": 432974.53604710626,
+            "s1_models": [],
+            "s2_models": [
+              {
+                "kind": "linear_log_response",
+                "feature": "dt_us",
+                "reference": 417.366,
+                "slope": -0.0007986450608928922,
+                "unconstrained_slope": -0.0007986450608928922,
+                "implied_lifetime_us": 1252.1206841021356,
+                "response_clip": [
+                  0.5,
+                  2.0
+                ],
+                "bin_rows": [
+                  {
+                    "bin": 0,
+                    "low": 10.112,
+                    "high": 289.8544,
+                    "feature_center": 208.21,
+                    "events": 720,
+                    "signal_center": 521154.7655
+                  },
+                  {
+                    "bin": 1,
+                    "low": 289.8544,
+                    "high": 379.9516,
+                    "feature_center": 338.202,
+                    "events": 720,
+                    "signal_center": 459585.688
+                  },
+                  {
+                    "bin": 2,
+                    "low": 379.9516,
+                    "high": 456.4464000000001,
+                    "feature_center": 417.366,
+                    "events": 720,
+                    "signal_center": 431008.59400000004
+                  },
+                  {
+                    "bin": 3,
+                    "low": 456.4464000000001,
+                    "high": 550.8568000000001,
+                    "feature_center": 499.66200000000003,
+                    "events": 720,
+                    "signal_center": 403983.719
+                  },
+                  {
+                    "bin": 4,
+                    "low": 550.8568000000001,
+                    "high": 842.3,
+                    "feature_center": 634.7080000000001,
+                    "events": 720,
+                    "signal_center": 370570.703
+                  }
+                ]
+              }
+            ]
+          },
+          "2": {
+            "alpha": 0.4,
+            "train_energy_scale": 1.010155601946282,
+            "s1_center": 10749.84275,
+            "s2_center": 433953.2812339582,
+            "s1_models": [],
+            "s2_models": [
+              {
+                "kind": "linear_log_response",
+                "feature": "dt_us",
+                "reference": 418.278,
+                "slope": -0.0008243974956729325,
+                "unconstrained_slope": -0.0008243974956729325,
+                "implied_lifetime_us": 1213.0070812305514,
+                "response_clip": [
+                  0.5,
+                  2.0
+                ],
+                "bin_rows": [
+                  {
+                    "bin": 0,
+                    "low": 10.112,
+                    "high": 294.2404,
+                    "feature_center": 216.076,
+                    "events": 720,
+                    "signal_center": 519850.25
+                  },
+                  {
+                    "bin": 1,
+                    "low": 294.2404,
+                    "high": 381.54800000000006,
+                    "feature_center": 342.134,
+                    "events": 720,
+                    "signal_center": 467856.938
+                  },
+                  {
+                    "bin": 2,
+                    "low": 381.54800000000006,
+                    "high": 459.0316,
+                    "feature_center": 418.278,
+                    "events": 720,
+                    "signal_center": 428487.4065
+                  },
+                  {
+                    "bin": 3,
+                    "low": 459.0316,
+                    "high": 553.7476,
+                    "feature_center": 502.11699999999996,
+                    "events": 720,
+                    "signal_center": 407595.375
+                  },
+                  {
+                    "bin": 4,
+                    "low": 553.7476,
+                    "high": 839.55,
+                    "feature_center": 638.7819999999999,
+                    "events": 720,
+                    "signal_center": 367452.297
+                  }
+                ]
+              }
+            ]
+          },
+          "3": {
+            "alpha": 0.35,
+            "train_energy_scale": 1.0158540743876718,
+            "s1_center": 10763.5439,
+            "s2_center": 434645.98877067416,
+            "s1_models": [],
+            "s2_models": [
+              {
+                "kind": "linear_log_response",
+                "feature": "dt_us",
+                "reference": 416.904,
+                "slope": -0.0008242003542316969,
+                "unconstrained_slope": -0.0008242003542316969,
+                "implied_lifetime_us": 1213.2972218049822,
+                "response_clip": [
+                  0.5,
+                  2.0
+                ],
+                "bin_rows": [
+                  {
+                    "bin": 0,
+                    "low": 10.362,
+                    "high": 290.9944,
+                    "feature_center": 214.621,
+                    "events": 720,
+                    "signal_center": 520580.9215
+                  },
+                  {
+                    "bin": 1,
+                    "low": 290.9944,
+                    "high": 379.3692,
+                    "feature_center": 338.202,
+                    "events": 720,
+                    "signal_center": 469227.625
+                  },
+                  {
+                    "bin": 2,
+                    "low": 379.3692,
+                    "high": 455.6960000000001,
+                    "feature_center": 416.904,
+                    "events": 720,
+                    "signal_center": 430597.781
+                  },
+                  {
+                    "bin": 3,
+                    "low": 455.6960000000001,
+                    "high": 552.2184,
+                    "feature_center": 499.341,
+                    "events": 720,
+                    "signal_center": 406541.25
+                  },
+                  {
+                    "bin": 4,
+                    "low": 552.2184,
+                    "high": 842.3,
+                    "feature_center": 636.8330000000001,
+                    "events": 720,
+                    "signal_center": 368815.0
+                  }
+                ]
+              }
+            ]
+          },
+          "4": {
+            "alpha": 0.4,
+            "train_energy_scale": 1.0143078242887533,
+            "s1_center": 10716.448250000001,
+            "s2_center": 432495.8718241161,
+            "s1_models": [],
+            "s2_models": [
+              {
+                "kind": "linear_log_response",
+                "feature": "dt_us",
+                "reference": 419.34000000000003,
+                "slope": -0.0008072521827375069,
+                "unconstrained_slope": -0.0008072521827375069,
+                "implied_lifetime_us": 1238.7702645892612,
+                "response_clip": [
+                  0.5,
+                  2.0
+                ],
+                "bin_rows": [
+                  {
+                    "bin": 0,
+                    "low": 10.112,
+                    "high": 293.7548,
+                    "feature_center": 217.543,
+                    "events": 720,
+                    "signal_center": 519561.46849999996
+                  },
+                  {
+                    "bin": 1,
+                    "low": 293.7548,
+                    "high": 381.98,
+                    "feature_center": 341.43100000000004,
+                    "events": 720,
+                    "signal_center": 459167.797
+                  },
+                  {
+                    "bin": 2,
+                    "low": 381.98,
+                    "high": 459.46320000000003,
+                    "feature_center": 419.34000000000003,
+                    "events": 720,
+                    "signal_center": 428366.906
+                  },
+                  {
+                    "bin": 3,
+                    "low": 459.46320000000003,
+                    "high": 554.6780000000001,
+                    "feature_center": 502.76599999999996,
+                    "events": 720,
+                    "signal_center": 406822.0
+                  },
+                  {
+                    "bin": 4,
+                    "low": 554.6780000000001,
+                    "high": 842.3,
+                    "feature_center": 635.4259999999999,
+                    "events": 720,
+                    "signal_center": 369212.78099999996
+                  }
+                ]
+              }
+            ]
+          },
+          "oof_summary": {
+            "scheme": "event_random5",
+            "candidate": "A1_s2_lifetime",
+            "label": "raw S1 + S2B exponential lifetime",
+            "correction_only_retention": 1.0,
+            "mean_alpha": 0.36,
+            "std_alpha": 0.04183300132670378,
+            "events_total": 4500,
+            "events_finite": 4500,
+            "finite_fraction": 1.0,
+            "median": 0.9946498927762979,
+            "r68": 0.09389451025945139,
+            "r90": 0.17010875698267425,
+            "tail_beyond_2r68": 0.07022222222222223,
+            "outside_20pct": 0.05177777777777778,
+            "low_tail_20pct": 0.026444444444444444,
+            "high_tail_20pct": 0.025333333333333333
+          }
+        },
+        "A2_s1_dt_r2": {
+          "0": {
+            "alpha": 0.7000000000000001,
+            "train_energy_scale": 1.010974449944741,
+            "s1_center": 10719.006184430002,
+            "s2_center": 422857.938,
+            "s1_models": [
+              {
+                "kind": "binned_response",
+                "feature": "dt_us",
+                "centers": [
+                  213.661,
+                  339.883,
+                  417.65,
+                  501.534,
+                  634.5219999999999
+                ],
+                "log_response": [
+                  -0.13026604943895004,
+                  -0.0566446884027316,
+                  0.004634048648297809,
+                  0.058595728671512685,
+                  0.19658633123502928
+                ],
+                "global_center": 10737.076649999999,
+                "bin_rows": [
+                  {
+                    "bin": 0,
+                    "low": 10.112,
+                    "high": 291.2388,
+                    "feature_center": 213.661,
+                    "events": 720,
+                    "signal_center": 9425.66992,
+                    "response": 0.8778618451978734
+                  },
+                  {
+                    "bin": 1,
+                    "low": 291.2388,
+                    "high": 380.37120000000004,
+                    "feature_center": 339.883,
+                    "events": 720,
+                    "signal_center": 10145.7832,
+                    "response": 0.9449297542269106
+                  },
+                  {
+                    "bin": 2,
+                    "low": 380.37120000000004,
+                    "high": 459.30400000000003,
+                    "feature_center": 417.65,
+                    "events": 720,
+                    "signal_center": 10786.94825,
+                    "response": 1.004644802456542
+                  },
+                  {
+                    "bin": 3,
+                    "low": 459.30400000000003,
+                    "high": 554.4200000000001,
+                    "feature_center": 501.534,
+                    "events": 720,
+                    "signal_center": 11385.0215,
+                    "response": 1.060346486396742
+                  },
+                  {
+                    "bin": 4,
+                    "low": 554.4200000000001,
+                    "high": 842.3,
+                    "feature_center": 634.5219999999999,
+                    "events": 720,
+                    "signal_center": 13069.6035,
+                    "response": 1.2172404022094785
+                  }
+                ]
+              },
+              {
+                "kind": "binned_response",
+                "feature": "r2",
+                "centers": [
+                  102306.45616435912,
+                  122113.15866471794,
+                  128975.94018312712,
+                  134484.65669276525,
+                  142901.0612284316
+                ],
+                "log_response": [
+                  -0.011554625644332328,
+                  -0.00788948568854455,
+                  -0.01900762841841393,
+                  -0.0002468195269954531,
+                  0.04279730002737081
+                ],
+                "global_center": 10703.845062596263,
+                "bin_rows": [
+                  {
+                    "bin": 0,
+                    "low": 794.7260927052007,
+                    "high": 116040.64078275378,
+                    "feature_center": 102306.45616435912,
+                    "events": 720,
+                    "signal_center": 10580.877927650841,
+                    "response": 0.9885118726750707
+                  },
+                  {
+                    "bin": 1,
+                    "low": 116040.64078275378,
+                    "high": 125923.7090056903,
+                    "feature_center": 122113.15866471794,
+                    "events": 720,
+                    "signal_center": 10619.72948080882,
+                    "response": 0.9921415546193416
+                  },
+                  {
+                    "bin": 2,
+                    "low": 125923.7090056903,
+                    "high": 131689.75003556837,
+                    "feature_center": 128975.94018312712,
+                    "events": 720,
+                    "signal_center": 10502.311755730043,
+                    "response": 0.9811718774246404
+                  },
+                  {
+                    "bin": 3,
+                    "low": 131689.75003556837,
+                    "high": 137848.64861850877,
+                    "feature_center": 134484.65669276525,
+                    "events": 720,
+                    "signal_center": 10701.20347063253,
+                    "response": 0.9997532109304381
+                  },
+                  {
+                    "bin": 4,
+                    "low": 137848.64861850877,
+                    "high": 211200.55667431746,
+                    "feature_center": 142901.0612284316,
+                    "events": 720,
+                    "signal_center": 11171.88471120201,
+                    "response": 1.0437263101127345
+                  }
+                ]
+              }
+            ],
+            "s2_models": []
+          },
+          "1": {
+            "alpha": 0.75,
+            "train_energy_scale": 1.004202277433789,
+            "s1_center": 10707.48544037079,
+            "s2_center": 434999.703,
+            "s1_models": [
+              {
+                "kind": "binned_response",
+                "feature": "dt_us",
+                "centers": [
+                  208.21,
+                  338.202,
+                  417.366,
+                  499.66200000000003,
+                  634.7080000000001
+                ],
+                "log_response": [
+                  -0.14922742677946454,
+                  -0.05493280414995624,
+                  0.0001697814208199106,
+                  0.06022664888784953,
+                  0.20437285407141123
+                ],
+                "global_center": 10738.1904,
+                "bin_rows": [
+                  {
+                    "bin": 0,
+                    "low": 10.112,
+                    "high": 289.8544,
+                    "feature_center": 208.21,
+                    "events": 720,
+                    "signal_center": 9249.589355,
+                    "response": 0.8613731932896255
+                  },
+                  {
+                    "bin": 1,
+                    "low": 289.8544,
+                    "high": 379.9516,
+                    "feature_center": 338.202,
+                    "events": 720,
+                    "signal_center": 10164.2207,
+                    "response": 0.9465487499644261
+                  },
+                  {
+                    "bin": 2,
+                    "low": 379.9516,
+                    "high": 456.4464000000001,
+                    "feature_center": 417.366,
+                    "events": 720,
+                    "signal_center": 10740.0137,
+                    "response": 1.000169795834501
+                  },
+                  {
+                    "bin": 3,
+                    "low": 456.4464000000001,
+                    "high": 550.8568000000001,
+                    "feature_center": 499.66200000000003,
+                    "events": 720,
+                    "signal_center": 11404.7876,
+                    "response": 1.0620772378928949
+                  },
+                  {
+                    "bin": 4,
+                    "low": 550.8568000000001,
+                    "high": 842.3,
+                    "feature_center": 634.7080000000001,
+                    "events": 720,
+                    "signal_center": 13173.1338,
+                    "response": 1.2267554689661677
+                  }
+                ]
+              },
+              {
+                "kind": "binned_response",
+                "feature": "r2",
+                "centers": [
+                  101603.43643061246,
+                  122041.59539762985,
+                  128978.02501473349,
+                  134352.1793254207,
+                  142821.4602258423
+                ],
+                "log_response": [
+                  -0.010914676487057906,
+                  -0.006676043631372312,
+                  -0.01397686172680707,
+                  0.002304932780289118,
+                  0.038932456305946564
+                ],
+                "global_center": 10703.376516299246,
+                "bin_rows": [
+                  {
+                    "bin": 0,
+                    "low": 794.7260927052007,
+                    "high": 115996.04320280202,
+                    "feature_center": 101603.43643061246,
+                    "events": 720,
+                    "signal_center": 10587.187858572132,
+                    "response": 0.9891446724731975
+                  },
+                  {
+                    "bin": 1,
+                    "low": 115996.04320280202,
+                    "high": 125947.79815012205,
+                    "feature_center": 122041.59539762985,
+                    "events": 720,
+                    "signal_center": 10632.158300146128,
+                    "response": 0.9933461916391836
+                  },
+                  {
+                    "bin": 2,
+                    "low": 125947.79815012205,
+                    "high": 131611.6357374966,
+                    "feature_center": 128978.02501473349,
+                    "events": 720,
+                    "signal_center": 10554.81751546925,
+                    "response": 0.9861203611212063
+                  },
+                  {
+                    "bin": 3,
+                    "low": 131611.6357374966,
+                    "high": 137818.44197170468,
+                    "feature_center": 134352.1793254207,
+                    "events": 720,
+                    "signal_center": 10728.075533543783,
+                    "response": 1.002307591179935
+                  },
+                  {
+                    "bin": 4,
+                    "low": 137818.44197170468,
+                    "high": 211200.55667431746,
+                    "feature_center": 142821.4602258423,
+                    "events": 720,
+                    "signal_center": 11128.303304943376,
+                    "response": 1.0397002560824657
+                  }
+                ]
+              }
+            ],
+            "s2_models": []
+          },
+          "2": {
+            "alpha": 0.75,
+            "train_energy_scale": 1.0106390799581533,
+            "s1_center": 10668.260502374585,
+            "s2_center": 421699.4375,
+            "s1_models": [
+              {
+                "kind": "binned_response",
+                "feature": "dt_us",
+                "centers": [
+                  216.076,
+                  342.134,
+                  418.278,
+                  502.11699999999996,
+                  638.7819999999999
+                ],
+                "log_response": [
+                  -0.14139886826305276,
+                  -0.03800146661154729,
+                  -0.0009147618745870433,
+                  0.05834866784745312,
+                  0.21262117021761967
+                ],
+                "global_center": 10749.84275,
+                "bin_rows": [
+                  {
+                    "bin": 0,
+                    "low": 10.112,
+                    "high": 294.2404,
+                    "feature_center": 216.076,
+                    "events": 720,
+                    "signal_center": 9332.40039,
+                    "response": 0.8681429679517871
+                  },
+                  {
+                    "bin": 1,
+                    "low": 294.2404,
+                    "high": 381.54800000000006,
+                    "feature_center": 342.134,
+                    "events": 720,
+                    "signal_center": 10348.99755,
+                    "response": 0.9627115289663191
+                  },
+                  {
+                    "bin": 2,
+                    "low": 381.54800000000006,
+                    "high": 459.0316,
+                    "feature_center": 418.278,
+                    "events": 720,
+                    "signal_center": 10740.0137,
+                    "response": 0.9990856563925086
+                  },
+                  {
+                    "bin": 3,
+                    "low": 459.0316,
+                    "high": 553.7476,
+                    "feature_center": 502.11699999999996,
+                    "events": 720,
+                    "signal_center": 11395.7422,
+                    "response": 1.0600845486786308
+                  },
+                  {
+                    "bin": 4,
+                    "low": 553.7476,
+                    "high": 839.55,
+                    "feature_center": 638.7819999999999,
+                    "events": 720,
+                    "signal_center": 13296.6523,
+                    "response": 1.2369159818640139
+                  }
+                ]
+              },
+              {
+                "kind": "binned_response",
+                "feature": "r2",
+                "centers": [
+                  102010.56906008926,
+                  122027.73337540093,
+                  129018.79604984906,
+                  134310.2176631595,
+                  142641.28095777507
+                ],
+                "log_response": [
+                  -0.009897629639043958,
+                  -0.010700504482918375,
+                  -0.016643738662584066,
+                  0.000979485242576542,
+                  0.04195672414497037
+                ],
+                "global_center": 10677.517663160586,
+                "bin_rows": [
+                  {
+                    "bin": 0,
+                    "low": 1093.8665956873076,
+                    "high": 116306.28523203298,
+                    "feature_center": 102010.56906008926,
+                    "events": 720,
+                    "signal_center": 10572.356827854943,
+                    "response": 0.9901511906958985
+                  },
+                  {
+                    "bin": 1,
+                    "low": 116306.28523203298,
+                    "high": 125982.53892493647,
+                    "feature_center": 122027.73337540093,
+                    "events": 720,
+                    "signal_center": 10563.871955118615,
+                    "response": 0.9893565422575633
+                  },
+                  {
+                    "bin": 2,
+                    "low": 125982.53892493647,
+                    "high": 131639.89824613443,
+                    "feature_center": 129018.79604984906,
+                    "events": 720,
+                    "signal_center": 10501.274589901008,
+                    "response": 0.98349400311763
+                  },
+                  {
+                    "bin": 3,
+                    "low": 131639.89824613443,
+                    "high": 137766.59849470228,
+                    "feature_center": 134310.2176631595,
+                    "events": 720,
+                    "signal_center": 10687.981257770698,
+                    "response": 1.0009799650949034
+                  },
+                  {
+                    "bin": 4,
+                    "low": 137766.59849470228,
+                    "high": 211200.55667431746,
+                    "feature_center": 142641.28095777507,
+                    "events": 720,
+                    "signal_center": 11135.042328769357,
+                    "response": 1.0428493475770417
+                  }
+                ]
+              }
+            ],
+            "s2_models": []
+          },
+          "3": {
+            "alpha": 0.75,
+            "train_energy_scale": 1.0050252445488037,
+            "s1_center": 10752.285932678215,
+            "s2_center": 432742.641,
+            "s1_models": [
+              {
+                "kind": "binned_response",
+                "feature": "dt_us",
+                "centers": [
+                  214.621,
+                  338.202,
+                  416.904,
+                  499.341,
+                  636.8330000000001
+                ],
+                "log_response": [
+                  -0.15049793330420494,
+                  -0.059106688353625675,
+                  -0.0003997344988044771,
+                  0.05576499214014027,
+                  0.18991329166065332
+                ],
+                "global_center": 10763.5439,
+                "bin_rows": [
+                  {
+                    "bin": 0,
+                    "low": 10.362,
+                    "high": 290.9944,
+                    "feature_center": 214.621,
+                    "events": 720,
+                    "signal_center": 9259.65625,
+                    "response": 0.8602795079416176
+                  },
+                  {
+                    "bin": 1,
+                    "low": 290.9944,
+                    "high": 379.3692,
+                    "feature_center": 338.202,
+                    "events": 720,
+                    "signal_center": 10145.7832,
+                    "response": 0.9426061986888908
+                  },
+                  {
+                    "bin": 2,
+                    "low": 379.3692,
+                    "high": 455.6960000000001,
+                    "feature_center": 416.904,
+                    "events": 720,
+                    "signal_center": 10759.2422,
+                    "response": 0.9996003453843859
+                  },
+                  {
+                    "bin": 3,
+                    "low": 455.6960000000001,
+                    "high": 552.2184,
+                    "feature_center": 499.341,
+                    "events": 720,
+                    "signal_center": 11380.8242,
+                    "response": 1.0573491691709456
+                  },
+                  {
+                    "bin": 4,
+                    "low": 552.2184,
+                    "high": 842.3,
+                    "feature_center": 636.8330000000001,
+                    "events": 720,
+                    "signal_center": 13014.6826,
+                    "response": 1.209144750178424
+                  }
+                ]
+              },
+              {
+                "kind": "binned_response",
+                "feature": "r2",
+                "centers": [
+                  102010.56906008926,
+                  122142.7544726592,
+                  128975.94018312712,
+                  134333.309158668,
+                  142572.55012211416
+                ],
+                "log_response": [
+                  -0.008652699276060332,
+                  -0.011156533121299947,
+                  -0.019881868588715434,
+                  0.003992081149856153,
+                  0.0481194463711643
+                ],
+                "global_center": 10763.430844883993,
+                "bin_rows": [
+                  {
+                    "bin": 0,
+                    "low": 794.7260927052007,
+                    "high": 116429.46713751732,
+                    "feature_center": 102010.56906008926,
+                    "events": 720,
+                    "signal_center": 10670.699879739108,
+                    "response": 0.9913846275893563
+                  },
+                  {
+                    "bin": 1,
+                    "low": 116429.46713751732,
+                    "high": 126022.26732825018,
+                    "feature_center": 122142.7544726592,
+                    "events": 720,
+                    "signal_center": 10644.015640619044,
+                    "response": 0.9889054701994291
+                  },
+                  {
+                    "bin": 2,
+                    "low": 126022.26732825018,
+                    "high": 131548.4106660961,
+                    "feature_center": 128975.94018312712,
+                    "events": 720,
+                    "signal_center": 10551.547029905496,
+                    "response": 0.9803144723989927
+                  },
+                  {
+                    "bin": 3,
+                    "low": 131548.4106660961,
+                    "high": 137713.5500049751,
+                    "feature_center": 134333.309158668,
+                    "events": 720,
+                    "signal_center": 10806.48521535929,
+                    "response": 1.0040000601198418
+                  },
+                  {
+                    "bin": 4,
+                    "low": 137713.5500049751,
+                    "high": 211200.55667431746,
+                    "feature_center": 142572.55012211416,
+                    "events": 720,
+                    "signal_center": 11294.024742772745,
+                    "response": 1.0492959824367665
+                  }
+                ]
+              }
+            ],
+            "s2_models": []
+          },
+          "4": {
+            "alpha": 0.7000000000000001,
+            "train_energy_scale": 1.003654925721407,
+            "s1_center": 10620.303966872418,
+            "s2_center": 431074.375,
+            "s1_models": [
+              {
+                "kind": "binned_response",
+                "feature": "dt_us",
+                "centers": [
+                  217.543,
+                  341.43100000000004,
+                  419.34000000000003,
+                  502.76599999999996,
+                  635.4259999999999
+                ],
+                "log_response": [
+                  -0.1260239394541587,
+                  -0.03780300319457364,
+                  0.0002047390447876956,
+                  0.06535080296581712,
+                  0.21600701358582886
+                ],
+                "global_center": 10716.448250000001,
+                "bin_rows": [
+                  {
+                    "bin": 0,
+                    "low": 10.112,
+                    "high": 293.7548,
+                    "feature_center": 217.543,
+                    "events": 720,
+                    "signal_center": 9447.55371,
+                    "response": 0.8815937416578294
+                  },
+                  {
+                    "bin": 1,
+                    "low": 293.7548,
+                    "high": 381.98,
+                    "feature_center": 341.43100000000004,
+                    "events": 720,
+                    "signal_center": 10318.896,
+                    "response": 0.9629026109466818
+                  },
+                  {
+                    "bin": 2,
+                    "low": 381.98,
+                    "high": 459.46320000000003,
+                    "feature_center": 419.34000000000003,
+                    "events": 720,
+                    "signal_center": 10718.64255,
+                    "response": 1.0002047600052564
+                  },
+                  {
+                    "bin": 3,
+                    "low": 459.46320000000003,
+                    "high": 554.6780000000001,
+                    "feature_center": 502.76599999999996,
+                    "events": 720,
+                    "signal_center": 11440.167,
+                    "response": 1.0675334526063707
+                  },
+                  {
+                    "bin": 4,
+                    "low": 554.6780000000001,
+                    "high": 842.3,
+                    "feature_center": 635.4259999999999,
+                    "events": 720,
+                    "signal_center": 13300.3027,
+                    "response": 1.2411110836092545
+                  }
+                ]
+              },
+              {
+                "kind": "binned_response",
+                "feature": "r2",
+                "centers": [
+                  101824.614507958,
+                  121916.68572048206,
+                  129010.41510593383,
+                  134352.56677217537,
+                  142546.88168878917
+                ],
+                "log_response": [
+                  0.01964037710519657,
+                  -0.010468047715148478,
+                  -0.009262736599080149,
+                  -0.003970398530446034,
+                  0.04074668899754524
+                ],
+                "global_center": 10623.483702582114,
+                "bin_rows": [
+                  {
+                    "bin": 0,
+                    "low": 794.7260927052007,
+                    "high": 115708.70826406895,
+                    "feature_center": 101824.614507958,
+                    "events": 720,
+                    "signal_center": 10834.19538375011,
+                    "response": 1.0198345182302846
+                  },
+                  {
+                    "bin": 1,
+                    "low": 115708.70826406895,
+                    "high": 125851.02098920761,
+                    "feature_center": 121916.68572048206,
+                    "events": 720,
+                    "signal_center": 10512.856603367129,
+                    "response": 0.9895865516141286
+                  },
+                  {
+                    "bin": 2,
+                    "low": 125851.02098920761,
+                    "high": 131693.38089211026,
+                    "feature_center": 129010.41510593383,
+                    "events": 720,
+                    "signal_center": 10525.535505768836,
+                    "response": 0.9907800303972348
+                  },
+                  {
+                    "bin": 3,
+                    "low": 131693.38089211026,
+                    "high": 137781.60478340473,
+                    "feature_center": 134352.56677217537,
+                    "events": 720,
+                    "signal_center": 10581.387862432213,
+                    "response": 0.9960374730805424
+                  },
+                  {
+                    "bin": 4,
+                    "low": 137781.60478340473,
+                    "high": 209608.1113996984,
+                    "feature_center": 142546.88168878917,
+                    "events": 720,
+                    "signal_center": 11065.295547615216,
+                    "response": 1.0415882263673748
+                  }
+                ]
+              }
+            ],
+            "s2_models": []
+          },
+          "oof_summary": {
+            "scheme": "event_random5",
+            "candidate": "A2_s1_dt_r2",
+            "label": "S1(dt,r2) + raw S2B",
+            "correction_only_retention": 1.0,
+            "mean_alpha": 0.7300000000000001,
+            "std_alpha": 0.02738612787525827,
+            "events_total": 4500,
+            "events_finite": 4500,
+            "finite_fraction": 1.0,
+            "median": 1.0107204446376974,
+            "r68": 0.09093118058655025,
+            "r90": 0.17317169309681085,
+            "tail_beyond_2r68": 0.0811111111111111,
+            "outside_20pct": 0.06444444444444444,
+            "low_tail_20pct": 0.0017777777777777779,
+            "high_tail_20pct": 0.06266666666666666
+          }
+        },
+        "A3_s2_lifetime_r2": {
+          "0": {
+            "alpha": 0.25,
+            "train_energy_scale": 1.0104368002392108,
+            "s1_center": 10737.076649999999,
+            "s2_center": 434145.08391738695,
+            "s1_models": [],
+            "s2_models": [
+              {
+                "kind": "linear_log_response",
+                "feature": "dt_us",
+                "reference": 417.65,
+                "slope": -0.0007911969055026566,
+                "unconstrained_slope": -0.0007911969055026566,
+                "implied_lifetime_us": 1263.9078755808434,
+                "response_clip": [
+                  0.5,
+                  2.0
+                ],
+                "bin_rows": [
+                  {
+                    "bin": 0,
+                    "low": 10.112,
+                    "high": 291.2388,
+                    "feature_center": 213.661,
+                    "events": 720,
+                    "signal_center": 517185.797
+                  },
+                  {
+                    "bin": 1,
+                    "low": 291.2388,
+                    "high": 380.37120000000004,
+                    "feature_center": 339.883,
+                    "events": 720,
+                    "signal_center": 458787.406
+                  },
+                  {
+                    "bin": 2,
+                    "low": 380.37120000000004,
+                    "high": 459.30400000000003,
+                    "feature_center": 417.65,
+                    "events": 720,
+                    "signal_center": 430083.594
+                  },
+                  {
+                    "bin": 3,
+                    "low": 459.30400000000003,
+                    "high": 554.4200000000001,
+                    "feature_center": 501.534,
+                    "events": 720,
+                    "signal_center": 405236.9065
+                  },
+                  {
+                    "bin": 4,
+                    "low": 554.4200000000001,
+                    "high": 842.3,
+                    "feature_center": 634.5219999999999,
+                    "events": 720,
+                    "signal_center": 369979.281
+                  }
+                ]
+              },
+              {
+                "kind": "binned_response",
+                "feature": "r2",
+                "centers": [
+                  102306.45616435912,
+                  122113.15866471794,
+                  128975.94018312712,
+                  134484.65669276525,
+                  142901.0612284316
+                ],
+                "log_response": [
+                  0.1109549992547038,
+                  0.02738853726066752,
+                  -0.004705048821028696,
+                  -0.0327538089839243,
+                  -0.07495896095553777
+                ],
+                "global_center": 432314.70366894186,
+                "bin_rows": [
+                  {
+                    "bin": 0,
+                    "low": 794.7260927052007,
+                    "high": 116040.64078275378,
+                    "feature_center": 102306.45616435912,
+                    "events": 720,
+                    "signal_center": 483044.51018589427,
+                    "response": 1.1173446243822425
+                  },
+                  {
+                    "bin": 1,
+                    "low": 116040.64078275378,
+                    "high": 125923.7090056903,
+                    "feature_center": 122113.15866471794,
+                    "events": 720,
+                    "signal_center": 444318.8080901605,
+                    "response": 1.027767050991657
+                  },
+                  {
+                    "bin": 2,
+                    "low": 125923.7090056903,
+                    "high": 131689.75003556837,
+                    "feature_center": 128975.94018312712,
+                    "events": 720,
+                    "signal_center": 430285.41956612107,
+                    "response": 0.9953060025819183
+                  },
+                  {
+                    "bin": 3,
+                    "low": 131689.75003556837,
+                    "high": 137848.64861850877,
+                    "feature_center": 134484.65669276525,
+                    "events": 720,
+                    "signal_center": 418384.1354143206,
+                    "response": 0.96777678821378
+                  },
+                  {
+                    "bin": 4,
+                    "low": 137848.64861850877,
+                    "high": 211200.55667431746,
+                    "feature_center": 142901.0612284316,
+                    "events": 720,
+                    "signal_center": 401093.6105336786,
+                    "response": 0.9277815608160028
+                  }
+                ]
+              }
+            ]
+          },
+          "1": {
+            "alpha": 0.25,
+            "train_energy_scale": 1.0108483224893126,
+            "s1_center": 10738.1904,
+            "s2_center": 434100.11221515894,
+            "s1_models": [],
+            "s2_models": [
+              {
+                "kind": "linear_log_response",
+                "feature": "dt_us",
+                "reference": 417.366,
+                "slope": -0.0007986450608928922,
+                "unconstrained_slope": -0.0007986450608928922,
+                "implied_lifetime_us": 1252.1206841021356,
+                "response_clip": [
+                  0.5,
+                  2.0
+                ],
+                "bin_rows": [
+                  {
+                    "bin": 0,
+                    "low": 10.112,
+                    "high": 289.8544,
+                    "feature_center": 208.21,
+                    "events": 720,
+                    "signal_center": 521154.7655
+                  },
+                  {
+                    "bin": 1,
+                    "low": 289.8544,
+                    "high": 379.9516,
+                    "feature_center": 338.202,
+                    "events": 720,
+                    "signal_center": 459585.688
+                  },
+                  {
+                    "bin": 2,
+                    "low": 379.9516,
+                    "high": 456.4464000000001,
+                    "feature_center": 417.366,
+                    "events": 720,
+                    "signal_center": 431008.59400000004
+                  },
+                  {
+                    "bin": 3,
+                    "low": 456.4464000000001,
+                    "high": 550.8568000000001,
+                    "feature_center": 499.66200000000003,
+                    "events": 720,
+                    "signal_center": 403983.719
+                  },
+                  {
+                    "bin": 4,
+                    "low": 550.8568000000001,
+                    "high": 842.3,
+                    "feature_center": 634.7080000000001,
+                    "events": 720,
+                    "signal_center": 370570.703
+                  }
+                ]
+              },
+              {
+                "kind": "binned_response",
+                "feature": "r2",
+                "centers": [
+                  101603.43643061246,
+                  122041.59539762985,
+                  128978.02501473349,
+                  134352.1793254207,
+                  142821.4602258423
+                ],
+                "log_response": [
+                  0.10755327287081642,
+                  0.0353662121959771,
+                  -0.005005719809242464,
+                  -0.028493675228337546,
+                  -0.07722617218205947
+                ],
+                "global_center": 432974.53604710626,
+                "bin_rows": [
+                  {
+                    "bin": 0,
+                    "low": 794.7260927052007,
+                    "high": 115996.04320280202,
+                    "feature_center": 101603.43643061246,
+                    "events": 720,
+                    "signal_center": 482138.87306218204,
+                    "response": 1.1135501811813868
+                  },
+                  {
+                    "bin": 1,
+                    "low": 115996.04320280202,
+                    "high": 125947.79815012205,
+                    "feature_center": 122041.59539762985,
+                    "events": 720,
+                    "signal_center": 448561.20144646015,
+                    "response": 1.035999034820048
+                  },
+                  {
+                    "bin": 2,
+                    "low": 125947.79815012205,
+                    "high": 131611.6357374966,
+                    "feature_center": 128978.02501473349,
+                    "events": 720,
+                    "signal_center": 430812.6023665805,
+                    "response": 0.995006787927384
+                  },
+                  {
+                    "bin": 3,
+                    "low": 131611.6357374966,
+                    "high": 137818.44197170468,
+                    "feature_center": 134352.1793254207,
+                    "events": 720,
+                    "signal_center": 420811.6064199484,
+                    "response": 0.9719084412256647
+                  },
+                  {
+                    "bin": 4,
+                    "low": 137818.44197170468,
+                    "high": 211200.55667431746,
+                    "feature_center": 142821.4602258423,
+                    "events": 720,
+                    "signal_center": 400796.0706222369,
+                    "response": 0.9256804667575913
+                  }
+                ]
+              }
+            ]
+          },
+          "2": {
+            "alpha": 0.25,
+            "train_energy_scale": 1.0107682286269006,
+            "s1_center": 10749.84275,
+            "s2_center": 434901.6266125484,
+            "s1_models": [],
+            "s2_models": [
+              {
+                "kind": "linear_log_response",
+                "feature": "dt_us",
+                "reference": 418.278,
+                "slope": -0.0008243974956729325,
+                "unconstrained_slope": -0.0008243974956729325,
+                "implied_lifetime_us": 1213.0070812305514,
+                "response_clip": [
+                  0.5,
+                  2.0
+                ],
+                "bin_rows": [
+                  {
+                    "bin": 0,
+                    "low": 10.112,
+                    "high": 294.2404,
+                    "feature_center": 216.076,
+                    "events": 720,
+                    "signal_center": 519850.25
+                  },
+                  {
+                    "bin": 1,
+                    "low": 294.2404,
+                    "high": 381.54800000000006,
+                    "feature_center": 342.134,
+                    "events": 720,
+                    "signal_center": 467856.938
+                  },
+                  {
+                    "bin": 2,
+                    "low": 381.54800000000006,
+                    "high": 459.0316,
+                    "feature_center": 418.278,
+                    "events": 720,
+                    "signal_center": 428487.4065
+                  },
+                  {
+                    "bin": 3,
+                    "low": 459.0316,
+                    "high": 553.7476,
+                    "feature_center": 502.11699999999996,
+                    "events": 720,
+                    "signal_center": 407595.375
+                  },
+                  {
+                    "bin": 4,
+                    "low": 553.7476,
+                    "high": 839.55,
+                    "feature_center": 638.7819999999999,
+                    "events": 720,
+                    "signal_center": 367452.297
+                  }
+                ]
+              },
+              {
+                "kind": "binned_response",
+                "feature": "r2",
+                "centers": [
+                  102010.56906008926,
+                  122027.73337540093,
+                  129018.79604984906,
+                  134310.2176631595,
+                  142641.28095777507
+                ],
+                "log_response": [
+                  0.10686783369109235,
+                  0.030693110282229163,
+                  -0.01155357833471892,
+                  -0.025092447283848865,
+                  -0.07268025798102486
+                ],
+                "global_center": 433953.2812339582,
+                "bin_rows": [
+                  {
+                    "bin": 0,
+                    "low": 1093.8665956873076,
+                    "high": 116306.28523203298,
+                    "feature_center": 102010.56906008926,
+                    "events": 720,
+                    "signal_center": 482897.64451191935,
+                    "response": 1.1127871717867566
+                  },
+                  {
+                    "bin": 1,
+                    "low": 116306.28523203298,
+                    "high": 125982.53892493647,
+                    "feature_center": 122027.73337540093,
+                    "events": 720,
+                    "signal_center": 447479.17112604354,
+                    "response": 1.031169000159704
+                  },
+                  {
+                    "bin": 2,
+                    "low": 125982.53892493647,
+                    "high": 131639.89824613443,
+                    "feature_center": 129018.79604984906,
+                    "events": 720,
+                    "signal_center": 428968.41994858644,
+                    "response": 0.9885129079536
+                  },
+                  {
+                    "bin": 3,
+                    "low": 131639.89824613443,
+                    "high": 137766.59849470228,
+                    "feature_center": 134310.2176631595,
+                    "events": 720,
+                    "signal_center": 423199.8110631456,
+                    "response": 0.9752197514436696
+                  },
+                  {
+                    "bin": 4,
+                    "low": 137766.59849470228,
+                    "high": 211200.55667431746,
+                    "feature_center": 142641.28095777507,
+                    "events": 720,
+                    "signal_center": 403532.33604599535,
+                    "response": 0.9298981099959424
+                  }
+                ]
+              }
+            ]
+          },
+          "3": {
+            "alpha": 0.30000000000000004,
+            "train_energy_scale": 1.0116774545344702,
+            "s1_center": 10763.5439,
+            "s2_center": 435884.3260056657,
+            "s1_models": [],
+            "s2_models": [
+              {
+                "kind": "linear_log_response",
+                "feature": "dt_us",
+                "reference": 416.904,
+                "slope": -0.0008242003542316969,
+                "unconstrained_slope": -0.0008242003542316969,
+                "implied_lifetime_us": 1213.2972218049822,
+                "response_clip": [
+                  0.5,
+                  2.0
+                ],
+                "bin_rows": [
+                  {
+                    "bin": 0,
+                    "low": 10.362,
+                    "high": 290.9944,
+                    "feature_center": 214.621,
+                    "events": 720,
+                    "signal_center": 520580.9215
+                  },
+                  {
+                    "bin": 1,
+                    "low": 290.9944,
+                    "high": 379.3692,
+                    "feature_center": 338.202,
+                    "events": 720,
+                    "signal_center": 469227.625
+                  },
+                  {
+                    "bin": 2,
+                    "low": 379.3692,
+                    "high": 455.6960000000001,
+                    "feature_center": 416.904,
+                    "events": 720,
+                    "signal_center": 430597.781
+                  },
+                  {
+                    "bin": 3,
+                    "low": 455.6960000000001,
+                    "high": 552.2184,
+                    "feature_center": 499.341,
+                    "events": 720,
+                    "signal_center": 406541.25
+                  },
+                  {
+                    "bin": 4,
+                    "low": 552.2184,
+                    "high": 842.3,
+                    "feature_center": 636.8330000000001,
+                    "events": 720,
+                    "signal_center": 368815.0
+                  }
+                ]
+              },
+              {
+                "kind": "binned_response",
+                "feature": "r2",
+                "centers": [
+                  102010.56906008926,
+                  122142.7544726592,
+                  128975.94018312712,
+                  134333.309158668,
+                  142572.55012211416
+                ],
+                "log_response": [
+                  0.09995579707759725,
+                  0.031133466054434643,
+                  -0.009187764844876814,
+                  -0.028626384852194944,
+                  -0.07488870052674072
+                ],
+                "global_center": 434645.98877067416,
+                "bin_rows": [
+                  {
+                    "bin": 0,
+                    "low": 794.7260927052007,
+                    "high": 116429.46713751732,
+                    "feature_center": 102010.56906008926,
+                    "events": 720,
+                    "signal_center": 480336.8736847573,
+                    "response": 1.105122067370994
+                  },
+                  {
+                    "bin": 1,
+                    "low": 116429.46713751732,
+                    "high": 126022.26732825018,
+                    "feature_center": 122142.7544726592,
+                    "events": 720,
+                    "signal_center": 448390.87770720903,
+                    "response": 1.0316231813743642
+                  },
+                  {
+                    "bin": 2,
+                    "low": 126022.26732825018,
+                    "high": 131548.4106660961,
+                    "feature_center": 128975.94018312712,
+                    "events": 720,
+                    "signal_center": 430670.85290525196,
+                    "response": 0.9908543136986833
+                  },
+                  {
+                    "bin": 3,
+                    "low": 131548.4106660961,
+                    "high": 137713.5500049751,
+                    "feature_center": 134333.309158668,
+                    "events": 720,
+                    "signal_center": 422380.04781421303,
+                    "response": 0.9717794681801772
+                  },
+                  {
+                    "bin": 4,
+                    "low": 137713.5500049751,
+                    "high": 211200.55667431746,
+                    "feature_center": 142572.55012211416,
+                    "events": 720,
+                    "signal_center": 403284.8678364223,
+                    "response": 0.9278467494363591
+                  }
+                ]
+              }
+            ]
+          },
+          "4": {
+            "alpha": 0.30000000000000004,
+            "train_energy_scale": 1.013540552566221,
+            "s1_center": 10716.448250000001,
+            "s2_center": 433297.1251275182,
+            "s1_models": [],
+            "s2_models": [
+              {
+                "kind": "linear_log_response",
+                "feature": "dt_us",
+                "reference": 419.34000000000003,
+                "slope": -0.0008072521827375069,
+                "unconstrained_slope": -0.0008072521827375069,
+                "implied_lifetime_us": 1238.7702645892612,
+                "response_clip": [
+                  0.5,
+                  2.0
+                ],
+                "bin_rows": [
+                  {
+                    "bin": 0,
+                    "low": 10.112,
+                    "high": 293.7548,
+                    "feature_center": 217.543,
+                    "events": 720,
+                    "signal_center": 519561.46849999996
+                  },
+                  {
+                    "bin": 1,
+                    "low": 293.7548,
+                    "high": 381.98,
+                    "feature_center": 341.43100000000004,
+                    "events": 720,
+                    "signal_center": 459167.797
+                  },
+                  {
+                    "bin": 2,
+                    "low": 381.98,
+                    "high": 459.46320000000003,
+                    "feature_center": 419.34000000000003,
+                    "events": 720,
+                    "signal_center": 428366.906
+                  },
+                  {
+                    "bin": 3,
+                    "low": 459.46320000000003,
+                    "high": 554.6780000000001,
+                    "feature_center": 502.76599999999996,
+                    "events": 720,
+                    "signal_center": 406822.0
+                  },
+                  {
+                    "bin": 4,
+                    "low": 554.6780000000001,
+                    "high": 842.3,
+                    "feature_center": 635.4259999999999,
+                    "events": 720,
+                    "signal_center": 369212.78099999996
+                  }
+                ]
+              },
+              {
+                "kind": "binned_response",
+                "feature": "r2",
+                "centers": [
+                  101824.614507958,
+                  121916.68572048206,
+                  129010.41510593383,
+                  134352.56677217537,
+                  142546.88168878917
+                ],
+                "log_response": [
+                  0.11106776541001738,
+                  0.031014950408418736,
+                  -0.003912087915601216,
+                  -0.028336597728348636,
+                  -0.06975563651863147
+                ],
+                "global_center": 432495.8718241161,
+                "bin_rows": [
+                  {
+                    "bin": 0,
+                    "low": 794.7260927052007,
+                    "high": 115708.70826406895,
+                    "feature_center": 101824.614507958,
+                    "events": 720,
+                    "signal_center": 483301.43442204,
+                    "response": 1.1174706301441535
+                  },
+                  {
+                    "bin": 1,
+                    "low": 115708.70826406895,
+                    "high": 125851.02098920761,
+                    "feature_center": 121916.68572048206,
+                    "events": 720,
+                    "signal_center": 446119.89190207,
+                    "response": 1.0315009251313605
+                  },
+                  {
+                    "bin": 2,
+                    "low": 125851.02098920761,
+                    "high": 131693.38089211026,
+                    "feature_center": 129010.41510593383,
+                    "events": 720,
+                    "signal_center": 430807.2151906705,
+                    "response": 0.9960955543313664
+                  },
+                  {
+                    "bin": 3,
+                    "low": 131693.38089211026,
+                    "high": 137781.60478340473,
+                    "feature_center": 134352.56677217537,
+                    "events": 720,
+                    "signal_center": 420412.42076691194,
+                    "response": 0.9720611181645725
+                  },
+                  {
+                    "bin": 4,
+                    "low": 137781.60478340473,
+                    "high": 209608.1113996984,
+                    "feature_center": 142546.88168878917,
+                    "events": 720,
+                    "signal_center": 403355.03122140607,
+                    "response": 0.932621690746309
+                  }
+                ]
+              }
+            ]
+          },
+          "oof_summary": {
+            "scheme": "event_random5",
+            "candidate": "A3_s2_lifetime_r2",
+            "label": "raw S1 + S2B(lifetime,r2)",
+            "correction_only_retention": 1.0,
+            "mean_alpha": 0.27,
+            "std_alpha": 0.02738612787525833,
+            "events_total": 4500,
+            "events_finite": 4500,
+            "finite_fraction": 1.0,
+            "median": 0.9925356303774019,
+            "r68": 0.08589175144781941,
+            "r90": 0.1567962343425811,
+            "tail_beyond_2r68": 0.07555555555555556,
+            "outside_20pct": 0.042222222222222223,
+            "low_tail_20pct": 0.03177777777777778,
+            "high_tail_20pct": 0.010444444444444444
+          }
+        },
+        "A4_both": {
+          "0": {
+            "alpha": 0.45000000000000007,
+            "train_energy_scale": 1.005883896837891,
+            "s1_center": 10719.006184430002,
+            "s2_center": 434145.08391738695,
+            "s1_models": [
+              {
+                "kind": "binned_response",
+                "feature": "dt_us",
+                "centers": [
+                  213.661,
+                  339.883,
+                  417.65,
+                  501.534,
+                  634.5219999999999
+                ],
+                "log_response": [
+                  -0.13026604943895004,
+                  -0.0566446884027316,
+                  0.004634048648297809,
+                  0.058595728671512685,
+                  0.19658633123502928
+                ],
+                "global_center": 10737.076649999999,
+                "bin_rows": [
+                  {
+                    "bin": 0,
+                    "low": 10.112,
+                    "high": 291.2388,
+                    "feature_center": 213.661,
+                    "events": 720,
+                    "signal_center": 9425.66992,
+                    "response": 0.8778618451978734
+                  },
+                  {
+                    "bin": 1,
+                    "low": 291.2388,
+                    "high": 380.37120000000004,
+                    "feature_center": 339.883,
+                    "events": 720,
+                    "signal_center": 10145.7832,
+                    "response": 0.9449297542269106
+                  },
+                  {
+                    "bin": 2,
+                    "low": 380.37120000000004,
+                    "high": 459.30400000000003,
+                    "feature_center": 417.65,
+                    "events": 720,
+                    "signal_center": 10786.94825,
+                    "response": 1.004644802456542
+                  },
+                  {
+                    "bin": 3,
+                    "low": 459.30400000000003,
+                    "high": 554.4200000000001,
+                    "feature_center": 501.534,
+                    "events": 720,
+                    "signal_center": 11385.0215,
+                    "response": 1.060346486396742
+                  },
+                  {
+                    "bin": 4,
+                    "low": 554.4200000000001,
+                    "high": 842.3,
+                    "feature_center": 634.5219999999999,
+                    "events": 720,
+                    "signal_center": 13069.6035,
+                    "response": 1.2172404022094785
+                  }
+                ]
+              },
+              {
+                "kind": "binned_response",
+                "feature": "r2",
+                "centers": [
+                  102306.45616435912,
+                  122113.15866471794,
+                  128975.94018312712,
+                  134484.65669276525,
+                  142901.0612284316
+                ],
+                "log_response": [
+                  -0.011554625644332328,
+                  -0.00788948568854455,
+                  -0.01900762841841393,
+                  -0.0002468195269954531,
+                  0.04279730002737081
+                ],
+                "global_center": 10703.845062596263,
+                "bin_rows": [
+                  {
+                    "bin": 0,
+                    "low": 794.7260927052007,
+                    "high": 116040.64078275378,
+                    "feature_center": 102306.45616435912,
+                    "events": 720,
+                    "signal_center": 10580.877927650841,
+                    "response": 0.9885118726750707
+                  },
+                  {
+                    "bin": 1,
+                    "low": 116040.64078275378,
+                    "high": 125923.7090056903,
+                    "feature_center": 122113.15866471794,
+                    "events": 720,
+                    "signal_center": 10619.72948080882,
+                    "response": 0.9921415546193416
+                  },
+                  {
+                    "bin": 2,
+                    "low": 125923.7090056903,
+                    "high": 131689.75003556837,
+                    "feature_center": 128975.94018312712,
+                    "events": 720,
+                    "signal_center": 10502.311755730043,
+                    "response": 0.9811718774246404
+                  },
+                  {
+                    "bin": 3,
+                    "low": 131689.75003556837,
+                    "high": 137848.64861850877,
+                    "feature_center": 134484.65669276525,
+                    "events": 720,
+                    "signal_center": 10701.20347063253,
+                    "response": 0.9997532109304381
+                  },
+                  {
+                    "bin": 4,
+                    "low": 137848.64861850877,
+                    "high": 211200.55667431746,
+                    "feature_center": 142901.0612284316,
+                    "events": 720,
+                    "signal_center": 11171.88471120201,
+                    "response": 1.0437263101127345
+                  }
+                ]
+              }
+            ],
+            "s2_models": [
+              {
+                "kind": "linear_log_response",
+                "feature": "dt_us",
+                "reference": 417.65,
+                "slope": -0.0007911969055026566,
+                "unconstrained_slope": -0.0007911969055026566,
+                "implied_lifetime_us": 1263.9078755808434,
+                "response_clip": [
+                  0.5,
+                  2.0
+                ],
+                "bin_rows": [
+                  {
+                    "bin": 0,
+                    "low": 10.112,
+                    "high": 291.2388,
+                    "feature_center": 213.661,
+                    "events": 720,
+                    "signal_center": 517185.797
+                  },
+                  {
+                    "bin": 1,
+                    "low": 291.2388,
+                    "high": 380.37120000000004,
+                    "feature_center": 339.883,
+                    "events": 720,
+                    "signal_center": 458787.406
+                  },
+                  {
+                    "bin": 2,
+                    "low": 380.37120000000004,
+                    "high": 459.30400000000003,
+                    "feature_center": 417.65,
+                    "events": 720,
+                    "signal_center": 430083.594
+                  },
+                  {
+                    "bin": 3,
+                    "low": 459.30400000000003,
+                    "high": 554.4200000000001,
+                    "feature_center": 501.534,
+                    "events": 720,
+                    "signal_center": 405236.9065
+                  },
+                  {
+                    "bin": 4,
+                    "low": 554.4200000000001,
+                    "high": 842.3,
+                    "feature_center": 634.5219999999999,
+                    "events": 720,
+                    "signal_center": 369979.281
+                  }
+                ]
+              },
+              {
+                "kind": "binned_response",
+                "feature": "r2",
+                "centers": [
+                  102306.45616435912,
+                  122113.15866471794,
+                  128975.94018312712,
+                  134484.65669276525,
+                  142901.0612284316
+                ],
+                "log_response": [
+                  0.1109549992547038,
+                  0.02738853726066752,
+                  -0.004705048821028696,
+                  -0.0327538089839243,
+                  -0.07495896095553777
+                ],
+                "global_center": 432314.70366894186,
+                "bin_rows": [
+                  {
+                    "bin": 0,
+                    "low": 794.7260927052007,
+                    "high": 116040.64078275378,
+                    "feature_center": 102306.45616435912,
+                    "events": 720,
+                    "signal_center": 483044.51018589427,
+                    "response": 1.1173446243822425
+                  },
+                  {
+                    "bin": 1,
+                    "low": 116040.64078275378,
+                    "high": 125923.7090056903,
+                    "feature_center": 122113.15866471794,
+                    "events": 720,
+                    "signal_center": 444318.8080901605,
+                    "response": 1.027767050991657
+                  },
+                  {
+                    "bin": 2,
+                    "low": 125923.7090056903,
+                    "high": 131689.75003556837,
+                    "feature_center": 128975.94018312712,
+                    "events": 720,
+                    "signal_center": 430285.41956612107,
+                    "response": 0.9953060025819183
+                  },
+                  {
+                    "bin": 3,
+                    "low": 131689.75003556837,
+                    "high": 137848.64861850877,
+                    "feature_center": 134484.65669276525,
+                    "events": 720,
+                    "signal_center": 418384.1354143206,
+                    "response": 0.96777678821378
+                  },
+                  {
+                    "bin": 4,
+                    "low": 137848.64861850877,
+                    "high": 211200.55667431746,
+                    "feature_center": 142901.0612284316,
+                    "events": 720,
+                    "signal_center": 401093.6105336786,
+                    "response": 0.9277815608160028
+                  }
+                ]
+              }
+            ]
+          },
+          "1": {
+            "alpha": 0.45000000000000007,
+            "train_energy_scale": 1.0055438507207446,
+            "s1_center": 10707.48544037079,
+            "s2_center": 434100.11221515894,
+            "s1_models": [
+              {
+                "kind": "binned_response",
+                "feature": "dt_us",
+                "centers": [
+                  208.21,
+                  338.202,
+                  417.366,
+                  499.66200000000003,
+                  634.7080000000001
+                ],
+                "log_response": [
+                  -0.14922742677946454,
+                  -0.05493280414995624,
+                  0.0001697814208199106,
+                  0.06022664888784953,
+                  0.20437285407141123
+                ],
+                "global_center": 10738.1904,
+                "bin_rows": [
+                  {
+                    "bin": 0,
+                    "low": 10.112,
+                    "high": 289.8544,
+                    "feature_center": 208.21,
+                    "events": 720,
+                    "signal_center": 9249.589355,
+                    "response": 0.8613731932896255
+                  },
+                  {
+                    "bin": 1,
+                    "low": 289.8544,
+                    "high": 379.9516,
+                    "feature_center": 338.202,
+                    "events": 720,
+                    "signal_center": 10164.2207,
+                    "response": 0.9465487499644261
+                  },
+                  {
+                    "bin": 2,
+                    "low": 379.9516,
+                    "high": 456.4464000000001,
+                    "feature_center": 417.366,
+                    "events": 720,
+                    "signal_center": 10740.0137,
+                    "response": 1.000169795834501
+                  },
+                  {
+                    "bin": 3,
+                    "low": 456.4464000000001,
+                    "high": 550.8568000000001,
+                    "feature_center": 499.66200000000003,
+                    "events": 720,
+                    "signal_center": 11404.7876,
+                    "response": 1.0620772378928949
+                  },
+                  {
+                    "bin": 4,
+                    "low": 550.8568000000001,
+                    "high": 842.3,
+                    "feature_center": 634.7080000000001,
+                    "events": 720,
+                    "signal_center": 13173.1338,
+                    "response": 1.2267554689661677
+                  }
+                ]
+              },
+              {
+                "kind": "binned_response",
+                "feature": "r2",
+                "centers": [
+                  101603.43643061246,
+                  122041.59539762985,
+                  128978.02501473349,
+                  134352.1793254207,
+                  142821.4602258423
+                ],
+                "log_response": [
+                  -0.010914676487057906,
+                  -0.006676043631372312,
+                  -0.01397686172680707,
+                  0.002304932780289118,
+                  0.038932456305946564
+                ],
+                "global_center": 10703.376516299246,
+                "bin_rows": [
+                  {
+                    "bin": 0,
+                    "low": 794.7260927052007,
+                    "high": 115996.04320280202,
+                    "feature_center": 101603.43643061246,
+                    "events": 720,
+                    "signal_center": 10587.187858572132,
+                    "response": 0.9891446724731975
+                  },
+                  {
+                    "bin": 1,
+                    "low": 115996.04320280202,
+                    "high": 125947.79815012205,
+                    "feature_center": 122041.59539762985,
+                    "events": 720,
+                    "signal_center": 10632.158300146128,
+                    "response": 0.9933461916391836
+                  },
+                  {
+                    "bin": 2,
+                    "low": 125947.79815012205,
+                    "high": 131611.6357374966,
+                    "feature_center": 128978.02501473349,
+                    "events": 720,
+                    "signal_center": 10554.81751546925,
+                    "response": 0.9861203611212063
+                  },
+                  {
+                    "bin": 3,
+                    "low": 131611.6357374966,
+                    "high": 137818.44197170468,
+                    "feature_center": 134352.1793254207,
+                    "events": 720,
+                    "signal_center": 10728.075533543783,
+                    "response": 1.002307591179935
+                  },
+                  {
+                    "bin": 4,
+                    "low": 137818.44197170468,
+                    "high": 211200.55667431746,
+                    "feature_center": 142821.4602258423,
+                    "events": 720,
+                    "signal_center": 11128.303304943376,
+                    "response": 1.0397002560824657
+                  }
+                ]
+              }
+            ],
+            "s2_models": [
+              {
+                "kind": "linear_log_response",
+                "feature": "dt_us",
+                "reference": 417.366,
+                "slope": -0.0007986450608928922,
+                "unconstrained_slope": -0.0007986450608928922,
+                "implied_lifetime_us": 1252.1206841021356,
+                "response_clip": [
+                  0.5,
+                  2.0
+                ],
+                "bin_rows": [
+                  {
+                    "bin": 0,
+                    "low": 10.112,
+                    "high": 289.8544,
+                    "feature_center": 208.21,
+                    "events": 720,
+                    "signal_center": 521154.7655
+                  },
+                  {
+                    "bin": 1,
+                    "low": 289.8544,
+                    "high": 379.9516,
+                    "feature_center": 338.202,
+                    "events": 720,
+                    "signal_center": 459585.688
+                  },
+                  {
+                    "bin": 2,
+                    "low": 379.9516,
+                    "high": 456.4464000000001,
+                    "feature_center": 417.366,
+                    "events": 720,
+                    "signal_center": 431008.59400000004
+                  },
+                  {
+                    "bin": 3,
+                    "low": 456.4464000000001,
+                    "high": 550.8568000000001,
+                    "feature_center": 499.66200000000003,
+                    "events": 720,
+                    "signal_center": 403983.719
+                  },
+                  {
+                    "bin": 4,
+                    "low": 550.8568000000001,
+                    "high": 842.3,
+                    "feature_center": 634.7080000000001,
+                    "events": 720,
+                    "signal_center": 370570.703
+                  }
+                ]
+              },
+              {
+                "kind": "binned_response",
+                "feature": "r2",
+                "centers": [
+                  101603.43643061246,
+                  122041.59539762985,
+                  128978.02501473349,
+                  134352.1793254207,
+                  142821.4602258423
+                ],
+                "log_response": [
+                  0.10755327287081642,
+                  0.0353662121959771,
+                  -0.005005719809242464,
+                  -0.028493675228337546,
+                  -0.07722617218205947
+                ],
+                "global_center": 432974.53604710626,
+                "bin_rows": [
+                  {
+                    "bin": 0,
+                    "low": 794.7260927052007,
+                    "high": 115996.04320280202,
+                    "feature_center": 101603.43643061246,
+                    "events": 720,
+                    "signal_center": 482138.87306218204,
+                    "response": 1.1135501811813868
+                  },
+                  {
+                    "bin": 1,
+                    "low": 115996.04320280202,
+                    "high": 125947.79815012205,
+                    "feature_center": 122041.59539762985,
+                    "events": 720,
+                    "signal_center": 448561.20144646015,
+                    "response": 1.035999034820048
+                  },
+                  {
+                    "bin": 2,
+                    "low": 125947.79815012205,
+                    "high": 131611.6357374966,
+                    "feature_center": 128978.02501473349,
+                    "events": 720,
+                    "signal_center": 430812.6023665805,
+                    "response": 0.995006787927384
+                  },
+                  {
+                    "bin": 3,
+                    "low": 131611.6357374966,
+                    "high": 137818.44197170468,
+                    "feature_center": 134352.1793254207,
+                    "events": 720,
+                    "signal_center": 420811.6064199484,
+                    "response": 0.9719084412256647
+                  },
+                  {
+                    "bin": 4,
+                    "low": 137818.44197170468,
+                    "high": 211200.55667431746,
+                    "feature_center": 142821.4602258423,
+                    "events": 720,
+                    "signal_center": 400796.0706222369,
+                    "response": 0.9256804667575913
+                  }
+                ]
+              }
+            ]
+          },
+          "2": {
+            "alpha": 0.55,
+            "train_energy_scale": 1.0040019387972663,
+            "s1_center": 10668.260502374585,
+            "s2_center": 434901.6266125484,
+            "s1_models": [
+              {
+                "kind": "binned_response",
+                "feature": "dt_us",
+                "centers": [
+                  216.076,
+                  342.134,
+                  418.278,
+                  502.11699999999996,
+                  638.7819999999999
+                ],
+                "log_response": [
+                  -0.14139886826305276,
+                  -0.03800146661154729,
+                  -0.0009147618745870433,
+                  0.05834866784745312,
+                  0.21262117021761967
+                ],
+                "global_center": 10749.84275,
+                "bin_rows": [
+                  {
+                    "bin": 0,
+                    "low": 10.112,
+                    "high": 294.2404,
+                    "feature_center": 216.076,
+                    "events": 720,
+                    "signal_center": 9332.40039,
+                    "response": 0.8681429679517871
+                  },
+                  {
+                    "bin": 1,
+                    "low": 294.2404,
+                    "high": 381.54800000000006,
+                    "feature_center": 342.134,
+                    "events": 720,
+                    "signal_center": 10348.99755,
+                    "response": 0.9627115289663191
+                  },
+                  {
+                    "bin": 2,
+                    "low": 381.54800000000006,
+                    "high": 459.0316,
+                    "feature_center": 418.278,
+                    "events": 720,
+                    "signal_center": 10740.0137,
+                    "response": 0.9990856563925086
+                  },
+                  {
+                    "bin": 3,
+                    "low": 459.0316,
+                    "high": 553.7476,
+                    "feature_center": 502.11699999999996,
+                    "events": 720,
+                    "signal_center": 11395.7422,
+                    "response": 1.0600845486786308
+                  },
+                  {
+                    "bin": 4,
+                    "low": 553.7476,
+                    "high": 839.55,
+                    "feature_center": 638.7819999999999,
+                    "events": 720,
+                    "signal_center": 13296.6523,
+                    "response": 1.2369159818640139
+                  }
+                ]
+              },
+              {
+                "kind": "binned_response",
+                "feature": "r2",
+                "centers": [
+                  102010.56906008926,
+                  122027.73337540093,
+                  129018.79604984906,
+                  134310.2176631595,
+                  142641.28095777507
+                ],
+                "log_response": [
+                  -0.009897629639043958,
+                  -0.010700504482918375,
+                  -0.016643738662584066,
+                  0.000979485242576542,
+                  0.04195672414497037
+                ],
+                "global_center": 10677.517663160586,
+                "bin_rows": [
+                  {
+                    "bin": 0,
+                    "low": 1093.8665956873076,
+                    "high": 116306.28523203298,
+                    "feature_center": 102010.56906008926,
+                    "events": 720,
+                    "signal_center": 10572.356827854943,
+                    "response": 0.9901511906958985
+                  },
+                  {
+                    "bin": 1,
+                    "low": 116306.28523203298,
+                    "high": 125982.53892493647,
+                    "feature_center": 122027.73337540093,
+                    "events": 720,
+                    "signal_center": 10563.871955118615,
+                    "response": 0.9893565422575633
+                  },
+                  {
+                    "bin": 2,
+                    "low": 125982.53892493647,
+                    "high": 131639.89824613443,
+                    "feature_center": 129018.79604984906,
+                    "events": 720,
+                    "signal_center": 10501.274589901008,
+                    "response": 0.98349400311763
+                  },
+                  {
+                    "bin": 3,
+                    "low": 131639.89824613443,
+                    "high": 137766.59849470228,
+                    "feature_center": 134310.2176631595,
+                    "events": 720,
+                    "signal_center": 10687.981257770698,
+                    "response": 1.0009799650949034
+                  },
+                  {
+                    "bin": 4,
+                    "low": 137766.59849470228,
+                    "high": 211200.55667431746,
+                    "feature_center": 142641.28095777507,
+                    "events": 720,
+                    "signal_center": 11135.042328769357,
+                    "response": 1.0428493475770417
+                  }
+                ]
+              }
+            ],
+            "s2_models": [
+              {
+                "kind": "linear_log_response",
+                "feature": "dt_us",
+                "reference": 418.278,
+                "slope": -0.0008243974956729325,
+                "unconstrained_slope": -0.0008243974956729325,
+                "implied_lifetime_us": 1213.0070812305514,
+                "response_clip": [
+                  0.5,
+                  2.0
+                ],
+                "bin_rows": [
+                  {
+                    "bin": 0,
+                    "low": 10.112,
+                    "high": 294.2404,
+                    "feature_center": 216.076,
+                    "events": 720,
+                    "signal_center": 519850.25
+                  },
+                  {
+                    "bin": 1,
+                    "low": 294.2404,
+                    "high": 381.54800000000006,
+                    "feature_center": 342.134,
+                    "events": 720,
+                    "signal_center": 467856.938
+                  },
+                  {
+                    "bin": 2,
+                    "low": 381.54800000000006,
+                    "high": 459.0316,
+                    "feature_center": 418.278,
+                    "events": 720,
+                    "signal_center": 428487.4065
+                  },
+                  {
+                    "bin": 3,
+                    "low": 459.0316,
+                    "high": 553.7476,
+                    "feature_center": 502.11699999999996,
+                    "events": 720,
+                    "signal_center": 407595.375
+                  },
+                  {
+                    "bin": 4,
+                    "low": 553.7476,
+                    "high": 839.55,
+                    "feature_center": 638.7819999999999,
+                    "events": 720,
+                    "signal_center": 367452.297
+                  }
+                ]
+              },
+              {
+                "kind": "binned_response",
+                "feature": "r2",
+                "centers": [
+                  102010.56906008926,
+                  122027.73337540093,
+                  129018.79604984906,
+                  134310.2176631595,
+                  142641.28095777507
+                ],
+                "log_response": [
+                  0.10686783369109235,
+                  0.030693110282229163,
+                  -0.01155357833471892,
+                  -0.025092447283848865,
+                  -0.07268025798102486
+                ],
+                "global_center": 433953.2812339582,
+                "bin_rows": [
+                  {
+                    "bin": 0,
+                    "low": 1093.8665956873076,
+                    "high": 116306.28523203298,
+                    "feature_center": 102010.56906008926,
+                    "events": 720,
+                    "signal_center": 482897.64451191935,
+                    "response": 1.1127871717867566
+                  },
+                  {
+                    "bin": 1,
+                    "low": 116306.28523203298,
+                    "high": 125982.53892493647,
+                    "feature_center": 122027.73337540093,
+                    "events": 720,
+                    "signal_center": 447479.17112604354,
+                    "response": 1.031169000159704
+                  },
+                  {
+                    "bin": 2,
+                    "low": 125982.53892493647,
+                    "high": 131639.89824613443,
+                    "feature_center": 129018.79604984906,
+                    "events": 720,
+                    "signal_center": 428968.41994858644,
+                    "response": 0.9885129079536
+                  },
+                  {
+                    "bin": 3,
+                    "low": 131639.89824613443,
+                    "high": 137766.59849470228,
+                    "feature_center": 134310.2176631595,
+                    "events": 720,
+                    "signal_center": 423199.8110631456,
+                    "response": 0.9752197514436696
+                  },
+                  {
+                    "bin": 4,
+                    "low": 137766.59849470228,
+                    "high": 211200.55667431746,
+                    "feature_center": 142641.28095777507,
+                    "events": 720,
+                    "signal_center": 403532.33604599535,
+                    "response": 0.9298981099959424
+                  }
+                ]
+              }
+            ]
+          },
+          "3": {
+            "alpha": 0.5,
+            "train_energy_scale": 1.0065228097988386,
+            "s1_center": 10752.285932678215,
+            "s2_center": 435884.3260056657,
+            "s1_models": [
+              {
+                "kind": "binned_response",
+                "feature": "dt_us",
+                "centers": [
+                  214.621,
+                  338.202,
+                  416.904,
+                  499.341,
+                  636.8330000000001
+                ],
+                "log_response": [
+                  -0.15049793330420494,
+                  -0.059106688353625675,
+                  -0.0003997344988044771,
+                  0.05576499214014027,
+                  0.18991329166065332
+                ],
+                "global_center": 10763.5439,
+                "bin_rows": [
+                  {
+                    "bin": 0,
+                    "low": 10.362,
+                    "high": 290.9944,
+                    "feature_center": 214.621,
+                    "events": 720,
+                    "signal_center": 9259.65625,
+                    "response": 0.8602795079416176
+                  },
+                  {
+                    "bin": 1,
+                    "low": 290.9944,
+                    "high": 379.3692,
+                    "feature_center": 338.202,
+                    "events": 720,
+                    "signal_center": 10145.7832,
+                    "response": 0.9426061986888908
+                  },
+                  {
+                    "bin": 2,
+                    "low": 379.3692,
+                    "high": 455.6960000000001,
+                    "feature_center": 416.904,
+                    "events": 720,
+                    "signal_center": 10759.2422,
+                    "response": 0.9996003453843859
+                  },
+                  {
+                    "bin": 3,
+                    "low": 455.6960000000001,
+                    "high": 552.2184,
+                    "feature_center": 499.341,
+                    "events": 720,
+                    "signal_center": 11380.8242,
+                    "response": 1.0573491691709456
+                  },
+                  {
+                    "bin": 4,
+                    "low": 552.2184,
+                    "high": 842.3,
+                    "feature_center": 636.8330000000001,
+                    "events": 720,
+                    "signal_center": 13014.6826,
+                    "response": 1.209144750178424
+                  }
+                ]
+              },
+              {
+                "kind": "binned_response",
+                "feature": "r2",
+                "centers": [
+                  102010.56906008926,
+                  122142.7544726592,
+                  128975.94018312712,
+                  134333.309158668,
+                  142572.55012211416
+                ],
+                "log_response": [
+                  -0.008652699276060332,
+                  -0.011156533121299947,
+                  -0.019881868588715434,
+                  0.003992081149856153,
+                  0.0481194463711643
+                ],
+                "global_center": 10763.430844883993,
+                "bin_rows": [
+                  {
+                    "bin": 0,
+                    "low": 794.7260927052007,
+                    "high": 116429.46713751732,
+                    "feature_center": 102010.56906008926,
+                    "events": 720,
+                    "signal_center": 10670.699879739108,
+                    "response": 0.9913846275893563
+                  },
+                  {
+                    "bin": 1,
+                    "low": 116429.46713751732,
+                    "high": 126022.26732825018,
+                    "feature_center": 122142.7544726592,
+                    "events": 720,
+                    "signal_center": 10644.015640619044,
+                    "response": 0.9889054701994291
+                  },
+                  {
+                    "bin": 2,
+                    "low": 126022.26732825018,
+                    "high": 131548.4106660961,
+                    "feature_center": 128975.94018312712,
+                    "events": 720,
+                    "signal_center": 10551.547029905496,
+                    "response": 0.9803144723989927
+                  },
+                  {
+                    "bin": 3,
+                    "low": 131548.4106660961,
+                    "high": 137713.5500049751,
+                    "feature_center": 134333.309158668,
+                    "events": 720,
+                    "signal_center": 10806.48521535929,
+                    "response": 1.0040000601198418
+                  },
+                  {
+                    "bin": 4,
+                    "low": 137713.5500049751,
+                    "high": 211200.55667431746,
+                    "feature_center": 142572.55012211416,
+                    "events": 720,
+                    "signal_center": 11294.024742772745,
+                    "response": 1.0492959824367665
+                  }
+                ]
+              }
+            ],
+            "s2_models": [
+              {
+                "kind": "linear_log_response",
+                "feature": "dt_us",
+                "reference": 416.904,
+                "slope": -0.0008242003542316969,
+                "unconstrained_slope": -0.0008242003542316969,
+                "implied_lifetime_us": 1213.2972218049822,
+                "response_clip": [
+                  0.5,
+                  2.0
+                ],
+                "bin_rows": [
+                  {
+                    "bin": 0,
+                    "low": 10.362,
+                    "high": 290.9944,
+                    "feature_center": 214.621,
+                    "events": 720,
+                    "signal_center": 520580.9215
+                  },
+                  {
+                    "bin": 1,
+                    "low": 290.9944,
+                    "high": 379.3692,
+                    "feature_center": 338.202,
+                    "events": 720,
+                    "signal_center": 469227.625
+                  },
+                  {
+                    "bin": 2,
+                    "low": 379.3692,
+                    "high": 455.6960000000001,
+                    "feature_center": 416.904,
+                    "events": 720,
+                    "signal_center": 430597.781
+                  },
+                  {
+                    "bin": 3,
+                    "low": 455.6960000000001,
+                    "high": 552.2184,
+                    "feature_center": 499.341,
+                    "events": 720,
+                    "signal_center": 406541.25
+                  },
+                  {
+                    "bin": 4,
+                    "low": 552.2184,
+                    "high": 842.3,
+                    "feature_center": 636.8330000000001,
+                    "events": 720,
+                    "signal_center": 368815.0
+                  }
+                ]
+              },
+              {
+                "kind": "binned_response",
+                "feature": "r2",
+                "centers": [
+                  102010.56906008926,
+                  122142.7544726592,
+                  128975.94018312712,
+                  134333.309158668,
+                  142572.55012211416
+                ],
+                "log_response": [
+                  0.09995579707759725,
+                  0.031133466054434643,
+                  -0.009187764844876814,
+                  -0.028626384852194944,
+                  -0.07488870052674072
+                ],
+                "global_center": 434645.98877067416,
+                "bin_rows": [
+                  {
+                    "bin": 0,
+                    "low": 794.7260927052007,
+                    "high": 116429.46713751732,
+                    "feature_center": 102010.56906008926,
+                    "events": 720,
+                    "signal_center": 480336.8736847573,
+                    "response": 1.105122067370994
+                  },
+                  {
+                    "bin": 1,
+                    "low": 116429.46713751732,
+                    "high": 126022.26732825018,
+                    "feature_center": 122142.7544726592,
+                    "events": 720,
+                    "signal_center": 448390.87770720903,
+                    "response": 1.0316231813743642
+                  },
+                  {
+                    "bin": 2,
+                    "low": 126022.26732825018,
+                    "high": 131548.4106660961,
+                    "feature_center": 128975.94018312712,
+                    "events": 720,
+                    "signal_center": 430670.85290525196,
+                    "response": 0.9908543136986833
+                  },
+                  {
+                    "bin": 3,
+                    "low": 131548.4106660961,
+                    "high": 137713.5500049751,
+                    "feature_center": 134333.309158668,
+                    "events": 720,
+                    "signal_center": 422380.04781421303,
+                    "response": 0.9717794681801772
+                  },
+                  {
+                    "bin": 4,
+                    "low": 137713.5500049751,
+                    "high": 211200.55667431746,
+                    "feature_center": 142572.55012211416,
+                    "events": 720,
+                    "signal_center": 403284.8678364223,
+                    "response": 0.9278467494363591
+                  }
+                ]
+              }
+            ]
+          },
+          "4": {
+            "alpha": 0.45000000000000007,
+            "train_energy_scale": 1.00422004301622,
+            "s1_center": 10620.303966872418,
+            "s2_center": 433297.1251275182,
+            "s1_models": [
+              {
+                "kind": "binned_response",
+                "feature": "dt_us",
+                "centers": [
+                  217.543,
+                  341.43100000000004,
+                  419.34000000000003,
+                  502.76599999999996,
+                  635.4259999999999
+                ],
+                "log_response": [
+                  -0.1260239394541587,
+                  -0.03780300319457364,
+                  0.0002047390447876956,
+                  0.06535080296581712,
+                  0.21600701358582886
+                ],
+                "global_center": 10716.448250000001,
+                "bin_rows": [
+                  {
+                    "bin": 0,
+                    "low": 10.112,
+                    "high": 293.7548,
+                    "feature_center": 217.543,
+                    "events": 720,
+                    "signal_center": 9447.55371,
+                    "response": 0.8815937416578294
+                  },
+                  {
+                    "bin": 1,
+                    "low": 293.7548,
+                    "high": 381.98,
+                    "feature_center": 341.43100000000004,
+                    "events": 720,
+                    "signal_center": 10318.896,
+                    "response": 0.9629026109466818
+                  },
+                  {
+                    "bin": 2,
+                    "low": 381.98,
+                    "high": 459.46320000000003,
+                    "feature_center": 419.34000000000003,
+                    "events": 720,
+                    "signal_center": 10718.64255,
+                    "response": 1.0002047600052564
+                  },
+                  {
+                    "bin": 3,
+                    "low": 459.46320000000003,
+                    "high": 554.6780000000001,
+                    "feature_center": 502.76599999999996,
+                    "events": 720,
+                    "signal_center": 11440.167,
+                    "response": 1.0675334526063707
+                  },
+                  {
+                    "bin": 4,
+                    "low": 554.6780000000001,
+                    "high": 842.3,
+                    "feature_center": 635.4259999999999,
+                    "events": 720,
+                    "signal_center": 13300.3027,
+                    "response": 1.2411110836092545
+                  }
+                ]
+              },
+              {
+                "kind": "binned_response",
+                "feature": "r2",
+                "centers": [
+                  101824.614507958,
+                  121916.68572048206,
+                  129010.41510593383,
+                  134352.56677217537,
+                  142546.88168878917
+                ],
+                "log_response": [
+                  0.01964037710519657,
+                  -0.010468047715148478,
+                  -0.009262736599080149,
+                  -0.003970398530446034,
+                  0.04074668899754524
+                ],
+                "global_center": 10623.483702582114,
+                "bin_rows": [
+                  {
+                    "bin": 0,
+                    "low": 794.7260927052007,
+                    "high": 115708.70826406895,
+                    "feature_center": 101824.614507958,
+                    "events": 720,
+                    "signal_center": 10834.19538375011,
+                    "response": 1.0198345182302846
+                  },
+                  {
+                    "bin": 1,
+                    "low": 115708.70826406895,
+                    "high": 125851.02098920761,
+                    "feature_center": 121916.68572048206,
+                    "events": 720,
+                    "signal_center": 10512.856603367129,
+                    "response": 0.9895865516141286
+                  },
+                  {
+                    "bin": 2,
+                    "low": 125851.02098920761,
+                    "high": 131693.38089211026,
+                    "feature_center": 129010.41510593383,
+                    "events": 720,
+                    "signal_center": 10525.535505768836,
+                    "response": 0.9907800303972348
+                  },
+                  {
+                    "bin": 3,
+                    "low": 131693.38089211026,
+                    "high": 137781.60478340473,
+                    "feature_center": 134352.56677217537,
+                    "events": 720,
+                    "signal_center": 10581.387862432213,
+                    "response": 0.9960374730805424
+                  },
+                  {
+                    "bin": 4,
+                    "low": 137781.60478340473,
+                    "high": 209608.1113996984,
+                    "feature_center": 142546.88168878917,
+                    "events": 720,
+                    "signal_center": 11065.295547615216,
+                    "response": 1.0415882263673748
+                  }
+                ]
+              }
+            ],
+            "s2_models": [
+              {
+                "kind": "linear_log_response",
+                "feature": "dt_us",
+                "reference": 419.34000000000003,
+                "slope": -0.0008072521827375069,
+                "unconstrained_slope": -0.0008072521827375069,
+                "implied_lifetime_us": 1238.7702645892612,
+                "response_clip": [
+                  0.5,
+                  2.0
+                ],
+                "bin_rows": [
+                  {
+                    "bin": 0,
+                    "low": 10.112,
+                    "high": 293.7548,
+                    "feature_center": 217.543,
+                    "events": 720,
+                    "signal_center": 519561.46849999996
+                  },
+                  {
+                    "bin": 1,
+                    "low": 293.7548,
+                    "high": 381.98,
+                    "feature_center": 341.43100000000004,
+                    "events": 720,
+                    "signal_center": 459167.797
+                  },
+                  {
+                    "bin": 2,
+                    "low": 381.98,
+                    "high": 459.46320000000003,
+                    "feature_center": 419.34000000000003,
+                    "events": 720,
+                    "signal_center": 428366.906
+                  },
+                  {
+                    "bin": 3,
+                    "low": 459.46320000000003,
+                    "high": 554.6780000000001,
+                    "feature_center": 502.76599999999996,
+                    "events": 720,
+                    "signal_center": 406822.0
+                  },
+                  {
+                    "bin": 4,
+                    "low": 554.6780000000001,
+                    "high": 842.3,
+                    "feature_center": 635.4259999999999,
+                    "events": 720,
+                    "signal_center": 369212.78099999996
+                  }
+                ]
+              },
+              {
+                "kind": "binned_response",
+                "feature": "r2",
+                "centers": [
+                  101824.614507958,
+                  121916.68572048206,
+                  129010.41510593383,
+                  134352.56677217537,
+                  142546.88168878917
+                ],
+                "log_response": [
+                  0.11106776541001738,
+                  0.031014950408418736,
+                  -0.003912087915601216,
+                  -0.028336597728348636,
+                  -0.06975563651863147
+                ],
+                "global_center": 432495.8718241161,
+                "bin_rows": [
+                  {
+                    "bin": 0,
+                    "low": 794.7260927052007,
+                    "high": 115708.70826406895,
+                    "feature_center": 101824.614507958,
+                    "events": 720,
+                    "signal_center": 483301.43442204,
+                    "response": 1.1174706301441535
+                  },
+                  {
+                    "bin": 1,
+                    "low": 115708.70826406895,
+                    "high": 125851.02098920761,
+                    "feature_center": 121916.68572048206,
+                    "events": 720,
+                    "signal_center": 446119.89190207,
+                    "response": 1.0315009251313605
+                  },
+                  {
+                    "bin": 2,
+                    "low": 125851.02098920761,
+                    "high": 131693.38089211026,
+                    "feature_center": 129010.41510593383,
+                    "events": 720,
+                    "signal_center": 430807.2151906705,
+                    "response": 0.9960955543313664
+                  },
+                  {
+                    "bin": 3,
+                    "low": 131693.38089211026,
+                    "high": 137781.60478340473,
+                    "feature_center": 134352.56677217537,
+                    "events": 720,
+                    "signal_center": 420412.42076691194,
+                    "response": 0.9720611181645725
+                  },
+                  {
+                    "bin": 4,
+                    "low": 137781.60478340473,
+                    "high": 209608.1113996984,
+                    "feature_center": 142546.88168878917,
+                    "events": 720,
+                    "signal_center": 403355.03122140607,
+                    "response": 0.932621690746309
+                  }
+                ]
+              }
+            ]
+          },
+          "oof_summary": {
+            "scheme": "event_random5",
+            "candidate": "A4_both",
+            "label": "S1(dt,r2) + S2B(lifetime,r2)",
+            "correction_only_retention": 1.0,
+            "mean_alpha": 0.4800000000000001,
+            "std_alpha": 0.04472135954999577,
+            "events_total": 4500,
+            "events_finite": 4500,
+            "finite_fraction": 1.0,
+            "median": 0.9997418314874542,
+            "r68": 0.06748038209524537,
+            "r90": 0.1334014012882797,
+            "tail_beyond_2r68": 0.09622222222222222,
+            "outside_20pct": 0.025555555555555557,
+            "low_tail_20pct": 0.0077777777777777776,
+            "high_tail_20pct": 0.017777777777777778
+          }
+        }
+      }
+    }
+  },
+  "limitations": [
+    "The input filename indicates an unknown E>2 MeV preselection, so the sample membership may already be sculpted.",
+    "Only one run and 4500 externally distributed events are available.",
+    "Candidate comparison is exploratory; a later independent run is required after selecting and freezing one pipeline.",
+    "Event-level folds do not test generalization to unseen acquisition files."
+  ]
+}

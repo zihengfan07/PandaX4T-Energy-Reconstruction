@@ -1,0 +1,386 @@
+[
+  {
+    "rank": 1,
+    "feature": "qS2channelStdevTo1_max",
+    "importance": 0.23153451737611871,
+    "normalized_importance": 1.0
+  },
+  {
+    "rank": 2,
+    "feature": "xS2T_max",
+    "importance": 0.22413806284683585,
+    "normalized_importance": 0.9680546355977342
+  },
+  {
+    "rank": 3,
+    "feature": "yS2B_max",
+    "importance": 0.20608931007423206,
+    "normalized_importance": 0.8901018837698748
+  },
+  {
+    "rank": 4,
+    "feature": "qS1channelStdevTo1_max",
+    "importance": 0.19535977087009157,
+    "normalized_importance": 0.8437608918273611
+  },
+  {
+    "rank": 5,
+    "feature": "qS2channelStdev_max",
+    "importance": 0.184281418239437,
+    "normalized_importance": 0.7959133710507582
+  },
+  {
+    "rank": 6,
+    "feature": "yS2Tcor_max",
+    "importance": 0.18368909308447362,
+    "normalized_importance": 0.7933551125168863
+  },
+  {
+    "rank": 7,
+    "feature": "r2_bottom",
+    "importance": 0.1735589796272475,
+    "normalized_importance": 0.7496030466390796
+  },
+  {
+    "rank": 8,
+    "feature": "xS2Bcor_max",
+    "importance": 0.16687331640943986,
+    "normalized_importance": 0.7207275973385892
+  },
+  {
+    "rank": 9,
+    "feature": "yS2T_max",
+    "importance": 0.1520350689510645,
+    "normalized_importance": 0.6566410515115096
+  },
+  {
+    "rank": 10,
+    "feature": "qS2hitStdev_max",
+    "importance": 0.11886247387466649,
+    "normalized_importance": 0.5133682667348431
+  },
+  {
+    "rank": 11,
+    "feature": "qS2hitStdevTo1_max",
+    "importance": 0.11725726497933518,
+    "normalized_importance": 0.5064353527420509
+  },
+  {
+    "rank": 12,
+    "feature": "wS2CDF_max",
+    "importance": 0.11652162701854002,
+    "normalized_importance": 0.5032581247022241
+  },
+  {
+    "rank": 13,
+    "feature": "rmsCogS1T_max",
+    "importance": 0.11570651388351638,
+    "normalized_importance": 0.4997376425544175
+  },
+  {
+    "rank": 14,
+    "feature": "xS2max_desImageMCPAF_firstS2",
+    "importance": 0.1131875257052761,
+    "normalized_importance": 0.48885810629007603
+  },
+  {
+    "rank": 15,
+    "feature": "xS2max_desImageMCPAF_maxS2",
+    "importance": 0.11318752570523527,
+    "normalized_importance": 0.4888581062898997
+  },
+  {
+    "rank": 16,
+    "feature": "qS1hitStdev_max",
+    "importance": 0.11298748008265808,
+    "normalized_importance": 0.4879941071555839
+  },
+  {
+    "rank": 17,
+    "feature": "wS2_max",
+    "importance": 0.11024379302570964,
+    "normalized_importance": 0.47614409408607933
+  },
+  {
+    "rank": 18,
+    "feature": "qS1channelStdev_max",
+    "importance": 0.10915783034148155,
+    "normalized_importance": 0.4714538099049782
+  },
+  {
+    "rank": 19,
+    "feature": "qS1hitStdevTo1_max",
+    "importance": 0.10526315660398453,
+    "normalized_importance": 0.4546326733347869
+  },
+  {
+    "rank": 20,
+    "feature": "yS2max_desImageMCPAF_firstS2",
+    "importance": 0.08949565301344659,
+    "normalized_importance": 0.38653266056250446
+  },
+  {
+    "rank": 21,
+    "feature": "yS2max_desImageMCPAF_maxS2",
+    "importance": 0.08949565300958424,
+    "normalized_importance": 0.38653266054582297
+  },
+  {
+    "rank": 22,
+    "feature": "hS2_max",
+    "importance": 0.08852906836560787,
+    "normalized_importance": 0.38235797136802663
+  },
+  {
+    "rank": 23,
+    "feature": "nPMTS1_max",
+    "importance": 0.08826335443223417,
+    "normalized_importance": 0.38121035011317045
+  },
+  {
+    "rank": 24,
+    "feature": "nSignalBetweenS1S2max",
+    "importance": 0.07788523299313613,
+    "normalized_importance": 0.33638713517006463
+  },
+  {
+    "rank": 25,
+    "feature": "nSignalBeforeS1max",
+    "importance": 0.07528391781686535,
+    "normalized_importance": 0.3251520277409419
+  },
+  {
+    "rank": 26,
+    "feature": "duration",
+    "importance": 0.07327418274513184,
+    "normalized_importance": 0.31647196096511526
+  },
+  {
+    "rank": 27,
+    "feature": "xS2Tcor_max",
+    "importance": 0.07295358909328838,
+    "normalized_importance": 0.3150873136327148
+  },
+  {
+    "rank": 28,
+    "feature": "qS2maxPreEvent",
+    "importance": 0.07158237774131089,
+    "normalized_importance": 0.30916503747485796
+  },
+  {
+    "rank": 29,
+    "feature": "nS2",
+    "importance": 0.07102354106256079,
+    "normalized_importance": 0.3067514160196937
+  },
+  {
+    "rank": 30,
+    "feature": "nSignalAfterS2max",
+    "importance": 0.06997419552695915,
+    "normalized_importance": 0.30221928168614626
+  },
+  {
+    "rank": 31,
+    "feature": "ratioqS2PrePeak_max",
+    "importance": 0.06835025380845257,
+    "normalized_importance": 0.2952054604343087
+  },
+  {
+    "rank": 32,
+    "feature": "wS2FWHM_max",
+    "importance": 0.06053907291021643,
+    "normalized_importance": 0.26146888851079203
+  },
+  {
+    "rank": 33,
+    "feature": "xS2B_max",
+    "importance": 0.06010829204142463,
+    "normalized_importance": 0.2596083414369749
+  },
+  {
+    "rank": 34,
+    "feature": "tDiffBottomTopS2_max",
+    "importance": 0.05978493213251001,
+    "normalized_importance": 0.25821174661137775
+  },
+  {
+    "rank": 35,
+    "feature": "r2_bottom_cor",
+    "importance": 0.058371488268619126,
+    "normalized_importance": 0.25210706779325237
+  },
+  {
+    "rank": 36,
+    "feature": "qElseAfterS2max",
+    "importance": 0.0564617162260017,
+    "normalized_importance": 0.2438587423847558
+  },
+  {
+    "rank": 37,
+    "feature": "r2_mcpaf",
+    "importance": 0.05540442651965166,
+    "normalized_importance": 0.23929229709473232
+  },
+  {
+    "rank": 38,
+    "feature": "dt",
+    "importance": 0.055373796938356944,
+    "normalized_importance": 0.2391600076130523
+  },
+  {
+    "rank": 39,
+    "feature": "nPMTS2_max",
+    "importance": 0.055297583729215574,
+    "normalized_importance": 0.23883084196637008
+  },
+  {
+    "rank": 40,
+    "feature": "r2_raw",
+    "importance": 0.04955338316265804,
+    "normalized_importance": 0.2140215796945754
+  },
+  {
+    "rank": 41,
+    "feature": "wS1_max",
+    "importance": 0.049173560686171555,
+    "normalized_importance": 0.2123811224496218
+  },
+  {
+    "rank": 42,
+    "feature": "yS2Bcor_max",
+    "importance": 0.043900412017355235,
+    "normalized_importance": 0.18960633824649456
+  },
+  {
+    "rank": 43,
+    "feature": "qNearS1max",
+    "importance": 0.03775049316355591,
+    "normalized_importance": 0.16304477445249219
+  },
+  {
+    "rank": 44,
+    "feature": "ratioqS1PrePeak_max",
+    "importance": 0.03620869503129742,
+    "normalized_importance": 0.1563857322080311
+  },
+  {
+    "rank": 45,
+    "feature": "lhfS2max_desImageMCPAF_firstS2",
+    "importance": 0.035276093531464284,
+    "normalized_importance": 0.15235781658490105
+  },
+  {
+    "rank": 46,
+    "feature": "lhfS2max_desImageMCPAF_maxS2",
+    "importance": 0.03527609353132757,
+    "normalized_importance": 0.15235781658431058
+  },
+  {
+    "rank": 47,
+    "feature": "pS2_max",
+    "importance": 0.033155370037789164,
+    "normalized_importance": 0.14319838965491943
+  },
+  {
+    "rank": 48,
+    "feature": "ratioqS1PrePeakSmr_max",
+    "importance": 0.030499543084427087,
+    "normalized_importance": 0.1317278452909109
+  },
+  {
+    "rank": 49,
+    "feature": "r2_cor",
+    "importance": 0.029896496557675525,
+    "normalized_importance": 0.1291232810402513
+  },
+  {
+    "rank": 50,
+    "feature": "tDiffPreEvent",
+    "importance": 0.029569824387734443,
+    "normalized_importance": 0.12771238052466893
+  },
+  {
+    "rank": 51,
+    "feature": "hS1_max",
+    "importance": 0.024450292784169613,
+    "normalized_importance": 0.10560107003160601
+  },
+  {
+    "rank": 52,
+    "feature": "nGoodS1",
+    "importance": 0.0238523289796934,
+    "normalized_importance": 0.10301845811156626
+  },
+  {
+    "rank": 53,
+    "feature": "nPostS1",
+    "importance": 0.02276533163134087,
+    "normalized_importance": 0.09832370520529984
+  },
+  {
+    "rank": 54,
+    "feature": "nS1",
+    "importance": 0.021980542875259988,
+    "normalized_importance": 0.0949341943670259
+  },
+  {
+    "rank": 55,
+    "feature": "qElseBetweenS1S2max",
+    "importance": 0.021579032477702716,
+    "normalized_importance": 0.09320006676433659
+  },
+  {
+    "rank": 56,
+    "feature": "wS1CDF_max",
+    "importance": 0.02066046290847316,
+    "normalized_importance": 0.08923275519611208
+  },
+  {
+    "rank": 57,
+    "feature": "widthTenS2_max",
+    "importance": 0.017725371202629576,
+    "normalized_importance": 0.07655606344791956
+  },
+  {
+    "rank": 58,
+    "feature": "qNearS2max",
+    "importance": 0.015565200108965076,
+    "normalized_importance": 0.06722626192137054
+  },
+  {
+    "rank": 59,
+    "feature": "pS1_max",
+    "importance": 0.015144650752930517,
+    "normalized_importance": 0.06540990485806757
+  },
+  {
+    "rank": 60,
+    "feature": "ratioqS2PrePeakSmr_max",
+    "importance": 0.014962406363065383,
+    "normalized_importance": 0.06462278943385164
+  },
+  {
+    "rank": 61,
+    "feature": "rmsCogS1B_max",
+    "importance": 0.014277665535676718,
+    "normalized_importance": 0.061665386645064296
+  },
+  {
+    "rank": 62,
+    "feature": "tDiffBottomTopS1_max",
+    "importance": 0.01193646839782327,
+    "normalized_importance": 0.05155373174200608
+  },
+  {
+    "rank": 63,
+    "feature": "qElseBeforeS1max",
+    "importance": 0.009910238532206976,
+    "normalized_importance": 0.042802423779035
+  },
+  {
+    "rank": 64,
+    "feature": "ratioTSignal",
+    "importance": 0.007184430479612968,
+    "normalized_importance": 0.031029630316166394
+  }
+]

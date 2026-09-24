@@ -1,0 +1,27 @@
+{
+  "problem_windows": [
+    {
+      "center_kev": 1307.5,
+      "half_width_kev": 5.0,
+      "foundation_fraction": 0.004550379198266522,
+      "v12_fraction": 0.0044884692772016715,
+      "fraction_ratio": 0.9863945578231292
+    },
+    {
+      "center_kev": 2600.0,
+      "half_width_kev": 20.0,
+      "foundation_fraction": 0.00915234999742042,
+      "v12_fraction": 0.009379353041324872,
+      "fraction_ratio": 1.0248027057497182
+    },
+    {
+      "center_kev": 2887.5,
+      "half_width_kev": 5.0,
+      "foundation_fraction": 0.0009492854563277099,
+      "v12_fraction": 0.0008461022545529587,
+      "fraction_ratio": 0.8913043478260868
+    }
+  ],
+  "max_abs_time_block_median_energy_change": 0.0007820973215610927,
+  "max_time_block_near_cap_fraction": 0.0
+}

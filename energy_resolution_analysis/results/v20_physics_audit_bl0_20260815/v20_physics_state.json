@@ -1,0 +1,22 @@
+{
+  "dt_reference_us": 416.416,
+  "dt_scale_us": 157.26999999999995,
+  "dt_fit_range_us": [
+    29.241000000000007,
+    801.0718400000001
+  ],
+  "q2_log_slope_per_us": -0.0008284602077406769,
+  "q2_log_intercept": 13.317937999651896,
+  "electron_lifetime_us": 1207.0585776559326,
+  "q1_polynomial_descending": [
+    19.932733844360236,
+    115.91899111502322,
+    1252.748095669598,
+    10974.833577997226
+  ],
+  "q1_reference_response": 10974.833577997226,
+  "correction_factor_bounds": [
+    0.65,
+    1.35
+  ]
+}

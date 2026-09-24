@@ -1,0 +1,628 @@
+\documentclass[UTF8,11pt,a4paper,oneside,fontset=none]{ctexart}
+
+\usepackage[a4paper,top=1.72cm,bottom=1.72cm,left=1.82cm,right=1.82cm,headheight=15pt]{geometry}
+\usepackage{fontspec}
+\usepackage{amsmath,amssymb,mathtools,bm}
+\usepackage{unicode-math}
+\usepackage{booktabs,tabularx,array}
+\usepackage[table]{xcolor}
+\usepackage{graphicx,float}
+\usepackage{siunitx}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage[most]{tcolorbox}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning}
+
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+\setmonofont{Consolas}
+\setmathfont{Cambria Math}
+\setCJKmainfont[BoldFont=SimHei,ItalicFont=KaiTi]{SimSun}
+\setCJKsansfont[BoldFont={Microsoft YaHei Bold}]{Microsoft YaHei}
+\setCJKmonofont{FangSong}
+
+\definecolor{DeepBlue}{HTML}{17324D}
+\definecolor{PandaTeal}{HTML}{0B7A75}
+\definecolor{WarmGold}{HTML}{C58A19}
+\definecolor{Coral}{HTML}{C95F4A}
+\definecolor{SoftBlue}{HTML}{EEF5F8}
+\definecolor{SoftTeal}{HTML}{ECF7F5}
+\definecolor{SoftGold}{HTML}{FFF7E7}
+\definecolor{SoftRed}{HTML}{FFF0F0}
+\definecolor{SoftGray}{HTML}{F5F7F9}
+\definecolor{MidGray}{HTML}{667085}
+\definecolor{LineGray}{HTML}{D5DEE5}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=DeepBlue,
+  urlcolor=PandaTeal,
+  pdfauthor={范子恒},
+  pdftitle={PandaX-4T run10972 数据结果分析报告}
+}
+
+\ctexset{
+  section={
+    format=\Large\bfseries\color{DeepBlue},
+    number=\arabic{section},
+    beforeskip=0pt,
+    afterskip=0.62em
+  },
+  subsection={format=\large\bfseries\color{PandaTeal}}
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\color{DeepBlue}PandaX-4T run10972}
+\fancyhead[R]{\small\color{MidGray}数据结果分析报告}
+\fancyfoot[C]{\small\color{MidGray}\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\captionsetup{font=small,labelfont=bf,labelsep=quad}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0.15em}
+\setlist[itemize]{leftmargin=1.55em,itemsep=0.20em,topsep=0.20em,parsep=0pt}
+\setlist[enumerate]{leftmargin=1.8em,itemsep=0.22em,topsep=0.20em,parsep=0pt}
+\renewcommand{\arraystretch}{1.16}
+\sisetup{group-separator={,},group-minimum-digits=4}
+
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+
+\newtcolorbox{infobox}[1][]{
+  enhanced,breakable,colback=SoftBlue,colframe=DeepBlue,
+  boxrule=0.7pt,arc=1.7mm,left=1.5mm,right=1.5mm,top=1.0mm,bottom=1.0mm,#1
+}
+\newtcolorbox{resultbox}[1][]{
+  enhanced,breakable,colback=SoftTeal,colframe=PandaTeal,
+  boxrule=0.8pt,arc=1.7mm,left=1.7mm,right=1.7mm,top=1.1mm,bottom=1.1mm,#1
+}
+\newtcolorbox{warningbox}[1][]{
+  enhanced,breakable,colback=SoftGold,colframe=WarmGold,
+  boxrule=0.75pt,arc=1.7mm,left=1.5mm,right=1.5mm,top=1.0mm,bottom=1.0mm,#1
+}
+\newtcolorbox{boundarybox}[1][]{
+  enhanced,breakable,colback=SoftRed,colframe=Coral,
+  boxrule=0.75pt,arc=1.7mm,left=1.5mm,right=1.5mm,top=1.0mm,bottom=1.0mm,#1
+}
+\newtcolorbox{graybox}[1][]{
+  enhanced,breakable,colback=SoftGray,colframe=LineGray,
+  boxrule=0.65pt,arc=1.4mm,left=1.5mm,right=1.5mm,top=1.0mm,bottom=1.0mm,#1
+}
+
+\newcommand{\Rsixtyeight}{R_{68}}
+\newcommand{\Rninty}{R_{90}}
+\newcommand{\OOF}{\mathrm{OOF}}
+\newcommand{\good}{\cellcolor{SoftTeal}}
+\newcommand{\bad}{\cellcolor{SoftRed}}
+
+\begin{document}
+
+% =============================================================================
+% 第 1 页：封面
+% =============================================================================
+\thispagestyle{empty}
+\vspace*{0.68cm}
+\noindent{\color{PandaTeal}\rule{\textwidth}{3.5pt}}
+
+\vspace{0.80cm}
+{\sffamily\bfseries\fontsize{25pt}{32pt}\selectfont\color{DeepBlue}
+PandaX-4T run10972\par
+数据结果分析报告\par}
+
+\vspace{0.28cm}
+{\sffamily\bfseries\fontsize{15.5pt}{21pt}\selectfont\color{PandaTeal}
+事件级五折 OOF 重建结果、稳定性与证据边界\par}
+
+\vspace{0.68cm}
+\begin{tcolorbox}[
+  colback=SoftBlue,colframe=DeepBlue,boxrule=0.9pt,arc=2mm,
+  left=3mm,right=3mm,top=2.5mm,bottom=2.5mm
+]
+\centering
+{\sffamily\bfseries\large 本报告集中回答三个问题}\par
+\vspace{1mm}
+重建后能量分布改善了多少？\par
+这种改善是否在五个独立外折上重复出现？\par
+现有证据能够支持哪些结论，又不能支持哪些结论？
+\end{tcolorbox}
+
+\vspace{0.60cm}
+\begin{center}
+\begin{tabular}{C{4.65cm} C{4.65cm} C{4.65cm}}
+\begin{tcolorbox}[width=4.4cm,colback=white,colframe=LineGray,arc=1.5mm,halign=center]
+{\sffamily\bfseries\fontsize{22pt}{24pt}\selectfont\color{DeepBlue}4500}\par
+\small 事件进入 OOF 评价
+\end{tcolorbox}
+&
+\begin{tcolorbox}[width=4.4cm,colback=white,colframe=LineGray,arc=1.5mm,halign=center]
+{\sffamily\bfseries\fontsize{22pt}{24pt}\selectfont\color{PandaTeal}2}\par
+\small 条独立重建管线
+\end{tcolorbox}
+&
+\begin{tcolorbox}[width=4.4cm,colback=white,colframe=LineGray,arc=1.5mm,halign=center]
+{\sffamily\bfseries\fontsize{22pt}{24pt}\selectfont\color{WarmGold}5}\par
+\small 个事件级外折
+\end{tcolorbox}
+\end{tabular}
+\end{center}
+
+\vspace{0.32cm}
+\begin{boundarybox}[title={与前两册的分工},fonttitle=\bfseries]
+《原始数据报告》说明数据内容，《数据处理方法报告》说明处理步骤。本册不重复变量清单和代码流程，只呈现\textbf{事件级结果、逐折稳定性、统计区间、拟合审计与结论边界}。
+\end{boundarybox}
+
+\vfill
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+\textbf{报告人：}范子恒\\
+\textbf{数据：}run10972
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\raggedleft
+\textbf{日期：}2026 年 7 月 18 日\\
+\textbf{版本：}事件级结果版
+\end{minipage}
+
+\vspace{0.32cm}
+\noindent{\color{PandaTeal}\rule{\textwidth}{1.3pt}}
+\clearpage
+
+% =============================================================================
+% 第 2 页：结果仪表盘
+% =============================================================================
+\section{先看结论：结果仪表盘}
+
+\begin{resultbox}[title={两个核心结果},fonttitle=\bfseries]
+\begin{center}
+\begin{tabular}{C{5.0cm} C{4.2cm} C{4.2cm}}
+\toprule
+ & \(\Rsixtyeight\) & \(\Rninty\)\\
+\midrule
+\textbf{A4 联合通道校正} &
+\(\mathbf{7.842\%\rightarrow6.748\%}\) &
+\(\mathbf{14.723\%\rightarrow13.340\%}\)\\
+\textbf{basic 嵌套优胜方案} &
+\(\mathbf{8.025\%\rightarrow5.874\%}\) &
+\(\mathbf{15.063\%\rightarrow11.899\%}\)\\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{resultbox}
+
+\begin{table}[H]
+\centering
+\small
+\caption{固定随机种子的事件级五折 OOF 汇总。改善量定义为校正后减校正前，负值表示分布缩窄。}
+\begin{tabular}{@{}C{3.7cm} C{2.15cm} C{2.15cm} C{2.25cm} C{2.25cm} C{2.0cm}@{}}
+\toprule
+管线 & 原始值 & 校正值 & 改善量 & 相对缩窄 & 五折结论\\
+\midrule
+A4：\(\Rsixtyeight\) & 7.8422\% & \good 6.7480\% & \good $-1.0941$ pp & \good 13.95\% & 5/5 改善\\
+A4：\(\Rninty\) & 14.7232\% & \good 13.3401\% & \good $-1.3830$ pp & \good 9.39\% & 5/5 改善\\
+\addlinespace
+basic：\(\Rsixtyeight\) & 8.0253\% & \good 5.8738\% & \good $-2.1515$ pp & \good 26.81\% & 5/5 改善\\
+basic：\(\Rninty\) & 15.0635\% & \good 11.8989\% & \good $-3.1646$ pp & \good 21.01\% & 5/5 改善\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{warningbox}[title={两个 raw 基线不能混算},fonttitle=\bfseries]
+两条管线的 raw 数值略有差异，原因是有效事件处理规则、归一化方式与权重定义链并不完全相同。因此，本报告只做同一管线内部的前后比较：
+\[
+\text{A4 对比 A4 的 raw},\qquad
+\text{basic 优胜方案对比 basic 的 raw}.
+\]
+不能用两条校正后曲线的差直接声称某条管线净胜另一条管线。
+\end{warningbox}
+
+\begin{infobox}[title={阶段性判断},fonttitle=\bfseries]
+\begin{itemize}
+  \item 两条管线均同时改善中心宽度 \(\Rsixtyeight\) 与更宽尾部尺度 \(\Rninty\)，不是只把峰中心局部压窄。
+  \item 两条管线在五个外折中均逐折改善两个主指标，结果不是由单一外折驱动。
+  \item A4 结构简单、物理含义清楚；basic 优胜方案数值改善更大，但模型自由度也更高。
+\end{itemize}
+\end{infobox}
+\clearpage
+
+% =============================================================================
+% 第 3 页：指标和协议
+% =============================================================================
+\section{评价口径与事件级 OOF 协议}
+
+\subsection*{2.1 为什么同时报告 \(\Rsixtyeight\) 和 \(\Rninty\)}
+
+对拼接后的全部外折测试事件，以相对能量分位数 \(Q_p\) 定义
+\begin{align}
+\Rsixtyeight
+  &=\frac{Q_{84.135}-Q_{15.865}}{2Q_{50}},\\
+\Rninty
+  &=\frac{Q_{95}-Q_{5}}{2Q_{50}}.
+\end{align}
+\(\Rsixtyeight\) 主要描述分布中央约 68\% 的宽度，\(\Rninty\) 对较远尾部更敏感。二者都不要求能谱服从高斯分布，因此适合作为当前探索阶段的主指标。
+
+改善量及相对缩窄比例分别为
+\begin{align}
+\Delta R &= R_{\mathrm{corrected}}-R_{\mathrm{raw}},\\
+I_R &= \frac{R_{\mathrm{raw}}-R_{\mathrm{corrected}}}{R_{\mathrm{raw}}}\times100\%.
+\end{align}
+这里 \(\Delta R<0\) 表示改善；pp 表示百分点，而不是相对百分比。
+
+\subsection*{2.2 外折测试事件从不参与训练}
+
+\begin{center}
+\begin{tikzpicture}[
+  node distance=9mm,
+  box/.style={draw=DeepBlue,rounded corners=1.5mm,fill=SoftBlue,
+              minimum width=4.15cm,minimum height=1.25cm,align=center,font=\small},
+  arrow/.style={-{Latex[length=2.2mm]},thick,color=PandaTeal}
+]
+\node[box] (split) {固定种子、均衡的\\事件级五折划分};
+\node[box,right=of split] (train) {仅在四折内\\学习响应与权重};
+\node[box,right=of train] (test) {在留出折产生一次\\OOF 能量预测};
+\draw[arrow] (split) -- (train);
+\draw[arrow] (train) -- (test);
+\end{tikzpicture}
+\end{center}
+
+4500 个事件被均衡分到五折，每折 900 个事件。每一轮只用四折训练，在剩余一折上预测；五轮结束后，每个事件恰好得到一次未参与自身训练的 OOF 预测。所有主指标均在 4500 个 OOF 预测拼接后计算。
+
+\begin{graybox}[title={如何理解“稳定”},fonttitle=\bfseries]
+本报告要求三个层次同时成立：
+\begin{enumerate}
+  \item 全部 OOF 事件拼接后的 \(\Rsixtyeight\) 与 \(\Rninty\) 均改善；
+  \item 五个外折中的两个指标均逐折改善；
+  \item 配对事件重采样得到的改善区间不跨越零。
+\end{enumerate}
+这比只展示一张校正后能谱更严格，但仍然只是同一 run 内的事件级证据。
+\end{graybox}
+
+\begin{boundarybox}[title={本协议没有证明什么},fonttitle=\bfseries]
+事件级 OOF 检验不能替代独立 run。它不能单独证明跨运行条件、跨时间段或跨能区泛化；也不能消除上游样本选择对能谱形状的潜在影响。
+\end{boundarybox}
+\clearpage
+
+% =============================================================================
+% 第 4 页：channel 消融
+% =============================================================================
+\section{Channel physics 管线：消融结果}
+
+该管线先分别处理 S1 与底部 S2 的低自由度响应，再以正权重组合相对能量。A0--A4 的作用是逐步回答：单独修正一个通道是否足够，以及两个通道是否必须联合处理。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.82\textwidth]{../channel_physics_outputs/channel_physics_matrix.png}
+  \caption{Channel physics 候选的事件级 OOF 指标。数值越低表示全事件分布越窄。}
+\end{figure}
+
+\begin{table}[H]
+\centering
+\small
+\caption{Channel physics 消融矩阵。A0 是本管线 raw 基线。}
+\begin{tabularx}{\textwidth}{@{}C{1.25cm}Y C{2.25cm} C{2.25cm} C{2.25cm}@{}}
+\toprule
+候选 & 处理内容 & \(\Rsixtyeight\) & \(\Rninty\) & 相对 A0 判断\\
+\midrule
+A0 & 原始 S1 与原始底部 S2 的正权组合 & 7.8422\% & 14.7232\% & 基线\\
+A1 & 只处理底部 S2 的漂移时间响应 & \bad 9.3895\% & \bad 17.0109\% & 两项均变差\\
+A2 & 只处理 S1 的漂移时间与半径响应 & \bad 9.0931\% & \bad 17.3172\% & 两项均变差\\
+A3 & 只处理底部 S2 的漂移时间与半径响应 & \bad 8.5892\% & \bad 15.6796\% & 两项均变差\\
+A4 & 同时处理 S1 与底部 S2 的响应 & \good 6.7480\% & \good 13.3401\% & 两项均改善\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{resultbox}[title={消融实验真正说明了什么？},fonttitle=\bfseries]
+\begin{itemize}
+  \item A1--A3 的负结果表明：只改一个通道会破坏原始 S1--S2 之间已有的互补关系，不能把“单通道响应更平坦”直接等同于“组合能量更窄”。
+  \item A4 同时修正两个通道后才出现稳定增益，说明关键不只是某一个变量，而是\textbf{两条通道响应需要成套处理}。
+  \item 因此，A4 的改进不是从消融矩阵中挑一个偶然最小值，而是由清楚的正负对照支持。
+\end{itemize}
+\end{resultbox}
+
+\begin{warningbox}[title={不要删除负结果},fonttitle=\bfseries]
+A1--A3 虽然没有提高分辨率，却限制了后续解释：下一步不应继续沿着“只加强某一单通道修正”的方向堆叠复杂度，而应检查联合响应中仍残留的二维结构。
+\end{warningbox}
+\clearpage
+
+% =============================================================================
+% 第 5 页：A4 稳定性
+% =============================================================================
+\section{A4：逐折稳定性与条件区间}
+
+\begin{table}[H]
+\centering
+\small
+\caption{A4 五个外折的测试侧结果。所有数值均为百分数，\(\Delta\) 为校正后减校正前。}
+\begin{tabular}{@{}C{1.0cm} C{2.0cm} C{2.0cm} C{1.9cm} C{2.0cm} C{2.0cm} C{1.9cm}@{}}
+\toprule
+折 & raw \(\Rsixtyeight\) & A4 \(\Rsixtyeight\) & \(\Delta\Rsixtyeight\) & raw \(\Rninty\) & A4 \(\Rninty\) & \(\Delta\Rninty\)\\
+\midrule
+0 & 8.030 & \good 6.724 & \good $-1.306$ & 14.730 & \good 13.714 & \good $-1.015$\\
+1 & 7.595 & \good 6.296 & \good $-1.298$ & 14.297 & \good 12.597 & \good $-1.699$\\
+2 & 8.497 & \good 8.049 & \good $-0.448$ & 15.175 & \good 14.778 & \good $-0.397$\\
+3 & 7.334 & \good 6.693 & \good $-0.641$ & 14.632 & \good 12.688 & \good $-1.944$\\
+4 & 7.921 & \good 6.758 & \good $-1.163$ & 14.146 & \good 13.331 & \good $-0.816$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+五折均满足 \(\Delta\Rsixtyeight<0\) 且 \(\Delta\Rninty<0\)。第 2 折的改善最小，但仍保持同方向；这说明总体结果并非由少数特别容易的测试事件主导，同时也提示不同事件子集上的收益并不完全相同。
+
+\begin{resultbox}[title={A4 的配对事件 bootstrap},fonttitle=\bfseries]
+在冻结的 OOF 预测上进行 1000 次配对事件重采样：
+\begin{align*}
+\operatorname{median}(\Delta\Rsixtyeight)
+  &= -1.0991\ \text{pp}, &
+95\%\ \mathrm{CI}&=[-1.3034,-0.8955]\ \text{pp},\\
+\operatorname{median}(\Delta\Rninty)
+  &= -1.4199\ \text{pp}, &
+95\%\ \mathrm{CI}&=[-1.8062,-1.0552]\ \text{pp}.
+\end{align*}
+两个区间都完全位于零以下，支持“改善不是有限事件抽样下的随机符号波动”。
+\end{resultbox}
+
+\subsection*{4.1 响应平坦度与尾部的补充检查}
+
+\begin{table}[H]
+\centering
+\small
+\caption{A4 前后的 OOF 诊断。峰峰变化越小表示对应方向的剩余响应趋势越弱。}
+\begin{tabular}{@{}C{5.8cm} C{3.2cm} C{3.2cm} C{2.2cm}@{}}
+\toprule
+诊断量 & raw & A4 & 变化\\
+\midrule
+漂移时间方向峰峰变化 & 3.973\% & \good 2.379\% & 降低\\
+半径平方方向峰峰变化 & 10.230\% & \good 5.230\% & 约减半\\
+固定 $\pm20\%$ 范围外比例 & 3.733\% & \good 2.556\% & 降低\\
+相对 $2\Rsixtyeight$ 之外比例 & 8.156\% & 9.622\% & 上升\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+最后一行并不与前面矛盾：A4 使 \(\Rsixtyeight\) 本身变小，因而“\(2\Rsixtyeight\)”对应的动态阈值也随之收紧。固定范围尾部减少，而相对收紧后核心宽度定义的尾部比例上升，说明主峰变窄后仍存在非高斯尾部。
+\clearpage
+
+% =============================================================================
+% 第 6 页：basic 方法矩阵
+% =============================================================================
+\section{Basic matrix：方法搜索结果}
+
+basic 管线在外层训练数据内部选择正的 S1--S2 权重与低阶响应形式，再在留出事件上产生 OOF 预测。嵌套优胜方案在五折中均选择 \texttt{dt\_r2\_then\_xy}。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.84\textwidth]{../basic_matrix_outputs/method_matrix.png}
+  \caption{Basic 方法矩阵的事件级 OOF 比较。红色优胜方案由外层训练数据内部的选择规则产生。}
+\end{figure}
+
+\begin{table}[H]
+\centering
+\scriptsize
+\renewcommand{\arraystretch}{1.08}
+\caption{Basic 管线全部候选的 OOF 主指标，按 \(\Rsixtyeight\) 从小到大排列。}
+\begin{tabular}{@{}C{4.25cm} C{2.6cm} C{2.6cm} C{4.25cm}@{}}
+\toprule
+候选 & \(\Rsixtyeight\) & \(\Rninty\) & 结果解释\\
+\midrule
+\texttt{dt\_r2\_then\_xy} & \good 5.8738\% & \good 11.8989\% & 嵌套优胜方案\\
+\texttt{r2\_then\_dt} & 6.2100\% & 12.1892\% & 次优\\
+\texttt{dt\_r2\_joint} & 6.2889\% & 12.6247\% & 改善\\
+\texttt{r2\_quad} & 6.3491\% & 12.4357\% & 改善\\
+\texttt{dt\_then\_r2} & 6.3647\% & 12.4515\% & 改善\\
+\texttt{dt\_then\_xy} & 6.6055\% & 12.9397\% & 改善\\
+\texttt{xy\_quad} & 6.6886\% & 13.2191\% & 改善\\
+\texttt{dt\_quad} & 7.5626\% & 14.3830\% & 小幅改善\\
+raw & 8.0253\% & 15.0635\% & 本管线基线\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{resultbox}[title={basic 优胜方案的全样本 OOF 改善},fonttitle=\bfseries]
+\begin{align*}
+\Rsixtyeight &: 8.0253\%\rightarrow5.8738\%,
+&\Delta\Rsixtyeight&=-2.1515\ \text{pp},
+&I_{68}&=26.81\%,\\
+\Rninty &: 15.0635\%\rightarrow11.8989\%,
+&\Delta\Rninty&=-3.1646\ \text{pp},
+&I_{90}&=21.01\%.
+\end{align*}
+数值收益明显大于 A4，但这种差异不能直接解释为净方法优势，因为两条管线的 raw 定义链并不完全相同。
+\end{resultbox}
+\clearpage
+
+% =============================================================================
+% 第 7 页：basic 稳定性
+% =============================================================================
+\section{Basic 优胜方案：逐折稳定性}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.62\textwidth]{../basic_matrix_outputs/fold_stability.png}
+  \caption{Basic 候选在五个事件级外折上的 \(\Rsixtyeight\)。该图用于检查改进是否集中在个别外折。}
+\end{figure}
+
+\begin{table}[H]
+\centering
+\scriptsize
+\renewcommand{\arraystretch}{1.10}
+\caption{Basic raw 与嵌套优胜方案的逐折结果。所有外折均选择 \texttt{dt\_r2\_then\_xy}。}
+\begin{tabular}{@{}C{0.8cm} C{1.7cm} C{1.7cm} C{1.7cm} C{1.7cm} C{1.7cm} C{1.7cm} C{1.7cm}@{}}
+\toprule
+折 & 选择的 $\alpha$ & raw \(\Rsixtyeight\) & 优胜 \(\Rsixtyeight\) & \(\Delta\Rsixtyeight\) & raw \(\Rninty\) & 优胜 \(\Rninty\) & \(\Delta\Rninty\)\\
+\midrule
+0 & 0.652 & 8.312 & \good 6.275 & \good $-2.037$ & 15.119 & \good 11.556 & \good $-3.564$\\
+1 & 0.425 & 7.672 & \good 5.390 & \good $-2.282$ & 14.607 & \good 11.333 & \good $-3.274$\\
+2 & 0.652 & 8.541 & \good 6.528 & \good $-2.013$ & 15.177 & \good 12.289 & \good $-2.887$\\
+3 & 0.425 & 7.730 & \good 5.889 & \good $-1.840$ & 14.683 & \good 11.803 & \good $-2.880$\\
+4 & 0.425 & 7.691 & \good 5.502 & \good $-2.188$ & 14.795 & \good 11.407 & \good $-3.388$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{resultbox}[title={Basic 优胜方案的配对事件 bootstrap},fonttitle=\bfseries]
+\begin{align*}
+\operatorname{median}(\Delta\Rsixtyeight)
+  &= -2.1477\ \text{pp}, &
+95\%\ \mathrm{CI}&=[-2.4558,-1.8803]\ \text{pp},\\
+\operatorname{median}(\Delta\Rninty)
+  &= -3.1732\ \text{pp}, &
+95\%\ \mathrm{CI}&=[-3.6608,-2.6607]\ \text{pp}.
+\end{align*}
+两个区间均不跨零，且每折改善方向一致。就当前 run 内的事件级检验而言，数值改善具有较强的一致性。
+\end{resultbox}
+
+\begin{warningbox}[title={方法选择仍然需要独立验证},fonttitle=\bfseries]
+五折都选择同一种响应形式，说明内层选择相当一致；但候选族是在当前研究阶段建立并检查的。要把它升级为正式默认方案，仍需先冻结全部规则，再在独立 run 上一次性验证。
+\end{warningbox}
+\clearpage
+
+% =============================================================================
+% 第 8 页：bootstrap 和 GOF
+% =============================================================================
+\section{统计稳定性与峰形拟合审计}
+
+\subsection*{7.1 两条管线的事件重采样结果}
+
+\begin{table}[H]
+\centering
+\small
+\caption{冻结 OOF 预测上的配对事件 bootstrap。区间全部位于零以下。}
+\begin{tabular}{@{}C{3.1cm} C{2.2cm} C{2.6cm} C{3.0cm} C{3.0cm}@{}}
+\toprule
+管线 & 指标 & 中位改善量 & 95\% 区间下限 & 95\% 区间上限\\
+\midrule
+A4 & \(\Delta\Rsixtyeight\) & $-1.0991$ pp & $-1.3034$ pp & $-0.8955$ pp\\
+A4 & \(\Delta\Rninty\) & $-1.4199$ pp & $-1.8062$ pp & $-1.0552$ pp\\
+basic & \(\Delta\Rsixtyeight\) & $-2.1477$ pp & $-2.4558$ pp & $-1.8803$ pp\\
+basic & \(\Delta\Rninty\) & $-3.1732$ pp & $-3.6608$ pp & $-2.6607$ pp\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{warningbox}[title={bootstrap 区间的准确含义},fonttitle=\bfseries]
+每次重采样都对同一批 raw 与 corrected 事件使用完全相同的抽样索引，因此保留了逐事件配对关系。但这里没有在每次复制中重新训练响应图、权重和方法选择；区间是\textbf{冻结 OOF 预测的条件区间}。此外，事件级 bootstrap 假设事件可以交换，不能表达 run 间系统变化。
+\end{warningbox}
+
+\subsection*{7.2 为什么高斯 core 不是正式结果}
+
+作为补充诊断，在固定相对能量窗口内尝试“高斯信号加二阶 Bernstein 背景”，并用 200 次参数 bootstrap 检验拟合优度。
+
+\begin{table}[H]
+\centering
+\small
+\caption{校正后 OOF 能谱的峰形拟合审计。}
+\begin{tabular}{@{}C{3.5cm} C{3.4cm} C{3.0cm} C{4.2cm}@{}}
+\toprule
+管线 & core \(\sigma/\mu\) & 拟合优度 $p$ 值 & 判定\\
+\midrule
+A4 & 3.6543\% & 0.004975 & \bad 拒绝该峰形模型\\
+basic 优胜方案 & 4.1548\% & 0.0199005 & \bad 拒绝该峰形模型\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+两项 $p$ 值都小于 0.05，说明该参数化模型不能充分描述真实 OOF 分布。于是
+\[
+\boxed{\text{正式结论继续采用全事件非参数 }\Rsixtyeight\text{ 与 }\Rninty}
+\]
+而不能把 3.6543\% 或 4.1548\% 当作已经成立的能量分辨率。basic 的 \(\Rsixtyeight\) 更小但拟合 core 更大，也恰好说明：当峰形含有背景和非高斯结构时，不同宽度定义不能互相替代。
+
+\begin{infobox}[title={这项“拒绝”是有价值的结果},fonttitle=\bfseries]
+拟合失败并不否定 OOF 分布确实缩窄；它只否定“用当前高斯加背景形式概括全部峰形”的假设。保留这一负结果可以避免报告一个看似更漂亮、却没有通过拟合优度检验的数字。
+\end{infobox}
+\clearpage
+
+% =============================================================================
+% 第 9 页：综合解释
+% =============================================================================
+\section{综合解释：我们已经知道什么}
+
+\begin{resultbox}[title={证据层级一：直接观察成立},fonttitle=\bfseries]
+\begin{itemize}
+  \item A4 将 \(\Rsixtyeight\) 从 7.8422\% 降到 6.7480\%，将 \(\Rninty\) 从 14.7232\% 降到 13.3401\%。
+  \item basic 优胜方案将自身 \(\Rsixtyeight\) 从 8.0253\% 降到 5.8738\%，将 \(\Rninty\) 从 15.0635\% 降到 11.8989\%。
+  \item A4 的消融实验显示，单独处理任一通道均不足，联合处理才产生增益。
+\end{itemize}
+\end{resultbox}
+
+\begin{infobox}[title={证据层级二：同一 run 内稳定},fonttitle=\bfseries]
+\begin{itemize}
+  \item 两条管线的五个外折均同时改善 \(\Rsixtyeight\) 和 \(\Rninty\)。
+  \item basic 的五个外折均选择 \texttt{dt\_r2\_then\_xy}，方法选择没有在外折之间来回跳变。
+  \item 四个 bootstrap 改善区间都不跨零，支持改善方向的事件级稳定性。
+\end{itemize}
+\end{infobox}
+
+\begin{boundarybox}[title={证据层级三：尚未证明跨 run 泛化},fonttitle=\bfseries]
+当前结果仍来自单一 run 的 4500 个上游标量事件。事件级 OOF 能阻止同一事件参与自身训练，却不能模拟新的运行条件。输入名称还暗示样本可能经历了上游单散射与能量阈值选择，因此现有数字只描述给定样本，不能直接外推到全部触发事件或其他能区。
+\end{boundarybox}
+
+\subsection*{8.1 两条管线应怎样定位}
+
+\begin{table}[H]
+\centering
+\small
+\caption{当前阶段的功能定位，而不是未经统一基线的胜负排名。}
+\begin{tabularx}{\textwidth}{@{}C{3.0cm}Y Y@{}}
+\toprule
+管线 & 优点 & 当前限制\\
+\midrule
+A4 & 通道级物理结构清楚；消融关系明确；自由度较低；便于解释剩余响应 & 数值改善较温和；仍存在非高斯尾部与位置残余\\
+basic 优胜方案 & 当前事件级 OOF 的 \(\Rsixtyeight\) 与 \(\Rninty\) 最低；五折选择一致 & 响应链更复杂；尚未在统一 raw 定义和独立 run 上确认净优势\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{warningbox}[title={最稳妥的阶段性表述},fonttitle=\bfseries]
+可以说“两个独立构造的低自由度重建方案都在 run10972 的事件级 OOF 检验中稳定缩窄了全事件分布”；暂时不能说“已经获得最终探测器能量分辨率”，也不能说“basic 已被证明普遍优于 A4”。
+\end{warningbox}
+\clearpage
+
+% =============================================================================
+% 第 10 页：结论与下一步
+% =============================================================================
+\section{最终结论与下一步工作}
+
+\begin{resultbox}[title={本阶段已经做到的事情},fonttitle=\bfseries]
+\begin{enumerate}
+  \item 从基础 S1、底部 S2、漂移时间和横向位置出发，建立了两条相互独立的相对能量重建管线。
+  \item 用固定种子、均衡的事件级五折 OOF 协议评价全部 4500 个事件，避免测试事件参与自身模型训练。
+  \item A4 在全样本上使 \(\Rsixtyeight\) 相对缩窄 13.95\%、\(\Rninty\) 相对缩窄 9.39\%；basic 优胜方案对应缩窄 26.81\% 与 21.01\%。
+  \item 两条管线均在五个外折上逐折改善两个指标，配对事件 bootstrap 区间也全部位于零以下。
+  \item 峰形拟合优度审计拒绝了当前高斯 core 模型，因此主动保留 \(\Rsixtyeight\) 和 \(\Rninty\) 作为正式结果，没有把未通过检验的 core 数值包装成最终分辨率。
+\end{enumerate}
+\end{resultbox}
+
+\subsection*{9.1 推荐的下一步顺序}
+
+\begin{enumerate}
+  \item \textbf{冻结当前方案。} 固定 A4 与 \texttt{dt\_r2\_then\_xy} 的变量、响应形式、权重搜索范围和评价指标，避免看到新数据后继续调规则。
+  \item \textbf{建立统一 raw 基线。} 让两条管线共享相同的有效事件规则、归一化和初始权重定义，再做严格的净增益比较。
+  \item \textbf{验证独立 run。} 在新的运行数据上只执行一次冻结流程，重点检查 \(\Rsixtyeight\)、\(\Rninty\)、逐折稳定性与尾部比例是否重复改善。
+  \item \textbf{补全上游选择信息。} 明确能量阈值的定义、效率以及目标峰信息，判断当前样本是否已被选择条件塑形。
+  \item \textbf{升级不确定度。} 在计算资源允许时，对每次重采样完整重训响应与权重，并增加不同随机种子的敏感性检查。
+\end{enumerate}
+
+\subsection*{9.2 可复核的结果入口}
+
+\begin{graybox}
+\small
+\begin{tabularx}{\textwidth}{@{}Y Y@{}}
+Channel 汇总与逐折结果 & \path{../channel_physics_outputs/summary.csv}, \path{../channel_physics_outputs/fold_metrics.csv}\\
+Channel 条件区间与 GOF & \path{../channel_physics_outputs/paired_event_bootstrap_summary.csv}, \path{../channel_physics_outputs/robust_peak_corrected_gof.json}\\
+Basic 汇总与逐折结果 & \path{../basic_matrix_outputs/summary_metrics.csv}, \path{../basic_matrix_outputs/fold_metrics.csv}\\
+Basic 条件区间与 GOF & \path{../basic_matrix_outputs/paired_event_bootstrap_summary.csv}, \path{../basic_matrix_outputs/robust_peak_corrected_gof.json}\\
+\end{tabularx}
+\end{graybox}
+
+\begin{boundarybox}[title={一句话总结},fonttitle=\bfseries]
+run10972 的事件级 OOF 证据表明，A4 与 basic 优胜方案都能稳定缩窄当前样本的中心和宽尾分布；但最终结论仍必须由统一基线和独立 run 的冻结验证来完成。
+\end{boundarybox}
+
+\end{document}

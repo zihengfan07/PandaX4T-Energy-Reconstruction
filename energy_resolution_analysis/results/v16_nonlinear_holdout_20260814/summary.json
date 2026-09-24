@@ -1,0 +1,140 @@
+{
+  "status": "holdout_not_passed_diagnostic_only",
+  "winner": {
+    "model_id": "F02_top_position_ridge_interactions_h3000_c50",
+    "feature_set": "F02_top_position",
+    "features": "dt|wS2CDF_max|xS2T_max|yS2T_max",
+    "feature_count": 4,
+    "family": "ridge_interactions",
+    "hyper": 3000.0,
+    "cap": 0.005,
+    "dev_base_sigma": 0.04237804561569755,
+    "dev_oof_sigma": 0.04195978806199124,
+    "dev_sigma_gain": 0.009869675385676069,
+    "dev_base_r68": 0.06841353944679428,
+    "dev_oof_r68": 0.06838291425220606,
+    "dev_r68_gain": 0.0004476481532142973,
+    "dev_base_r90": 0.13139431589248823,
+    "dev_oof_r90": 0.13153813739264789,
+    "dev_r90_gain": -0.0010945793140497706,
+    "dev_protocol_successes": 12,
+    "dev_center_bias_max": 0.15639461817224865,
+    "background_applied": 0.6240032923504295,
+    "background_ood": 0.0006584700859097691,
+    "background_strong": 0.37484438499922834,
+    "background_near_cap": 0.0,
+    "background_energy_trend": 0.003385616037552798,
+    "background_rank_corr": 0.9999858577267465,
+    "background_spike_growth": 0.9811035525321239,
+    "background_2600_spike_growth": 0.9811035525321239,
+    "background_median_scale_shift": 0.0,
+    "time_ratio_span": 0.00020370780568113034,
+    "time_applied_fraction_span": 0.016166208387200287,
+    "time_supported_blocks": 10,
+    "safety_pass_count": 16,
+    "safe": true
+  },
+  "winner_safety_flags": {
+    "sigma_improves": true,
+    "r68_not_worse": true,
+    "r90_not_worse": true,
+    "fit_protocol_ok": true,
+    "center_stable": true,
+    "background_coverage": true,
+    "background_ood": true,
+    "background_fallback": true,
+    "no_cap_pileup": true,
+    "ranking_preserved": true,
+    "no_global_spike_growth": true,
+    "no_2600_spike_growth": true,
+    "scale_stable": true,
+    "time_stable": true,
+    "time_coverage_stable": true,
+    "time_blocks_supported": true
+  },
+  "untouched_holdout": {
+    "n": 900,
+    "base_sigma": 0.04199252184928828,
+    "candidate_sigma": 0.042501653002196424,
+    "sigma_gain": -0.012124329058764705,
+    "base_r68": 0.06542480619034491,
+    "candidate_r68": 0.06544080744732149,
+    "r68_gain": -0.00024457477076844647,
+    "base_r90": 0.13005254847924436,
+    "candidate_r90": 0.131187505023298,
+    "r90_gain": -0.008726907371867432,
+    "applied_fraction": 0.7866666666666666,
+    "protocol_successes": 12
+  },
+  "holdout_pass": false,
+  "safe_candidates": 8,
+  "total_candidates": 144,
+  "feature_sets": {
+    "F01_v15_corrected_position": [
+      "dt",
+      "wS2CDF_max",
+      "yS2Tcor_max",
+      "xS2Bcor_max"
+    ],
+    "F02_top_position": [
+      "dt",
+      "wS2CDF_max",
+      "xS2T_max",
+      "yS2T_max"
+    ],
+    "F03_both_position_systems": [
+      "dt",
+      "wS2CDF_max",
+      "xS2T_max",
+      "yS2T_max",
+      "yS2Tcor_max",
+      "xS2Bcor_max"
+    ],
+    "F04_position_and_shape": [
+      "dt",
+      "wS2CDF_max",
+      "yS2Tcor_max",
+      "xS2Bcor_max",
+      "wS2FWHM_max",
+      "tDiffBottomTopS2_max"
+    ]
+  },
+  "families": {
+    "ridge_additive": [
+      300.0,
+      1000.0,
+      3000.0
+    ],
+    "ridge_interactions": [
+      300.0,
+      1000.0,
+      3000.0
+    ],
+    "ridge_spline": [
+      300.0,
+      1000.0,
+      3000.0
+    ],
+    "shallow_gbr": [
+      80.0,
+      160.0,
+      320.0
+    ]
+  },
+  "caps": [
+    0.0025,
+    0.005,
+    0.0075
+  ],
+  "background_base_spike": {
+    "ratio": 1.423728813559322,
+    "center": 2697.5,
+    "count": 42
+  },
+  "background_base_2600_spike": {
+    "ratio": 1.423728813559322,
+    "center": 2697.5,
+    "count": 42
+  },
+  "warning": "Do not deploy before cross-run and multi-line blind validation."
+}

@@ -1,0 +1,202 @@
+{
+  "status": "safe_candidate_selected",
+  "winner": {
+    "model_id": "S10_corrected_position_a3000_c75",
+    "feature_set": "S10_corrected_position",
+    "features": "dt|wS2CDF_max|yS2Tcor_max|xS2Bcor_max",
+    "feature_count": 4,
+    "alpha": 3000.0,
+    "cap": 0.0075,
+    "calibration_base_sigma": 0.04178090146749322,
+    "calibration_oof_sigma": 0.041660389341621196,
+    "relative_sigma_improvement": 0.002884383094648779,
+    "calibration_base_r68": 0.06774135758272384,
+    "calibration_oof_r68": 0.0677468961288547,
+    "relative_r68_improvement": -8.176018799299634e-05,
+    "calibration_base_r90": 0.1312197664911172,
+    "calibration_oof_r90": 0.13083147272635196,
+    "relative_r90_improvement": 0.0029591103165963473,
+    "calibration_protocol_successes": 12,
+    "calibration_center_bias_max": 0.1568882453789917,
+    "background_applied": 0.6960440351869952,
+    "background_ood": 0.005247183497093472,
+    "background_strong": 0.29947013735274447,
+    "background_near_cap": 0.0,
+    "background_energy_trend": 0.004635811869174275,
+    "background_rank_corr": 0.9999676699168484,
+    "background_spike_growth": 1.0993788819875776,
+    "background_2600_spike_growth": 0.9995421245421245,
+    "background_median_scale_shift": 0.0,
+    "background_ratio_q01": 0.9934007774300845,
+    "background_ratio_q99": 1.0067218998085532,
+    "time_ratio_span": 0.00022231302991904123,
+    "time_applied_fraction_span": 0.01507018992568121,
+    "time_supported_blocks": 10,
+    "safety_pass_count": 16,
+    "safe": true
+  },
+  "winner_safety_flags": {
+    "sigma_improves": true,
+    "r68_not_worse": true,
+    "r90_not_worse": true,
+    "fit_protocol_ok": true,
+    "center_stable": true,
+    "background_coverage": true,
+    "background_ood": true,
+    "background_fallback": true,
+    "no_cap_pileup": true,
+    "ranking_preserved": true,
+    "no_global_spike_growth": true,
+    "no_2600_spike_growth": true,
+    "scale_stable": true,
+    "time_stable": true,
+    "time_coverage_stable": true,
+    "time_blocks_supported": true
+  },
+  "safe_candidates": 4,
+  "total_candidates": 204,
+  "feature_sets": {
+    "S01_M06_reference": [
+      "dt",
+      "wS2CDF_max"
+    ],
+    "S02_top_xy": [
+      "dt",
+      "wS2CDF_max",
+      "xS2T_max",
+      "yS2T_max"
+    ],
+    "S03_bottom_xy": [
+      "dt",
+      "wS2CDF_max",
+      "xS2B_max",
+      "yS2B_max"
+    ],
+    "S04_top_bottom_xy": [
+      "dt",
+      "wS2CDF_max",
+      "xS2T_max",
+      "yS2T_max",
+      "xS2B_max",
+      "yS2B_max"
+    ],
+    "S05_s2_pattern": [
+      "dt",
+      "wS2CDF_max",
+      "qS2hitStdevTo1_max",
+      "qS2channelStdevTo1_max"
+    ],
+    "S06_s1_pattern": [
+      "dt",
+      "wS2CDF_max",
+      "qS1hitStdevTo1_max",
+      "qS1channelStdevTo1_max"
+    ],
+    "S07_s1_s2_pattern": [
+      "dt",
+      "wS2CDF_max",
+      "qS2hitStdevTo1_max",
+      "qS2channelStdevTo1_max",
+      "qS1hitStdevTo1_max",
+      "qS1channelStdevTo1_max"
+    ],
+    "S08_s2_shape": [
+      "dt",
+      "wS2CDF_max",
+      "wS2FWHM_max",
+      "tDiffBottomTopS2_max"
+    ],
+    "S09_hit_topology": [
+      "dt",
+      "wS2CDF_max",
+      "nPMTS2_max",
+      "rmsCogS1T_max"
+    ],
+    "S10_corrected_position": [
+      "dt",
+      "wS2CDF_max",
+      "yS2Tcor_max",
+      "xS2Bcor_max"
+    ],
+    "S11_historical_core": [
+      "dt",
+      "wS2CDF_max",
+      "xS2T_max",
+      "yS2B_max"
+    ],
+    "S12_core_channel_pattern": [
+      "dt",
+      "wS2CDF_max",
+      "xS2T_max",
+      "yS2B_max",
+      "qS2channelStdevTo1_max",
+      "qS1channelStdevTo1_max"
+    ],
+    "S13_core_s2_shape": [
+      "dt",
+      "wS2CDF_max",
+      "xS2T_max",
+      "yS2B_max",
+      "wS2FWHM_max",
+      "tDiffBottomTopS2_max"
+    ],
+    "S14_core_hit_topology": [
+      "dt",
+      "wS2CDF_max",
+      "xS2T_max",
+      "yS2B_max",
+      "nPMTS2_max",
+      "rmsCogS1T_max"
+    ],
+    "S15_core_hit_pattern": [
+      "dt",
+      "wS2CDF_max",
+      "xS2T_max",
+      "yS2B_max",
+      "qS2hitStdevTo1_max",
+      "qS1hitStdevTo1_max"
+    ],
+    "S16_geometry_s2_pattern": [
+      "dt",
+      "wS2CDF_max",
+      "xS2T_max",
+      "yS2T_max",
+      "xS2B_max",
+      "yS2B_max",
+      "qS2hitStdevTo1_max",
+      "qS2channelStdevTo1_max"
+    ],
+    "S17_geometry_shape": [
+      "dt",
+      "wS2CDF_max",
+      "xS2T_max",
+      "yS2T_max",
+      "xS2B_max",
+      "yS2B_max",
+      "wS2FWHM_max",
+      "tDiffBottomTopS2_max"
+    ]
+  },
+  "alphas": [
+    100.0,
+    300.0,
+    1000.0,
+    3000.0
+  ],
+  "caps": [
+    0.0025,
+    0.005,
+    0.0075
+  ],
+  "background_base_spike": {
+    "ratio": 1.423728813559322,
+    "center": 2697.5,
+    "count": 42
+  },
+  "background_base_2600_spike": {
+    "ratio": 1.423728813559322,
+    "center": 2697.5,
+    "count": 42
+  },
+  "warning": "Single calibration run: require new runs and multiple monoenergetic lines before deployment."
+}

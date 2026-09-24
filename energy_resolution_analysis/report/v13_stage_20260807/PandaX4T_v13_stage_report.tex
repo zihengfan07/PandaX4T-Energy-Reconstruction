@@ -1,0 +1,305 @@
+\documentclass[UTF8,11pt,a4paper]{ctexart}
+\usepackage[a4paper,margin=2.2cm,headheight=15pt]{geometry}
+\usepackage{amsmath,amssymb,booktabs,tabularx,array,graphicx,xcolor,fancyhdr,hyperref,float,caption}
+\graphicspath{{assets/}}
+\definecolor{navy}{HTML}{17365D}
+\definecolor{blue}{HTML}{2455C3}
+\definecolor{red}{HTML}{D62728}
+\definecolor{light}{HTML}{EEF3F8}
+\hypersetup{colorlinks=true,linkcolor=navy,urlcolor=blue}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{PandaX-4T 独立能量重建阶段汇报}
+\rhead{2026-08-07}
+\cfoot{\thepage}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0.35em}
+\captionsetup{font=small,labelfont=bf}
+\newcommand{\keybox}[1]{%
+  \begin{center}\fcolorbox{navy}{light}{\begin{minipage}{0.91\textwidth}#1\end{minipage}}\end{center}}
+
+\begin{document}
+
+\begin{titlepage}
+  \centering
+  \vspace*{2.0cm}
+  {\color{navy}\rule{\textwidth}{1.2pt}}\\[1.0cm]
+  {\Huge\bfseries PandaX-4T 独立能量重建\\[0.35cm]模型问题诊断与改进汇报}\par
+  \vspace{0.8cm}
+  {\Large 从人工造峰问题到 Energy\_cor 锚定模型}\par
+  \vspace{1.0cm}
+  {\color{navy}\rule{\textwidth}{1.2pt}}
+  \vfill
+  \begin{tabular}{rl}
+    汇报人：& 范子恒\\
+    数据：& Run 10972 标定样本与同时期本底样本\\
+    日期：& 2026 年 8 月 7 日
+  \end{tabular}
+  \vfill
+  \keybox{\textbf{本次结论：}旧模型中显著的人工尖峰已经被定位并消除。v13 固定原有 $E_{\mathrm{cor}}$ 能标后，仅筛选出一个改善极小的保守候选；该候选已制作成教师演示包，用于检查流程和逐事件输出，但不作为全能区最优模型。}
+\end{titlepage}
+
+\tableofcontents
+\clearpage
+
+\section{研究目标与评价标准}
+
+项目最初目标是降低能量峰的相对分辨率
+\begin{equation}
+  R=\frac{\sigma}{\mu},
+\end{equation}
+其中 $\mu$ 为峰中心，$\sigma$ 为峰宽。然而，峰变窄并不自动等价于能量重建变好。如果模型把不同真实能量的事件压向同一位置，$\sigma/\mu$ 会变小，但本底中会产生人工峰。
+
+因此，本阶段采用两类并列指标：
+\begin{enumerate}
+  \item \textbf{改善指标：}峰拟合 $\sigma/\mu$、稳健宽度 $R_{68}$ 和尾部宽度 $R_{90}$；
+  \item \textbf{安全指标：}峰位偏差、本底谱形、人工尖峰、修正撞上限、时间稳定性、分布外事件比例以及盲测性能。
+\end{enumerate}
+
+\keybox{只有“分辨率改善”与“谱形不被破坏”同时成立，候选模型才允许导出。}
+
+\section{数据与原始能量定义}
+
+本次使用两份事件级数据：
+\begin{itemize}
+  \item 标定开发样本：\texttt{light\_ana\_run10972\_finalSS\_Egt2MeV\_scalar.txt}，有效事件约 4499；
+  \item 本底验证样本：\texttt{light\_ana\_run10972\_finalSS2\_scalar.txt}，共 97195 个事件。
+\end{itemize}
+
+原始 S1/S2 能量和给定的三次标定公式为
+\begin{align}
+E_{\mathrm{raw}} &= 0.0137\left(\frac{qS1ub\_C}{0.125}+\frac{qS2Bdesub\_C}{10.58}\right),\\
+E_{\mathrm{cor}} &= -1.73706\times10^{-9}E_{\mathrm{raw}}^3
+ +7.98193\times10^{-6}E_{\mathrm{raw}}^2
+ +1.07904E_{\mathrm{raw}}-9.22086.
+\end{align}
+
+需要强调：文件名中的 \texttt{Egt2MeV} 表明该文件是能量筛选后的混合样本，并非所有事件都具有 $2614.5\,\mathrm{keV}$ 的真实标签。这一点直接改变了模型训练问题的定义。
+
+\clearpage
+\section{旧模型为什么会失败}
+
+旧模型使用了
+\texttt{qS1C\_desImageMCPAF\_maxS2} 和
+\texttt{qS2BdesC\_desImageMCPAF\_maxS2} 作为基础能量变量。当这些派生变量出现 \texttt{inf} 时，旧流程用训练中位数填补，导致许多不同事件获得完全相同的基础能量，再经过饱和修正后堆积到固定位置。
+
+在老师提供的本底数据上，旧版曾出现：
+\begin{itemize}
+  \item 约 $77.5\%$ 事件修正接近上限；
+  \item 约 $1308\,\mathrm{keV}$ 和 $2888\,\mathrm{keV}$ 的窄尖峰；
+  \item 在约 $2600\,\mathrm{keV}$ 附近形成与真实信号无关的结构。
+\end{itemize}
+
+这不是普通的拟合误差，而是\textbf{谱形塑造（spectral sculpting）}。因此，旧版很小的表面 $\sigma/\mu$ 不能被视为有效性能。
+
+\section{历史诊断：v12 解决造峰，但改变了基础能标}
+
+v12 取消无效图像变量的中位数填补，并增加 OOD 回退、强修正回退和修正限幅。本底中不再出现旧版的尖峰，且撞上限比例降为 0。
+
+但是，v12 重新优化了 S1/S2 的组合权重，因此它不仅是位置修正，还替换了基础能量估计器。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.98\textwidth]{problem_zoom.png}
+  \caption{历史 v12 内部安全检查。蓝色为 v12 稳健基础能量，红色为 v12 输出；这不是当前 v13 的结果。两条曲线基本重合，说明 v12 的局部修正没有重新产生窄尖峰。}
+\end{figure}
+
+\clearpage
+\section{历史对比：原始公式与 v12}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.98\textwidth]{full_spectrum.png}
+  \caption{历史 v12 对比：同一批本底事件的三种能量。灰色为原始 S1/S2 公式，蓝色为给定 $E_{\mathrm{cor}}$，红色为 v12；红色不是当前 v13。}
+\end{figure}
+
+三种能量在本底样本中的中位数分别约为
+\begin{equation}
+1222.2\,\mathrm{keV},\qquad 1317.6\,\mathrm{keV},\qquad 1427.4\,\mathrm{keV}.
+\end{equation}
+红线相对蓝线发生明显的能量相关移动。因此，v12 虽然解决了人工尖峰，却不能证明这种新能标在其他真实能量处正确。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.73\textwidth]{event_compare.png}
+  \caption{逐事件比较：横轴为给定 $E_{\mathrm{cor}}$，纵轴为 v12。若两种方法等价，事件应沿虚线 $y=x$ 分布。}
+\end{figure}
+
+逐事件图中存在能量相关偏离和分支，说明 v12 不是简单的统一比例修正。没有多条已知能量线时，无法判断这种重新映射是否物理正确。
+
+\clearpage
+\section{v13：以 Energy\_cor 为锚点的改进方案}
+
+根据上述反馈，v13 固定 $E_{\mathrm{cor}}$ 为基础能量，只学习几何相关的乘法残差：
+\begin{equation}
+  E_{\mathrm{v13}}=E_{\mathrm{cor}}\exp[-\delta(\mathbf z)],
+\end{equation}
+其中 $\mathbf z$ 只包含漂移时间、上下阵列位置和半径等几何量。设计约束为
+\begin{equation}
+  |\delta|\lesssim 1\%,\qquad
+  E_{\mathrm{scale}}=1.
+\end{equation}
+
+即 v13 禁止通过统一缩放把整份数据移动到 $2614.5\,\mathrm{keV}$。分布外事件、建议修正过强的事件均自动返回原始 $E_{\mathrm{cor}}$。
+
+模型选择使用按 \texttt{fileNumber} 分组的五折 OOF 验证，并在从未作为标签使用的本底数据上检查：
+\begin{itemize}
+  \item 能谱排序相关系数；
+  \item 5 keV 局部尖峰增长；
+  \item 时间分段中位修正变化；
+  \item OOD、强修正回退和撞上限比例。
+\end{itemize}
+
+\section{v13 搜索结果：保守候选通过，但改善不显著}
+
+共搜索 36 个组合，包括漂移时间、几何位置和几何加脉冲形状三类变量集，以及不同正则强度与修正上限。给定 $E_{\mathrm{cor}}$ 的峰拟合基准为
+\begin{equation}
+  \left(\frac{\sigma}{\mu}\right)_{\mathrm{base}}=4.1781\%.
+\end{equation}
+
+\begin{table}[H]
+\centering
+\caption{代表性 v13 候选结果}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}Xrrrr}
+\toprule
+候选 & $\sigma/\mu$ & 相对改善 & 本底应用率 & 本底 OOD率\\
+\midrule
+geometry-ratio, $\alpha=100$, cap $=0.25\%$ & 4.1717\% & 0.1518\% & 0.791\% & 40.46\%\\
+geometry-ratio, $\alpha=10$, cap $=0.25\%$  & 4.1720\% & 0.1464\% & 0.869\% & 40.46\%\\
+drift-only, $\alpha=1000$, cap $=0.25\%$ & 4.1779\% & 0.0054\% & 23.98\% & 1.63\%\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+数值上最好的候选仅改善 $0.1518\%$，且只对 $0.791\%$ 的本底事件真正应用修正；这意味着它近似于“绝大多数事件不做任何处理”。因此该改善既不显著，也不具备推广价值。
+
+综合“至少覆盖 $10\%$ 本底事件、能标整体不移动、本底不造峰、时间稳定和峰宽不得恶化”等约束，最终选择
+\begin{equation}
+  \texttt{drift-only, }\alpha=1000,\quad \mathrm{cap}=0.25\%
+\end{equation}
+作为\textbf{保守研究候选}。它只使用漂移时间，约对 $23.98\%$ 的本底事件应用修正，OOD 比例为 $1.63\%$，修正前后排序相关系数为 $0.9999983$，但峰宽相对改善仅为 $0.0054\%$，在实际意义上近似不变。
+
+此外，峰拟合协议相对 $2614.5\,\mathrm{keV}$ 的最大中心偏差约为 $15.7\%$。这表明当前给定公式、数据选择和标称峰之间尚未形成一致的能标闭环。在该问题解决前，继续增加模型复杂度只会增加造峰风险。
+
+\keybox{v13 的结构已经改正，并导出了一个低自由度、强回退的教师演示候选；但当前数据仍不足以证明它显著优于 $E_{\mathrm{cor}}$，因此不得把该包描述为正式最优模型。}
+
+\clearpage
+\section{v13 数据结果与图像验证}
+
+本节只比较当前 v13 与它固定使用的三次修正基准 $E_{\mathrm{cor}}$。以下各图中，\textbf{蓝色始终表示修正前的 $E_{\mathrm{cor}}$，红色始终表示 v13 修正后的 $E_{\mathrm{v13}}$}。
+
+\subsection{本底完整能谱与高能区放大}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.98\textwidth]{v13_spectrum_full_zoom.png}
+  \caption{v13 本底谱形安全检查。上图为 $500$--$3800\,\mathrm{keV}$ 完整能谱，下图为 $2500$--$3000\,\mathrm{keV}$ 高能放大区。红蓝曲线整体重合，在先前关注的约 $2600\,\mathrm{keV}$ 和 $2888\,\mathrm{keV}$ 附近没有形成新的窄尖峰。}
+\end{figure}
+
+在 $97195$ 条本底事件中共有 $96883$ 条能量有效。v13 对其中约 $23.98\%$ 应用小幅修正，约 $75.98\%$ 因建议修正过强而回退到 $E_{\mathrm{cor}}$，OOD 比例为 $1.63\%$，撞到修正上限的比例为 0。
+
+\clearpage
+\subsection{逐事件一致性与修正幅度}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.98\textwidth]{v13_event_correction.png}
+  \caption{左图：本底逐事件比较，横轴为 $E_{\mathrm{cor}}$，纵轴为 $E_{\mathrm{v13}}$；事件紧贴 $y=x$。右图：真正应用修正的事件中，相对修正量 $(E_{\mathrm{v13}}/E_{\mathrm{cor}}-1)$ 的分布。}
+\end{figure}
+
+本底事件修正量的第 1 与第 99 百分位约为 $-0.218\%$ 和 $+0.221\%$，修正前后能量排序相关系数为 $0.9999983$。因此，v13 没有像 v12 那样对能量轴进行明显的非线性搬移。
+
+\subsection{漂移时间依赖与标定样本 OOF 分布}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.98\textwidth]{v13_drift_calibration.png}
+  \caption{左图：五折 OOF 条件下，相对修正量随漂移时间的变化；红点为漂移时间分箱中位数，阴影为 $16\%$--$84\%$ 区间。右图：标定开发样本的 OOF 能量分布，虚线为 $2614.5\,\mathrm{keV}$。}
+\end{figure}
+
+最终候选仅使用漂移时间。模型在数据支持最充分的中间漂移时间区域给出不超过约 $\pm0.23\%$ 的连续修正，在其他区域自动回退为零。右图同时表明，当前标定样本不是集中在 $2614.5\,\mathrm{keV}$ 的单一光电峰，因此不能把全部事件都作为同一个真实能量标签。
+
+\clearpage
+\subsection{宽度指标和 36 个候选的安全筛选}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.98\textwidth]{v13_metrics_search.png}
+  \caption{左图：修正前后 OOF 宽度指标，柱高接近说明改善很小；数字给出精确变化。右图：36 个候选的峰宽改善与本底应用率，灰点为被安全门槛拒绝的候选，金色星号为最终保守候选，虚线为 $10\%$ 本底覆盖门槛。}
+\end{figure}
+
+v13 将 $\sigma/\mu$ 从 $4.1781\%$ 降至 $4.1779\%$，$R_{68}$ 从 $6.8214\%$ 降至 $6.8031\%$，$R_{90}$ 从 $13.1220\%$ 降至 $13.1140\%$。虽然三个指标均未明显恶化，但总体改善很小。搜索图还说明：部分候选具有更大的表面改善，却因为本底覆盖不足、OOD 过高或其他安全指标不合格而被拒绝。
+
+\keybox{v13 图像给出的结论是“谱形安全、修正受控、效果很小”。它适合用作老师检查运行流程和逐事件输出的保守候选，但现阶段不能宣称已经显著提高全能区分辨率。}
+
+\clearpage
+\section{教师演示包与最简输出}
+
+演示包已部署在 bl-0：
+\begin{center}
+\texttt{/home/researcher/PandaX\_v13\_teacher\_demo\_20260807}
+\end{center}
+
+老师在自己的账号中运行：
+\begin{verbatim}
+cd ~
+/home/researcher/PandaX_v13_teacher_demo_20260807/run.sh \
+  /完整路径/待处理的_scalar.txt
+\end{verbatim}
+
+结果自动写入老师自己的目录：
+\begin{center}
+\texttt{\string~/v13\_output/energy\_before\_after.txt}
+\end{center}
+
+逐事件结果严格只有两列：
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+列名 & 含义\\
+\midrule
+\texttt{energy\_before\_kev} & 给定三次公式 $E_{\mathrm{cor}}$\\
+\texttt{energy\_after\_kev} & v13 漂移时间小幅修正后的能量\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+在 97195 条本底事件上的完整测试中，便携版与开发版两列的最大逐事件差值均为 $0\,\mathrm{keV}$；输出列数为 2，行数与输入完全一致。包内同时包含模型说明和本报告 PDF，运行不需要 \texttt{joblib} 或 \texttt{scikit-learn}。
+
+\section{当前可以确认的成果}
+
+\begin{enumerate}
+  \item 定位了旧模型人工尖峰的直接来源：无效图像变量、中位数填补和饱和限幅共同造成事件堆积；
+  \item 建立了本底防造峰、OOD 回退、强修正回退和时间分段审计；
+  \item 证明 v12 的局部修正本身不会再产生尖峰，但 v12 更换了基础能量，导致全谱能标移动；
+  \item 设计并运行了 Energy\_cor 锚定的 v13，共评估 36 个候选；
+  \item 完成了 v13 的完整本底谱、高能区放大、逐事件比较、修正量、漂移时间依赖、OOF 宽度和候选安全筛选图；
+  \item 发现当前候选的最大可信改善不足，只发布明确标记为“保守研究候选”的教师演示包；
+  \item 将逐事件输出精简为修正前、修正后两列，并在 bl-0 上完成完全一致性验证。
+\end{enumerate}
+
+\section{下一步最关键的数据与实验}
+
+后续优先级不应是继续更换机器学习算法，而应补齐监督信息：
+\begin{enumerate}
+  \item \textbf{获得老师现有三次修正后的逐事件能量列。}这将作为可靠锚点，与原始量和模型输出逐事件比较；
+  \item \textbf{获得多条已知能量峰。}至少需要低、中、高三个能区，检查峰位线性、分辨率和谱形；
+  \item \textbf{获得多个时间段的独立 run。}一个 run 训练，另一个 run 完全盲测；
+  \item \textbf{明确标定样本的事件选择。}区分 photopeak、Compton 连续本底和其他事件，不能把 \texttt{Egt2MeV} 全部当成单能标签；
+  \item \textbf{先构造位置响应图，再进行能量标定。}将位置响应 $C(x,y,z,t)$ 与全局能标严格分离。
+\end{enumerate}
+
+理想的新流程应为
+\begin{equation}
+  (S1,S2,\mathbf r,t)\longrightarrow
+  \text{位置响应修正}\longrightarrow
+  \text{多峰能量标定}\longrightarrow
+  \text{跨 run 盲测}.
+\end{equation}
+
+\section{汇报时建议使用的结论}
+
+\keybox{本周工作的主要价值不是得到一个更低但不可信的百分数，而是发现并消除了模型人为制造本底峰的机制，建立了物理安全门槛，并交付了可复现、输出精简的教师演示包。该候选改善极小，不能视为全能区最优模型；下一步仍需要老师现有修正能量、多条已知峰和跨 run 数据。}
+
+\end{document}

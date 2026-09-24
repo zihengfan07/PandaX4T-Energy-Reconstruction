@@ -1,0 +1,104 @@
+{
+  "background": [
+    {
+      "feature": "dt",
+      "finite_fraction": 1.0,
+      "missing_fraction": 0.0,
+      "unique_finite": 84669
+    },
+    {
+      "feature": "qS1channelStdevTo1_max",
+      "finite_fraction": 1.0,
+      "missing_fraction": 0.0,
+      "unique_finite": 96959
+    },
+    {
+      "feature": "qS2channelStdevTo1_max",
+      "finite_fraction": 1.0,
+      "missing_fraction": 0.0,
+      "unique_finite": 96916
+    },
+    {
+      "feature": "wS2CDF_max",
+      "finite_fraction": 1.0,
+      "missing_fraction": 0.0,
+      "unique_finite": 5002
+    },
+    {
+      "feature": "xS2T_max",
+      "finite_fraction": 1.0,
+      "missing_fraction": 0.0,
+      "unique_finite": 97024
+    },
+    {
+      "feature": "yS2B_max",
+      "finite_fraction": 1.0,
+      "missing_fraction": 0.0,
+      "unique_finite": 96812
+    }
+  ],
+  "calibration": [
+    {
+      "feature": "dt",
+      "finite_fraction": 1.0,
+      "missing_fraction": 0.0,
+      "unique_finite": 4469
+    },
+    {
+      "feature": "qS1channelStdevTo1_max",
+      "finite_fraction": 1.0,
+      "missing_fraction": 0.0,
+      "unique_finite": 4500
+    },
+    {
+      "feature": "qS2channelStdevTo1_max",
+      "finite_fraction": 1.0,
+      "missing_fraction": 0.0,
+      "unique_finite": 4499
+    },
+    {
+      "feature": "wS2CDF_max",
+      "finite_fraction": 1.0,
+      "missing_fraction": 0.0,
+      "unique_finite": 1588
+    },
+    {
+      "feature": "xS2T_max",
+      "finite_fraction": 1.0,
+      "missing_fraction": 0.0,
+      "unique_finite": 4499
+    },
+    {
+      "feature": "yS2B_max",
+      "finite_fraction": 1.0,
+      "missing_fraction": 0.0,
+      "unique_finite": 4500
+    }
+  ],
+  "historical_importance": {
+    "dt": {
+      "normalized": 0.2392,
+      "rank": 38
+    },
+    "qS1channelStdevTo1_max": {
+      "normalized": 0.8438,
+      "rank": 4
+    },
+    "qS2channelStdevTo1_max": {
+      "normalized": 1.0,
+      "rank": 1
+    },
+    "wS2CDF_max": {
+      "normalized": 0.5033,
+      "rank": 12
+    },
+    "xS2T_max": {
+      "normalized": 0.9681,
+      "rank": 2
+    },
+    "yS2B_max": {
+      "normalized": 0.8901,
+      "rank": 3
+    }
+  }
+}
