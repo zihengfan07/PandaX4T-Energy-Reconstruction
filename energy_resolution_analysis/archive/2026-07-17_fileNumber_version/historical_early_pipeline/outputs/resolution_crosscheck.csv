@@ -1,5 +1,0 @@
-method,fit_core_resolution,robust_central68_halfwidth_over_median,events_in_window
-documented_baseline,0.06261564050947233,0.07611478089230285,888
-documented_plus_selected_nuisance,0.04783922444667922,0.06373549703570389,898
-ub_stretch_uncorrected,0.047481585104760166,0.061445065534358044,899
-ub_stretch_plus_selected_nuisance,0.046955603598938175,0.059291270479990055,898

@@ -1,0 +1,185 @@
+{
+  "kind": "local_reexecution_of_original_data_not_new_run_validation",
+  "date": "2026-09-24",
+  "python": "3.10.11",
+  "packages": {
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "matplotlib": "3.10.9",
+    "uproot": "5.7.6"
+  },
+  "source_sha256": {
+    "audit_v21_candidates_on_2615.py": "11095d4e4ca4dd978b66906911535328e9d31427d665353630698215a53cb9fa",
+    "bootstrap_time_matched_v21.py": "24e810d34a3f0ad885933596f146accb6fae23f87b3bea0ac1924d3c5569648a",
+    "kr_residual_correction_v21.py": "609a8a93018badcfbff2d6ab36aa5959fca50d9803afe6169d5d3cac3ae426cc",
+    "new_doke_v21_survey.py": "50df57504b8a94f7a422945adcf068a67937737cdf3834a683dfc71f32902dc7",
+    "time_matched_kr_v21.py": "57febe1a10ed78e633b7ef0edd235b2945ade70e04d58c11c24f63f4ec597774"
+  },
+  "same_selected_models": true,
+  "peak_fit_differences": [
+    {
+      "sample": "all",
+      "fit": "base",
+      "absolute_differences": {
+        "mu_kev": 0.0,
+        "sigma_kev": 0.0,
+        "sigma_over_mu": 0.0
+      }
+    },
+    {
+      "sample": "all",
+      "fit": "corrected",
+      "absolute_differences": {
+        "mu_kev": 0.0,
+        "sigma_kev": 0.0,
+        "sigma_over_mu": 0.0
+      }
+    },
+    {
+      "sample": "9563",
+      "fit": "base",
+      "absolute_differences": {
+        "mu_kev": 0.0,
+        "sigma_kev": 0.0,
+        "sigma_over_mu": 0.0
+      }
+    },
+    {
+      "sample": "9563",
+      "fit": "corrected",
+      "absolute_differences": {
+        "mu_kev": 0.0,
+        "sigma_kev": 0.0,
+        "sigma_over_mu": 0.0
+      }
+    },
+    {
+      "sample": "9566",
+      "fit": "base",
+      "absolute_differences": {
+        "mu_kev": 0.0,
+        "sigma_kev": 0.0,
+        "sigma_over_mu": 0.0
+      }
+    },
+    {
+      "sample": "9566",
+      "fit": "corrected",
+      "absolute_differences": {
+        "mu_kev": 0.0,
+        "sigma_kev": 0.0,
+        "sigma_over_mu": 0.0
+      }
+    },
+    {
+      "sample": "9698",
+      "fit": "base",
+      "absolute_differences": {
+        "mu_kev": 0.0,
+        "sigma_kev": 0.0,
+        "sigma_over_mu": 0.0
+      }
+    },
+    {
+      "sample": "9698",
+      "fit": "corrected",
+      "absolute_differences": {
+        "mu_kev": 0.0,
+        "sigma_kev": 0.0,
+        "sigma_over_mu": 0.0
+      }
+    }
+  ],
+  "bootstrap_comparison": [
+    {
+      "sample": "all",
+      "archived_retained": 150,
+      "replayed_retained": 150,
+      "archived_gain_interval": [
+        0.11727906152881114,
+        0.17117847199173103
+      ],
+      "replayed_gain_interval": [
+        0.11727906152881114,
+        0.17117847199173103
+      ]
+    },
+    {
+      "sample": "run_9563",
+      "archived_retained": 150,
+      "replayed_retained": 150,
+      "archived_gain_interval": [
+        0.0709609517705043,
+        0.17353117702677867
+      ],
+      "replayed_gain_interval": [
+        0.0709609517705043,
+        0.17353117702677867
+      ]
+    },
+    {
+      "sample": "run_9566",
+      "archived_retained": 110,
+      "replayed_retained": 110,
+      "archived_gain_interval": [
+        0.12427232194737879,
+        0.2385678866637908
+      ],
+      "replayed_gain_interval": [
+        0.12427232194737879,
+        0.2385678866637908
+      ]
+    },
+    {
+      "sample": "run_9698",
+      "archived_retained": 150,
+      "replayed_retained": 150,
+      "archived_gain_interval": [
+        -0.02108574409062497,
+        0.024212360396073294
+      ],
+      "replayed_gain_interval": [
+        -0.02108574409062497,
+        0.024212360396073294
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "script": "time_matched_kr_v21.py",
+      "returncode": 0,
+      "elapsed_seconds": 21.016,
+      "log": "time_matched_kr_v21.log"
+    },
+    {
+      "script": "bootstrap_time_matched_v21.py",
+      "returncode": 0,
+      "elapsed_seconds": 26.25,
+      "log": "bootstrap_time_matched_v21.log"
+    }
+  ],
+  "synthetic_demo": {
+    "status": "complete",
+    "kind": "synthetic_demonstration",
+    "events": {
+      "kr": 18000,
+      "th2615": 7500
+    },
+    "iterations": 12,
+    "steps": [
+      {
+        "script": "time_matched_kr_v21.py",
+        "returncode": 0,
+        "elapsed_seconds": 72.625,
+        "log": "time_matched_kr_v21.log"
+      },
+      {
+        "script": "bootstrap_time_matched_v21.py",
+        "returncode": 0,
+        "elapsed_seconds": 13.125,
+        "log": "bootstrap_time_matched_v21.log"
+      }
+    ]
+  },
+  "note": "No raw data or event-level outputs are included. This checks reproduction of an existing dataset, not independent physics validation."
+}

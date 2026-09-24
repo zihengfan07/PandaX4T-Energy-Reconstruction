@@ -1,0 +1,98 @@
+[
+  {
+    "path": "analysis/v21/new_doke_v21_survey.py",
+    "sha256": "50df57504b8a94f7a422945adcf068a67937737cdf3834a683dfc71f32902dc7",
+    "source_path": "energy_resolution_analysis/new_doke_v21_survey.py",
+    "source_commit": "e98ca8445220d948650019bedcded83c6909d856"
+  },
+  {
+    "path": "analysis/v21/kr_residual_correction_v21.py",
+    "sha256": "609a8a93018badcfbff2d6ab36aa5959fca50d9803afe6169d5d3cac3ae426cc",
+    "source_path": "energy_resolution_analysis/kr_residual_correction_v21.py",
+    "source_commit": "e98ca8445220d948650019bedcded83c6909d856"
+  },
+  {
+    "path": "analysis/v21/audit_v21_candidates_on_2615.py",
+    "sha256": "11095d4e4ca4dd978b66906911535328e9d31427d665353630698215a53cb9fa",
+    "source_path": "energy_resolution_analysis/audit_v21_candidates_on_2615.py",
+    "source_commit": "e98ca8445220d948650019bedcded83c6909d856"
+  },
+  {
+    "path": "analysis/v21/time_matched_kr_v21.py",
+    "sha256": "57febe1a10ed78e633b7ef0edd235b2945ade70e04d58c11c24f63f4ec597774",
+    "source_path": "energy_resolution_analysis/time_matched_kr_v21.py",
+    "source_commit": "e98ca8445220d948650019bedcded83c6909d856"
+  },
+  {
+    "path": "analysis/v21/bootstrap_time_matched_v21.py",
+    "sha256": "24e810d34a3f0ad885933596f146accb6fae23f87b3bea0ac1924d3c5569648a",
+    "source_path": "energy_resolution_analysis/bootstrap_time_matched_v21.py",
+    "source_commit": "e98ca8445220d948650019bedcded83c6909d856"
+  },
+  {
+    "path": "results/v21/summary.json",
+    "sha256": "7d2c4486c4431cf90030823c21eeeaae9efc7b573756fca8c885b34fe7ba564c",
+    "source_path": "energy_resolution_analysis/results/v21_kr_residual_correction_20260822/summary.json",
+    "source_commit": "e98ca8445220d948650019bedcded83c6909d856"
+  },
+  {
+    "path": "results/v21/time_matched_summary.json",
+    "sha256": "522dea7d7dc25d69c571044e6670e3efddaaf91d2ab092ea2ee71d74463284d1",
+    "source_path": "energy_resolution_analysis/results/v21_kr_residual_correction_20260822/time_matched_summary.json",
+    "source_commit": "e98ca8445220d948650019bedcded83c6909d856"
+  },
+  {
+    "path": "results/v21/time_matched_bootstrap.json",
+    "sha256": "33085e77719f59c16ab0ff05c4a1a4a70631ec88513d34ea53f808bdfdb124f3",
+    "source_path": "energy_resolution_analysis/results/v21_kr_residual_correction_20260822/time_matched_bootstrap.json",
+    "source_commit": "e98ca8445220d948650019bedcded83c6909d856"
+  },
+  {
+    "path": "results/v21/2615_candidate_audit.json",
+    "sha256": "00ec88aad637ee387b9fb57b3504553cbe73509db9f9fb9179f2e80b829c1ffc",
+    "source_path": "energy_resolution_analysis/results/v21_kr_residual_correction_20260822/2615_candidate_audit.json",
+    "source_commit": "e98ca8445220d948650019bedcded83c6909d856"
+  },
+  {
+    "path": "results/v21/residual_maps.json",
+    "sha256": "63a3055b4301993d9daf3208f4a4bd0eddd7b9cf97f3e4752ad2d8aec3d360b3",
+    "source_path": "energy_resolution_analysis/results/v21_kr_residual_correction_20260822/residual_maps.json",
+    "source_commit": "e98ca8445220d948650019bedcded83c6909d856"
+  },
+  {
+    "path": "results/v21/01_kr_cross_validation.png",
+    "sha256": "c02797832a6f9a1da74fd0b8e2d35bbfb22fe0ccc610623a7e5a1d4213e24288",
+    "source_path": "energy_resolution_analysis/results/v21_kr_residual_correction_20260822/01_kr_cross_validation.png",
+    "source_commit": "e98ca8445220d948650019bedcded83c6909d856"
+  },
+  {
+    "path": "results/v21/06_time_matched_kr_selection.png",
+    "sha256": "3756b1e73d20a6050b38afacf8527cddb716c64f580a09a65c3bc498e0e06e22",
+    "source_path": "energy_resolution_analysis/results/v21_kr_residual_correction_20260822/06_time_matched_kr_selection.png",
+    "source_commit": "e98ca8445220d948650019bedcded83c6909d856"
+  },
+  {
+    "path": "results/v21/07_time_matched_2615_comparison.png",
+    "sha256": "b8871d4f820f48ad74c6d1a669f0d7dc5327cc02717b9b881e8b172748fd6e57",
+    "source_path": "energy_resolution_analysis/results/v21_kr_residual_correction_20260822/07_time_matched_2615_comparison.png",
+    "source_commit": "e98ca8445220d948650019bedcded83c6909d856"
+  },
+  {
+    "path": "results/v21/08_run_center_and_resolution.png",
+    "sha256": "bc6aa732469e65e728b612d3f97d0cd8a1bd83fe1dc39488c20fe5b9525dcb0e",
+    "source_path": "energy_resolution_analysis/results/v21_kr_residual_correction_20260822/08_run_center_and_resolution.png",
+    "source_commit": "e98ca8445220d948650019bedcded83c6909d856"
+  },
+  {
+    "path": "results/v21/09_dt_coverage_and_factor_limits.png",
+    "sha256": "f31a215fc5284e38ed6e112e294cd760953fcb3980f2170931fab6ad217dfb7f",
+    "source_path": "energy_resolution_analysis/results/v21_kr_residual_correction_20260822/09_dt_coverage_and_factor_limits.png",
+    "source_commit": "e98ca8445220d948650019bedcded83c6909d856"
+  },
+  {
+    "path": "results/v21/10_time_matched_bootstrap.png",
+    "sha256": "080a8b984c59f9002682536c85a0ed7306ea38abf16875a72bc10577010857c4",
+    "source_path": "energy_resolution_analysis/results/v21_kr_residual_correction_20260822/10_time_matched_bootstrap.png",
+    "source_commit": "e98ca8445220d948650019bedcded83c6909d856"
+  }
+]

@@ -11,13 +11,7 @@ local_results/
 *.root
 *.joblib
 *.zip
-*.html
 *.log
-*.aux
-*.toc
-*.nav
-*.snm
-*.out
 *_events.csv
 *_events.tsv
 *_events.txt

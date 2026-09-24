@@ -1,5 +1,0 @@
-scheme,metric,q025,median,q975,replicates,interpretation
-event_random5,delta_r68,-0.024557762840583617,-0.02147742763441705,-0.01880332555061725,1000,paired event resampling conditional on frozen OOF predictions; pipeline is not retrained
-event_random5,ratio_r68,0.6995765835965561,0.732080054253484,0.7595154816303133,1000,paired event resampling conditional on frozen OOF predictions; pipeline is not retrained
-event_random5,delta_r90,-0.03660774767914145,-0.031731571371987545,-0.02660670491318415,1000,paired event resampling conditional on frozen OOF predictions; pipeline is not retrained
-event_random5,ratio_r90,0.7602358804403634,0.7885621990540626,0.8188962819251453,1000,paired event resampling conditional on frozen OOF predictions; pipeline is not retrained
